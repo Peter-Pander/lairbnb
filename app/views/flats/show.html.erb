@@ -1,0 +1,7 @@
+<h1><%= @flat.name %></h1>
+
+<p><strong>Description:</strong> <%= @flat.description %></p>
+<p><strong>Price per night:</strong> <%= @flat.price_per_night %> gold</p>
+
+<!-- Button to go back to the list of flats -->
+<%= link_to 'Back to All Flats', flats_path, class: 'btn btn-primary' %>
