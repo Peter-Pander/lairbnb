@@ -1,1 +1,19 @@
-// Specific CSS for your home-page
+.landing-page-background {
+  background-color: black;
+  background-position: center; /* Centers the image */
+  height: 100vh; /* Full viewport height */
+  background-repeat: no-repeat;
+  background-size: contain; /* Ensures the entire image fits within the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-custom-green {
+  background-color: #32d3a2; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Adjust button size */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+}

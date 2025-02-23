@@ -1,5 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<!-- Link to the flats index page -->
-<%= link_to 'View All Flats', flats_path %>
+
+<div class="landing-page-background"
+  style="background-image: url('<%= cl_image_path("landingpage_abmmfc") %>')"
+  >
+
+
+  <!-- Link to the flats index page with custom button styling -->
+  <%= link_to 'View All Flats', flats_path, class: 'btn-custom-green' %>
+</div>
