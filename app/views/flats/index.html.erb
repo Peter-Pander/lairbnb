@@ -5,10 +5,12 @@
     <li>
       <strong><%= flat.name %></strong><br>
       <%= flat.description %><br>
-      <%= flat.price_per_night %> per night
+      <%= flat.price_per_night %> gold per night<br>
+      <%= link_to 'View Details', flat_path(flat), class: 'btn btn-secondary' %>
     </li>
   <% end %>
 </ul>
+
 
 <!-- Link back to the homepage -->
 <%= link_to 'Back to Homepage', root_path %>
