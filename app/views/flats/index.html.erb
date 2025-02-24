@@ -1,19 +1,12 @@
-<div class="flats-page">
-  <ul>
-    <% @flats.each do |flat| %>
-      <li>
-        <% if flat.photo.attached? %>
-          <%= link_to image_tag(flat.photo), flat_path(flat) %><br>
-        <% end %>
-        <strong><%= flat.name %></strong><br>
-        <%= flat.address %> <br>
-        <strong><%= flat.price_per_night %> gold per night</strong><br>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
-<div class="back-to-home">
-  <!-- Link back to the homepage -->
-  <%= link_to 'Back to Homepage', root_path %>
+<div class="cards">
+  <% @flats.each do |flat| %>
+    <div class="card-item"> <!-- New class for styling the text -->
+      <% if flat.photo.attached? %>
+        <%= link_to image_tag(flat.photo), flat_path(flat) %><br>
+      <% end %>
+      <strong><%= flat.name %></strong><br>
+      <%= flat.address %> <br>
+      <strong><%= flat.price_per_night %> gold per night</strong><br>
+    </div>
+  <% end %>
 </div>
