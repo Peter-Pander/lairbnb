@@ -85,3 +85,15 @@ lairs.each do |lair_data|
 end
 
 puts "Lairs seeded successfully!"
+
+# Seeding homepage background
+puts "Seeding homepage background..."
+
+homepage_background_url = 'https://res.cloudinary.com/dadymzua9/image/upload/v1/landingpage_niljab'
+homepage_background = HomepageBackground.create!
+
+# Attach image from Cloudinary
+file = URI.open(homepage_background_url)
+homepage_background.photo.attach(io: file, filename: "homepage_background.jpg", content_type: "image/jpeg")
+
+puts "Homepage background seeded successfully!"
