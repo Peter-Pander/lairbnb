@@ -1,0 +1,27 @@
+.flats-page {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Distribute items evenly across the row */
+    gap: 20px; /* Space between items */
+    margin-bottom: 40px;
+  }
+
+  li {
+    list-style-type: none;
+    width: 282px;
+    height: 268px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Slightly rounded corners */
+  }
+}
+
+.back-to-home {
+  display: block;      /* Ensures the link is on its own line */
+  margin-top: 100px;    /* Adjust the top margin for space */
+}
