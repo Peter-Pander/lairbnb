@@ -2,7 +2,7 @@ class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @flats = Flat.all
+    @flats = Flat.all.order(:id) # This ensures the flats are displayed in the same order as they were created.
   end
 
   def show
