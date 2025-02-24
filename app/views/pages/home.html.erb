@@ -1,10 +1,9 @@
-
+<% homepage_background = HomepageBackground.first %>
 
 <div class="landing-page-background"
-  style="background-image: url('<%= cl_image_path("landingpage_abmmfc") %>')"
-  >
-
-
-  <!-- Link to the flats index page with custom button styling -->
+  <% if homepage_background&.photo.attached? %>
+    style="background-image: url('<%= homepage_background.photo.url %>')"
+  <% end %>
+>
   <%= link_to 'View All Flats', flats_path, class: 'btn-custom-green' %>
 </div>
