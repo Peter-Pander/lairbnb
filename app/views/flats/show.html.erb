@@ -1,5 +1,3 @@
-
-
 <div class="flat-gallery">
   <div class="flat-image-wrapper">
     <h1><strong><%= @flat.name %></strong></h1>
@@ -7,7 +5,31 @@
       <%= image_tag @flat.photo, class: 'flat-image' %>
     <% end %>
     <p></p>
+
     <p><%= @flat.description %></p>
     <p><strong><%= @flat.price_per_night %> gold per night</strong> </p>
+  </div>
+</div>
+
+<!-- What this place offers section -->
+<div class="flat-amenities flat-gallery">
+  <div class="flat-image-wrapper">
+    <h2><strong>What this place offers</h2></strong>
+    <div class="amenities-grid">
+      <div class="amenities-left">
+        <% @flat.amenities.split(', ').first(@flat.amenities.split(', ').length / 2).each do |amenity| %>
+          <div class="amenity-item">
+            <span><%= amenity %></span>
+          </div>
+        <% end %>
+      </div>
+      <div class="amenities-right">
+        <% @flat.amenities.split(', ').drop(@flat.amenities.split(', ').length / 2).each do |amenity| %>
+          <div class="amenity-item">
+            <span><%= amenity %></span>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
