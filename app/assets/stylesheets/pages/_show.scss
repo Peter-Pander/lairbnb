@@ -1,0 +1,22 @@
+.flat-gallery {
+  display: flex;
+  justify-content: center; /* Center the gallery */
+  margin: 20px 0;
+}
+
+.flat-image-wrapper {
+  position: relative;
+  max-width: 80%; /* Limit the size */
+  width: 600px; /* Set a max width to keep it from being too large */
+  padding: 20px;
+  background-color: #f4f4f4; /* Add a subtle background */
+  border-radius: 15px; /* Rounded corners for a clean look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a shadow for a floating effect */
+}
+
+.flat-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; /* Rounded corners for the image */
+}

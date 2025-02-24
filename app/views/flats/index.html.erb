@@ -1,16 +1,19 @@
-<h1>All Flats</h1>
+<div class="flats-page">
+  <ul>
+    <% @flats.each do |flat| %>
+      <li>
+        <% if flat.photo.attached? %>
+          <%= link_to image_tag(flat.photo), flat_path(flat) %><br>
+        <% end %>
+        <strong><%= flat.name %></strong><br>
+        <%= flat.address %> <br>
+        <strong><%= flat.price_per_night %> gold per night</strong><br>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
-<ul>
-  <% @flats.each do |flat| %>
-    <li>
-      <strong><%= flat.name %></strong><br>
-      <%= flat.description %><br>
-      <%= flat.price_per_night %> gold per night<br>
-      <%= link_to 'View Details', flat_path(flat), class: 'btn btn-secondary' %>
-    </li>
-  <% end %>
-</ul>
-
-
-<!-- Link back to the homepage -->
-<%= link_to 'Back to Homepage', root_path %>
+<div class="back-to-home">
+  <!-- Link back to the homepage -->
+  <%= link_to 'Back to Homepage', root_path %>
+</div>
