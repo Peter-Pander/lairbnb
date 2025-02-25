@@ -48,8 +48,16 @@
 
       <div class="form-group">
         <!-- Calculation displayed above total -->
-        <p id="price-breakdown-msg"></p> <!-- Price breakdown here -->
-        <p id="total-price-msg"><strong style="font-size: 1.2em;">Total</strong> Select dates and guests to see the price</p>
+        <div class="d-flex justify-content-between">
+          <p id="price-breakdown-msg" class="d-inline-block"></p> <!-- Price breakdown here -->
+          <p id="final-price-msg"></p>
+        </div>
+        <p id="total-price-msg" class="d-inline-block"><strong style="font-size: 1.2em;"></strong> Select dates and guests to see the price</p>
+        <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
+        <div class="d-flex justify-content-between">
+          <p><strong>Total</strong></p>
+          <strong><p id="final-price-msg2"></p></strong>
+        </div>
       </div>
 
     <% end %>
@@ -100,16 +108,17 @@
         if (nights > 0) {
           // Calculate the total price
           const totalPrice = pricePerNight * nights * guests;
-          document.getElementById("total-price-msg").innerHTML = `<strong style="font-size: 1.2em;">Total</strong> ${totalPrice} gold`;
+          document.getElementById("final-price-msg").innerHTML = `${totalPrice} gold`;
+          document.getElementById("final-price-msg2").innerHTML = `${totalPrice} gold`; // For the second price display
 
           // Add price breakdown above total
           document.getElementById("price-breakdown-msg").innerHTML = `${pricePerNight} gold x ${nights} nights x ${guests} guests`;
         } else {
-          document.getElementById("total-price-msg").innerHTML = `<strong style="font-size: 1.2em;">Total</strong> Invalid date range`;
+          document.getElementById("final-price-msg").innerHTML = `Invalid date range`;
           document.getElementById("price-breakdown-msg").innerHTML = '';
         }
       } else {
-        document.getElementById("total-price-msg").innerHTML = `<strong style="font-size: 1.2em;">Total</strong> Select dates and guests to see the price`;
+        document.getElementById("final-price-msg").innerHTML = '';
         document.getElementById("price-breakdown-msg").innerHTML = '';
       }
     }
