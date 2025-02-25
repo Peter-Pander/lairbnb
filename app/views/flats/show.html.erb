@@ -52,7 +52,6 @@
           <p id="price-breakdown-msg" class="d-inline-block"></p> <!-- Price breakdown here -->
           <p class="final-price-msg"></p> <!-- Using a class for the first final price -->
         </div>
-        <p id="total-price-msg" class="d-inline-block"><strong style="font-size: 1.2em;"></strong> Select dates and guests to see the price</p>
         <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
         <div class="d-flex justify-content-between">
           <p><strong>Total</strong></p>
@@ -125,7 +124,7 @@
         }
       } else {
         // Show the "Select dates and guests to see the price" message if no dates or guests
-        document.getElementById("total-price-msg").style.display = "block";
+        document.getElementById("total-price-msg").style.display = "none"; // Hide it completely
         document.querySelectorAll(".final-price-msg").forEach(function(element) {
           element.innerHTML = '';
         });
