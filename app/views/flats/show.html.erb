@@ -20,17 +20,19 @@
 
     <%= form_with model: @booking, url: flat_bookings_path(@flat), local: true do |f| %>
       <div class="form-group">
-        <%= f.label :start_datetime, "Check-in Date" %>
-        <%= f.datetime_select :start_datetime, { include_blank: true, ampm: true }, class: "form-control" %>
+        <%= f.label :start_datetime, "CHECK-IN" %>
+        <!-- Date picker for start_datetime -->
+        <%= f.text_field :start_datetime, data: { controller: "datepicker" }, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :end_datetime, "Check-out Date" %>
-        <%= f.datetime_select :end_datetime, { include_blank: true, ampm: true }, class: "form-control" %>
+        <%= f.label :end_datetime, "CHECKOUT" %>
+        <!-- Date picker for end_datetime -->
+        <%= f.text_field :end_datetime, data: { controller: "datepicker" }, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :guests, "Number of Guests" %>
+        <%= f.label :guests, "GUETS" %>
         <%= f.number_field :guests, class: "form-control", min: 1 %>
       </div>
 
