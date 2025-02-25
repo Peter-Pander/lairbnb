@@ -11,6 +11,40 @@
   </div>
 </div>
 
+<!-- Booking Section -->
+<div class="booking-container">
+  <h3>Reserve Your Stay</h3>
+
+  <%= form_with model: @booking, url: flat_bookings_path(@flat), local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :start_datetime, "Check-in Date" %>
+      <%= f.datetime_select :start_datetime, { include_blank: true, ampm: true }, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :end_datetime, "Check-out Date" %>
+      <%= f.datetime_select :end_datetime, { include_blank: true, ampm: true }, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :guests, "Number of Guests" %>
+      <%= f.number_field :guests, class: "form-control", min: 1 %>
+    </div>
+
+    <div class="form-group">
+      <% if @booking.start_datetime && @booking.end_datetime %>
+        <p><strong>Total Price:</strong> <%= number_to_currency(@flat.price_per_night * booking_nights(@booking), unit: "gold") %></p>
+      <% else %>
+        <p><strong>Total Price:</strong> Select dates to see the price</p>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Reserve", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
 <!-- What this place offers section -->
 <div class="flat-amenities flat-gallery">
   <div class="flat-image-wrapper">
