@@ -1,4 +1,16 @@
+/* Container to position Flat Details and Booking Section side by side */
+.flat-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* Space between flat details and booking section */
+  margin: 20px auto;
+  max-width: 1200px; /* Ensures it doesn’t stretch too much */
+}
+
+/* Flat Gallery (Left Side) */
 .flat-gallery {
+  flex: 1; /* Takes up remaining space */
   display: flex;
   justify-content: center; /* Center the gallery */
   margin: 20px 0;
@@ -50,15 +62,14 @@
   font-size: 1rem;
 }
 
-/* New Booking Section Styles */
+/* Booking Section (Right Side) */
 .booking-container {
-  margin-top: 40px;
+  width: 400px; /* Fixed width for booking section */
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 20px auto;
+  margin-top: 0; /* Removed auto margin so it aligns with the image */
 }
 
 .booking-container h3 {
@@ -67,6 +78,7 @@
   font-weight: bold;
 }
 
+/* Form Styles */
 .form-group {
   margin-bottom: 20px;
 }
