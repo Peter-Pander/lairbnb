@@ -1,10 +1,52 @@
-<h1>Booking Details</h1>
-<p><strong>Flat:</strong> <%= @booking.flat.name %></p>
-<p><strong>Check-in:</strong> <%= @booking.start_datetime.strftime("%B %d, %Y") %></p>
-<p><strong>Check-out:</strong> <%= @booking.end_datetime.strftime("%B %d, %Y") %></p>
-<p><strong>Guests:</strong> <%= @booking.guests %></p>
+<h1><strong>Confirm and pay</strong></h1>
 
-<% nights = booking_nights(@booking) %>
-<p><strong>Total Price:</strong>
-  <%= "#{number_to_currency(@booking.flat.price_per_night * nights * @booking.guests, unit: '', delimiter: '.', precision: 0)} gold" %>
-</p>
+<!-- Wrapper to hold both containers side by side -->
+<div class="booking-wrapper">
+  <!-- Left Side: Your Trip -->
+  <div class="trip-container">
+    <h3><strong>Your trip</strong></h3>
+
+    <p><strong>Dates</strong></p>
+    <p><%= @booking.start_datetime.strftime("%b %-d") %> - <%= @booking.end_datetime.strftime("%b %-d") %></p>
+
+    <p><strong>Guests</strong></p>
+    <p><%= @booking.guests %> <%= @booking.guests == 1 ? "guest" : "guests" %></p>
+  </div>
+
+  <!-- Right Side: Price Details -->
+  <div class="price-container">
+    <!-- Image and Lair Details -->
+    <div class="lair-info">
+      <% if @booking.flat.photo.attached? %>
+        <%= image_tag @booking.flat.photo, class: 'lair-image' %>
+      <% end %>
+      <div class="lair-details">
+        <p><strong><%= @booking.flat.name %></strong></p>
+        <p><%= @booking.flat.address %></p>
+      </div>
+    </div>
+
+    <hr>
+
+    <p><strong>Price details</strong></p>
+
+    <% nights = booking_nights(@booking) %>
+    <% total_price = @booking.flat.price_per_night * nights * @booking.guests %>
+
+    <div class="d-flex justify-content-between">
+      <p>
+        <%= "#{number_to_currency(@booking.flat.price_per_night, unit: '', delimiter: '.', precision: 0)} gold" %>
+        x <%= nights %> nights x <%= @booking.guests %>
+        <%= @booking.guests == 1 ? "person" : "people" %>
+      </p>
+      <p><strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong></p>
+    </div>
+
+    <hr>
+
+    <div class="d-flex justify-content-between">
+      <p><strong>Total</strong></p>
+      <p><strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong></p>
+    </div>
+  </div>
+</div>

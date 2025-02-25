@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user # assuming you have user authentication set up
 
     if @booking.save
-      redirect_to flat_booking_path(@flat, @booking), notice: 'Booking was successfully created.'
+      redirect_to flat_booking_path(@flat, @booking)
     else
       render 'flats/show', alert: 'Error creating booking. Please check your inputs.'
     end
