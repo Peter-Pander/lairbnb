@@ -4,13 +4,26 @@
 <div class="booking-wrapper">
   <!-- Left Side: Your Trip -->
   <div class="trip-container">
-    <h3><strong>Your trip</strong></h3>
+    <!-- New container for the deal announcement -->
+    <div class="deal-announcement">
+      <p>
+        <strong class="deal-title">Lower price.</strong>
+        <span class="money-emoji">💸</span>
+        <br>
+        <span>Got the best deal for ya today, friend!</span><br>
+        <span>Don’t forget to confirm your booking and seal the deal!</span>
+      </p>
+    </div>
 
-    <p><strong>Dates</strong></p>
-    <p><%= @booking.start_datetime.strftime("%b %-d") %> - <%= @booking.end_datetime.strftime("%b %-d") %></p>
+    <h4><strong>Your trip</strong></h4>
+    <div class="dates-guests">
+      <p><strong>Dates</strong></p>
+      <p><%= @booking.start_datetime.strftime("%b %-d") %> - <%= @booking.end_datetime.strftime("%b %-d") %></p><br>
 
-    <p><strong>Guests</strong></p>
-    <p><%= @booking.guests %> <%= @booking.guests == 1 ? "guest" : "guests" %></p>
+      <p><strong>Guests</strong></p>
+      <p><%= @booking.guests %> <%= @booking.guests == 1 ? "guest" : "guests" %></p>
+      <hr class="thin-line">
+    </div>
   </div>
 
   <!-- Right Side: Price Details -->
@@ -33,7 +46,6 @@
     <hr>
 
     <p class="price-details-title"><strong>Price details</strong></p>
-
 
     <% nights = booking_nights(@booking) %>
     <% total_price = @booking.flat.price_per_night * nights * @booking.guests %>

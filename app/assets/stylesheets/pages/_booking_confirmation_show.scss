@@ -28,6 +28,39 @@
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Container for the deal announcement */
+.deal-announcement p {
+  padding: 15px;
+  border: 0.5px solid #ccc;  /* Light gray, thin solid border */
+  border-radius: 8px;
+  margin-bottom: 20px; /* Adds space below it */
+  font-size: 17px;
+  height: 35%; /* About half the height of the trip container */
+  display: block;  /* Ensures text will be arranged in a block format */
+  line-height: 1.5;  /* Adds some space between the lines */
+}
+
+.deal-title {
+  margin-right: 320px; /* Adjust space between text and emoji */
+}
+
+.money-emoji {
+  font-size: 24px; /* Make the emoji a bit bigger */
+}
+
+.dates-guests {
+  line-height: 1;
+  padding-top: 18px;
+}
+
+/* Thin horizontal line under Number of Guests */
+.thin-line {
+  border: none;              /* Remove all default borders */
+  border-top: 1px solid #ccc; /* Add a thin gray top border */
+  margin: 5px 0;             /* Reduce space above and below */
+}
+
+/* Price details title */
 .price-details-title {
   font-size: 24px; /* Adjust the size as needed */
 }
