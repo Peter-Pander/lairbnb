@@ -1,4 +1,16 @@
+/* Container to position Flat Details and Booking Section side by side */
+.flat-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* Space between flat details and booking section */
+  margin: 20px auto;
+  max-width: 1200px; /* Ensures it doesn’t stretch too much */
+}
+
+/* Flat Gallery (Left Side) */
 .flat-gallery {
+  flex: 1; /* Takes up remaining space */
   display: flex;
   justify-content: center; /* Center the gallery */
   margin: 20px 0;
@@ -48,4 +60,70 @@
 
 .amenity-item span {
   font-size: 1rem;
+}
+
+/* Booking Section (Right Side) */
+.booking-container {
+  width: 400px; /* Fixed width for booking section */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 0; /* Removed auto margin so it aligns with the image */
+}
+
+.booking-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button, .btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover, .btn:hover {
+  background-color: #0056b3;
+}
+
+.total-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+p {
+  font-size: 1rem;
+  color: #333;
 }
