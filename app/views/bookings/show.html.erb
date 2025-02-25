@@ -15,20 +15,25 @@
 
   <!-- Right Side: Price Details -->
   <div class="price-container">
-    <!-- Image and Lair Details -->
-    <div class="lair-info">
-      <% if @booking.flat.photo.attached? %>
-        <%= image_tag @booking.flat.photo, class: 'lair-image' %>
-      <% end %>
-      <div class="lair-details">
-        <p><strong><%= @booking.flat.name %></strong></p>
-        <p><%= @booking.flat.address %></p>
+    <!-- New Container for Image and Address -->
+    <div class="lair-info-container">
+      <div class="lair-info">
+        <% if @booking.flat.photo.attached? %>
+          <%= image_tag @booking.flat.photo, class: 'lair-image' %>
+        <% end %>
+        <div class="lair-details">
+          <p><strong><%= @booking.flat.name %></strong></p>
+          <p class="address">
+            <%= @booking.flat.address %>
+          </p>
+        </div>
       </div>
     </div>
 
     <hr>
 
-    <p><strong>Price details</strong></p>
+    <p class="price-details-title"><strong>Price details</strong></p>
+
 
     <% nights = booking_nights(@booking) %>
     <% total_price = @booking.flat.price_per_night * nights * @booking.guests %>
@@ -37,7 +42,7 @@
       <p>
         <%= "#{number_to_currency(@booking.flat.price_per_night, unit: '', delimiter: '.', precision: 0)} gold" %>
         x <%= nights %> nights x <%= @booking.guests %>
-        <%= @booking.guests == 1 ? "person" : "people" %>
+        <%= @booking.guests == 1 ? "guest" : "guests" %>
       </p>
       <p><strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong></p>
     </div>
