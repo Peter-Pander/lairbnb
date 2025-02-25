@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_flat, only: [:new, :create] # Set the flat for the booking form
+  before_action :set_flat, only: [:create] # Set the flat for the booking form
 
   # New booking page (form)
   def new
@@ -12,9 +12,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user # assuming you have user authentication set up
 
     if @booking.save
-      redirect_to booking_path(@booking), notice: 'Booking was successfully created.'
+      redirect_to flat_booking_path(@flat, @booking), notice: 'Booking was successfully created.'
     else
-      render :new, alert: 'Error creating booking. Please check your inputs.'
+      render 'flats/show', alert: 'Error creating booking. Please check your inputs.'
     end
   end
 
