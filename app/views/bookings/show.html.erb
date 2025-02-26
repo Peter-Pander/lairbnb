@@ -39,17 +39,26 @@
         "<span>Gold ain't gonna save itself! 🏆 Lock in this steal before it vanishes! ✨</span>",
 
         "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>Ya got good taste, friend! 😎 Now seal the deal before someone else does! 🔒</span>",
+        "<span>Fast as lightning ⚡ Book now and secure your spot in the lair!</span>",
 
         "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>Coin’s talkin’, and it says this is a bargain! 💰 Book now! 🏃‍♂️💨</span>"
+        "<span>Make haste, ya never know when this deal’ll be gone! ⚡ Hurry up ‘n’ get it! 🎯</span>"
       ];
 
-      // Pick a random deal
-      const randomDeal = deals[Math.floor(Math.random() * deals.length)];
+      // Function to pick and display a random deal
+      function displayDeal() {
+        const dealText = deals[Math.floor(Math.random() * deals.length)];
+        const dealElement = document.getElementById("deal-text");
 
-      // Insert the random deal into the page
-      document.getElementById("deal-text").innerHTML = randomDeal;
+        if (dealElement) {
+          dealElement.innerHTML = dealText;
+        }
+      }
+
+      // Wait for Turbo to load the page before displaying the deal
+      document.addEventListener("turbo:load", function() {
+        displayDeal();
+      });
     </script>
     <h4><strong>Your trip</strong></h4>
     <div class="dates-guests">
