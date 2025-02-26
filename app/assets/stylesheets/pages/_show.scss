@@ -33,11 +33,12 @@
   border-radius: 10px; /* Rounded corners for the image */
 }
 
+/* What this place offers section (Flat Amenities) */
 .flat-amenities {
   padding: 20px;
   margin-top: 20px;
+  margin-left: -420px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .flat-amenities h2 {
@@ -69,7 +70,9 @@
   background-color: #f4f4f4;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 0; /* Removed auto margin so it aligns with the image */
+  margin-top: 20px;
+  position: sticky;
+  top: 20px; /* Sticks 20px from the top when scrolling */
 }
 
 .booking-container h3 {
@@ -112,10 +115,6 @@ button, .btn {
   cursor: pointer;
 }
 
-button:hover, .btn:hover {
-  background-color: #0056b3;
-}
-
 .total-price {
   font-size: 1.2rem;
   font-weight: bold;
@@ -126,4 +125,13 @@ button:hover, .btn:hover {
 p {
   font-size: 1rem;
   color: #333;
+}
+
+/* Location and Map */
+.location {
+  margin-top: 20px;
+}
+
+.map-container {
+  margin-top: 20px;
 }
