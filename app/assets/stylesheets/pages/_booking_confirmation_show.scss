@@ -1,7 +1,6 @@
 /* Confirm Title */
 .confirm-title {
   display: flex;
-  justify-content: space-between;
   gap: 20px;
   margin-top: 20px;
   flex-wrap: wrap;
@@ -9,7 +8,36 @@
   margin-left: auto;
   margin-right: auto;
   position: relative; // Allows precise positioning if needed
+  left: -60px;
 }
+
+/* Styling the back button */
+.back-button {
+  background-color: transparent;
+  border: none;
+  font-size: 40px; /* Larger font size for the arrow */
+  color: #333; /* Dark color for the arrow */
+  cursor: pointer;
+  padding: 0; /* Remove any padding */
+  margin-right: 20px; /* Space between the arrow and the title */
+  text-decoration: none; /* Remove underline */
+  transition: transform 0.2s ease; /* Smooth transition on hover */
+
+  /* Adjust position of the back button */
+  position: relative; /* Makes it possible to position the button relative to its normal position */
+  top: -5px; /* Move the button slightly higher */
+  left: -1px; /* Move the button a bit to the left */
+}
+
+.back-button:hover {
+  transform: scale(1.2); /* Slightly scale up the arrow on hover */
+}
+
+.back-button span {
+  display: inline-block;
+  font-size: 40px; /* Adjust the size of the arrow */
+}
+
 
 /* Wrapper for title and trip-container to align them together */
 .confirm-wrapper {
