@@ -41,9 +41,9 @@
         <!-- Calculation displayed above total -->
         <div class="d-flex justify-content-between">
           <p id="price-breakdown-msg" class="d-inline-block"></p>
- <!-- Price breakdown here -->
+          <!-- Price breakdown here -->
           <p class="final-price-msg"></p>
- <!-- Using a class for the first final price -->
+          <!-- Using a class for the first final price -->
         </div>
         <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
         <div class="d-flex justify-content-between">
@@ -54,29 +54,6 @@
         </div>
       </div>
     <% end %>
-  </div>
-</div>
-<!-- What this place offers section -->
-<div class="flat-amenities flat-gallery">
-  <div class="flat-image-wrapper">
-    <h2><strong>What this place offers</h2>
-    </strong>
-    <div class="amenities-grid">
-      <div class="amenities-left">
-        <% @flat.amenities.split(', ').first(@flat.amenities.split(', ').length / 2).each do |amenity| %>
-          <div class="amenity-item">
-            <span><%= amenity %></span>
-          </div>
-        <% end %>
-      </div>
-      <div class="amenities-right">
-        <% @flat.amenities.split(', ').drop(@flat.amenities.split(', ').length / 2).each do |amenity| %>
-          <div class="amenity-item">
-            <span><%= amenity %></span>
-          </div>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
 <script>
@@ -131,3 +108,30 @@
     document.getElementById("guests").addEventListener("input", calculateTotal);
   });
 </script>
+<!-- What this place offers section -->
+<div class="flat-amenities flat-gallery">
+  <div class="flat-image-wrapper">
+    <h2><strong>What this place offers</h2>
+    </strong>
+    <div class="amenities-grid">
+      <div class="amenities-left">
+        <% @flat.amenities.split(', ').first(@flat.amenities.split(', ').length / 2).each do |amenity| %>
+          <div class="amenity-item">
+            <span><%= amenity %></span>
+          </div>
+        <% end %>
+      </div>
+      <div class="amenities-right">
+        <% @flat.amenities.split(', ').drop(@flat.amenities.split(', ').length / 2).each do |amenity| %>
+          <div class="amenity-item">
+            <span><%= amenity %></span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
