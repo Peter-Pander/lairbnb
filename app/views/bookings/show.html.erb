@@ -59,4 +59,18 @@
       <p><strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong></p>
     </div>
   </div>
+  <!-- Payment Method Container -->
+  <div class="payment-container">
+    <h3>Pay with</h3>
+    <select class="payment-dropdown">
+      <option value="paypal">PayPal</option>
+      <option value="visa">Visa</option>
+      <option value="mastercard">MasterCard</option>
+      <option value="amex">AMEX</option>
+      <option value="googlepay">Google Pay</option>
+    </select>
+    <hr class="thin-line">
+    <h3>Cancellation policy</h3>
+    <p class="cancellation-text">This reservation is non-refundable.</p>
+  </div>
 </div>
