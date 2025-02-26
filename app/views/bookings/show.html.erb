@@ -1,10 +1,87 @@
-<h1>Booking Details</h1>
-<p><strong>Flat:</strong> <%= @booking.flat.name %></p>
-<p><strong>Check-in:</strong> <%= @booking.start_datetime.strftime("%B %d, %Y") %></p>
-<p><strong>Check-out:</strong> <%= @booking.end_datetime.strftime("%B %d, %Y") %></p>
-<p><strong>Guests:</strong> <%= @booking.guests %></p>
-
-<% nights = booking_nights(@booking) %>
-<p><strong>Total Price:</strong>
-  <%= "#{number_to_currency(@booking.flat.price_per_night * nights * @booking.guests, unit: '', delimiter: '.', precision: 0)} gold" %>
-</p>
+<div class="confirm-title">
+  <h1><strong>Confirm and pay</strong></h1>
+</div>
+<!-- Wrapper to hold both containers side by side -->
+<div class="booking-wrapper">
+  <!-- Left Side: Your Trip -->
+  <div class="trip-container">
+    <!-- New container for the deal announcement -->
+    <div class="deal-announcement">
+      <p>
+        <strong class="deal-title">Lower price.</strong>
+        <span class="money-emoji">💸</span>
+        <br>
+        <span>Got the best deal for ya today, friend!</span><br>
+        <span>Don’t forget to confirm your booking and seal the deal!</span>
+      </p>
+    </div>
+    <h4><strong>Your trip</strong></h4>
+    <div class="dates-guests">
+      <p><strong>Dates</strong></p>
+      <p><%= @booking.start_datetime.strftime("%b %-d") %> - <%= @booking.end_datetime.strftime("%b %-d") %></p>
+      <br>
+      <p><strong>Guests</strong></p>
+      <p><%= @booking.guests %> <%= @booking.guests == 1 ? "guest" : "guests" %></p>
+      <hr class="thin-line">
+    </div>
+  </div>
+  <!-- Right Side: Price Details -->
+  <div class="price-container">
+    <!-- New Container for Image and Address -->
+    <div class="lair-info-container">
+      <div class="lair-info">
+        <% if @booking.flat.photo.attached? %>
+          <%= image_tag @booking.flat.photo, class: 'lair-image' %>
+        <% end %>
+        <div class="lair-details">
+          <p><strong><%= @booking.flat.name %></strong></p>
+          <p class="address">
+            <%= @booking.flat.address %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p class="price-details-title"><strong>Price details</strong></p>
+    <% nights = booking_nights(@booking) %>
+    <% total_price = @booking.flat.price_per_night * nights * @booking.guests %>
+    <div class="d-flex justify-content-between">
+      <p>
+        <%= "#{number_to_currency(@booking.flat.price_per_night, unit: '', delimiter: '.', precision: 0)} gold" %>
+        x <%= nights %> nights x <%= @booking.guests %>
+        <%= @booking.guests == 1 ? "guest" : "guests" %>
+      </p>
+      <p><strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong></p>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between">
+      <p><strong>Total</strong></p>
+      <p><strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong></p>
+    </div>
+  </div>
+  <!-- Payment Method Container -->
+  <div class="payment-container">
+    <h3>Pay with</h3>
+    <select class="payment-dropdown">
+      <option value="paypal">PayPal</option>
+      <option value="visa">Visa</option>
+      <option value="mastercard">MasterCard</option>
+      <option value="amex">AMEX</option>
+      <option value="googlepay">Google Pay</option>
+    </select>
+    <hr class="thin-line2">
+    <h3>Cancellation policy</h3>
+    <p class="cancellation-text">This reservation is non-refundable.</p>
+  </div>
+</div>
+<div class="booking-wrapper2">
+  <!-- Container for Terms & Conditions -->
+  <div class="terms-container booking-wrapper">
+    <p class="terms-text">
+      By selecting the button below, I agree to the Host’s Lair Rules, Ground Rules for Guests, LairBnB’s Rebooking and Refund Policy, and I understand that LairBnB may charge my payment method if I am responsible for any damage caused to the lair. Payment Terms between you and LairBnB Payments (Hoard of Treasures Division, Goldclaw Treasury) apply.  </p>
+    <p class="terms-text">
+      I also agree to the updated Terms of Service, Payment Terms of Service, and acknowledge the Privacy Policy of LairBnB, where personal data is kept safer than a dragon’s hoard.
+    </p>
+  </div>
+  <div class="invisible-container"></div>
+</div>
