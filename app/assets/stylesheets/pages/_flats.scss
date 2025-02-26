@@ -1,3 +1,22 @@
+/* Only apply sticky navbar on the index page */
+body.index-page .navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+  padding: 30px 73px 50px 73px; /* Top: 30px, Bottom: 50px, Left and Right: 0px */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures it stays above other elements */
+}
+
+body.index-page .navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+body.index-page .navbar-lewagon .navbar-brand img {
+  width: 80px;
+  border-radius: 5px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Exactly 5 columns on large screens */
