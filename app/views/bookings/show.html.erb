@@ -5,16 +5,49 @@
 <div class="booking-wrapper">
   <!-- Left Side: Your Trip -->
   <div class="trip-container">
-    <!-- New container for the deal announcement -->
+    <!-- Trip announcement -->
     <div class="deal-announcement">
-      <p>
-        <strong class="deal-title">Lower price.</strong>
-        <span class="money-emoji">💸</span>
-        <br>
-        <span>Got the best deal for ya today, friend!</span><br>
-        <span>Don’t forget to confirm your booking and seal the deal!</span>
+      <p id="deal-text">
+        <!-- The random deal will be inserted here -->
       </p>
     </div>
+    <script>
+      // List of goblin-style deal announcements with "Lower price." at the top
+      const deals = [
+        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
+        "<span>Time is money, friend! 💸 Lock in that deal ‘fore someone else snags it!</span>",
+
+        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
+        "<span>I got the best deals, anywhere! 🔥 Ya won’t find a price like this again!</span>",
+
+        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
+        "<span>Oi! You booking or just window shopping? 👀 Get it while it's hot! 🔥</span>",
+
+        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
+        "<span>Cha-ching! 💰 Best price ya gonna get—don’t wait ‘til it’s gone! ⏳</span>",
+
+        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
+        "<span>A deal so good, it’s almost criminal! 😏💰 Hurry up ‘n’ book it!</span>",
+
+        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
+        "<span>Can I interest ya in a limited-time offer? ⏳ ‘Cause this one won’t last! 🚀</span>",
+
+        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
+        "<span>Gold ain't gonna save itself! 🏆 Lock in this steal before it vanishes! ✨</span>",
+
+        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
+        "<span>Ya got good taste, friend! 😎 Now seal the deal before someone else does! 🔒</span>",
+
+        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
+        "<span>Coin’s talkin’, and it says this is a bargain! 💰 Book now! 🏃‍♂️💨</span>"
+      ];
+
+      // Pick a random deal
+      const randomDeal = deals[Math.floor(Math.random() * deals.length)];
+
+      // Insert the random deal into the page
+      document.getElementById("deal-text").innerHTML = randomDeal;
+    </script>
     <h4><strong>Your trip</strong></h4>
     <div class="dates-guests">
       <p><strong>Dates</strong></p>
