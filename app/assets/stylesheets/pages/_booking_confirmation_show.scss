@@ -141,6 +141,7 @@ hr {
   min-width: 450px;
   max-width: 550px;
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 .payment-dropdown {
@@ -151,6 +152,13 @@ hr {
   border-radius: 4px;
   background: white;
   cursor: pointer;
+}
+
+.thin-line2 {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin-bottom: 20px;
+  margin-top: 25px;
 }
 
 .cancellation-text {
