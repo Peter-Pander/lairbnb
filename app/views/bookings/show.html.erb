@@ -106,13 +106,47 @@
       <!-- Google Pay icon with characteristic color -->
       <i class="fa-brands fa-google-pay" style="float: right; font-size: 1.5rem; color: #4285f4; margin-right: 10px;"></i>
     </h3>
-    <select class="payment-dropdown">
-      <option value="paypal">PayPal</option>
-      <option value="visa">Visa</option>
-      <option value="mastercard">MasterCard</option>
-      <option value="amex">AMEX</option>
-      <option value="googlepay">Google Pay</option>
-    </select>
+    <div class="custom-dropdown">
+      <!-- Button with default PayPal selected -->
+      <button class="dropdown-btn">
+        <i class="fa-brands fa-paypal" style="color: #0070ba; margin-right: 10px;"></i> PayPal
+      </button>
+      <div class="dropdown-content">
+        <div class="dropdown-item" data-value="paypal">
+          <i class="fa-brands fa-paypal" style="color: #0070ba; margin-right: 10px;"></i> PayPal
+        </div>
+        <div class="dropdown-item" data-value="visa">
+          <i class="fa-brands fa-cc-visa" style="color: #1a1f71; margin-right: 10px;"></i> Visa
+        </div>
+        <div class="dropdown-item" data-value="mastercard">
+          <i class="fa-brands fa-cc-mastercard" style="color: #eb001b; margin-right: 10px;"></i> MasterCard
+        </div>
+        <div class="dropdown-item" data-value="amex">
+          <i class="fa-brands fa-cc-amex" style="color: #2e77bb; margin-right: 10px;"></i> AMEX
+        </div>
+        <div class="dropdown-item" data-value="googlepay">
+          <i class="fa-brands fa-google-pay" style="color: #4285f4; margin-right: 10px;"></i> Google Pay
+        </div>
+      </div>
+    </div>
+    <script>
+      // Simple JS to handle the dropdown toggle and value selection
+      document.querySelector('.dropdown-btn').addEventListener('click', function() {
+        document.querySelector('.dropdown-content').classList.toggle('show');
+      });
+
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function() {
+          let value = item.getAttribute('data-value');
+          let iconHTML = item.querySelector('i').outerHTML;
+          let text = item.innerText.trim();
+
+          // Set the button text with the selected icon and text
+          document.querySelector('.dropdown-btn').innerHTML = iconHTML + ' ' + text;
+          document.querySelector('.dropdown-content').classList.remove('show');
+        });
+      });
+    </script>
     <hr class="thin-line2">
     <h3>Cancellation policy</h3>
     <p class="cancellation-text">This reservation is non-refundable.</p>
