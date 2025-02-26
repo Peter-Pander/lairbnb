@@ -273,3 +273,31 @@ hr {
   max-width: 550px;
   top: 20px; /* Sticks 20px from the top when scrolling */
 }
+
+// Custom button styles
+.goblin-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #FFD700, #FF8C00); // Gold to orange gradient
+  border: 2px solid #A52A2A; // Dark brown border
+  color: #222; // Dark text for contrast
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px #A52A2A; // 3D effect
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(135deg, #FF8C00, #FFD700); // Reverse gradient on hover
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px #5A1F1F; // Deeper shadow
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 0px #5A1F1F;
+  }
+}
