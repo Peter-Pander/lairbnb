@@ -8,6 +8,12 @@ class FlatsController < ApplicationController
   def show
     @flat = Flat.find(params[:id])
     @booking = Booking.new # Add this line to prevent @booking from being nil
+    # Add coordinates for map display (geocoding happens for the specific flat)
+    @markers = [{
+      lat: @flat.latitude,
+      lng: @flat.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {flat: @flat})
+    }]
   end
 
   private

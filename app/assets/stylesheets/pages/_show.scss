@@ -3,23 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px; /* Space between flat details and booking section */
+  gap: 60px; /* Space between flat details and booking section */
   margin: 20px auto;
-  max-width: 1200px; /* Ensures it doesn’t stretch too much */
-}
-
-/* Flat Gallery (Left Side) */
-.flat-gallery {
-  flex: 1; /* Takes up remaining space */
-  display: flex;
-  justify-content: center; /* Center the gallery */
-  margin: 20px 0;
+  max-width: 1350px; /* Ensures it doesn’t stretch too much */
 }
 
 .flat-image-wrapper {
   position: relative;
   max-width: 80%; /* Limit the size */
-  width: 620px; /* Set a max width to keep it from being too large */
+  width: 800px; /* Set a max width to keep it from being too large */
   padding: 20px;
   background-color: #f4f4f4; /* Add a subtle background */
   border-radius: 15px; /* Rounded corners for a clean look */
@@ -33,24 +25,22 @@
   border-radius: 10px; /* Rounded corners for the image */
 }
 
-.flat-amenities {
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+/* Thin line separator */
+.thin-line0 {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.flat-amenities h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
+/* What this place offers section (Flat Amenities) */
 .amenities-grid {
   display: flex;
   justify-content: space-between;
 }
 
-.amenities-left, .amenities-right {
+.amenities-left,
+.amenities-right {
   width: 48%;
 }
 
@@ -69,7 +59,9 @@
   background-color: #f4f4f4;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 0; /* Removed auto margin so it aligns with the image */
+  margin-top: 20px;
+  position: sticky;
+  top: 20px; /* Sticks 20px from the top when scrolling */
 }
 
 .booking-container h3 {
@@ -112,18 +104,11 @@ button, .btn {
   cursor: pointer;
 }
 
-button:hover, .btn:hover {
-  background-color: #0056b3;
+/* Location and Map */
+.location {
+  margin-top: 40px;
 }
 
-.total-price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #333;
-}
-
-p {
-  font-size: 1rem;
-  color: #333;
+.map-container {
+  margin-top: 20px;
 }

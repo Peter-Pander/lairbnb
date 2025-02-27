@@ -1,72 +1,17 @@
 <!-- Flat Details and Booking Section Container -->
 <div class="flat-container">
   <!-- Flat Details -->
-  <div class="flat-gallery">
-    <div class="flat-image-wrapper">
-      <h1><strong><%= @flat.name %></strong></h1>
-      <% if @flat.photo.attached? %>
-        <%= image_tag @flat.photo, class: 'flat-image' %>
-      <% end %>
-      <p></p>
-
-      <p><%= @flat.description %></p>
-      <p><strong><%= @flat.price_per_night %> gold per night</strong> </p>
-    </div>
-  </div>
-
-  <!-- Booking Section -->
-  <div class="booking-container">
-    <h3><strong><%= @flat.price_per_night %> gold per night</strong></h3>
-
-    <%= form_with model: @booking, url: flat_bookings_path(@flat), local: true, html: { id: 'booking-form' } do |f| %>
-      <div class="form-group">
-        <%= f.label :start_datetime, "CHECK-IN", style: "font-weight: bold; font-size: 0.8em;" %>
-        <!-- Date picker for start_datetime -->
-        <%= f.text_field :start_datetime, data: { controller: "datepicker" }, class: "form-control", id: "start_datetime" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :end_datetime, "CHECKOUT", style: "font-weight: bold; font-size: 0.8em;" %>
-        <!-- Date picker for end_datetime -->
-        <%= f.text_field :end_datetime, data: { controller: "datepicker" }, class: "form-control", id: "end_datetime" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :guests, "GUESTS", style: "font-weight: bold; font-size: 0.8em;"  %>
-        <%= f.number_field :guests, class: "form-control", min: 1, id: "guests" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.submit "Reserve", class: "btn btn-primary w-100" %>
-      </div>
-
-      <!-- Text under the Reserve button -->
-      <p class="text-muted" style="font-size: 0.9em; text-align: center;">
-        You won't be charged yet. <br>
-        Price per night includes VAT and all applicable fees.
-      </p>
-
-      <div class="form-group">
-        <!-- Calculation displayed above total -->
-        <div class="d-flex justify-content-between">
-          <p id="price-breakdown-msg" class="d-inline-block"></p> <!-- Price breakdown here -->
-          <p class="final-price-msg"></p> <!-- Using a class for the first final price -->
-        </div>
-        <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
-        <div class="d-flex justify-content-between">
-          <p><strong>Total</strong></p>
-          <strong><p class="final-price-msg"></p></strong> <!-- Using a class for the second final price -->
-        </div>
-      </div>
-
-    <% end %>
-  </div>
-</div>
-
-<!-- What this place offers section -->
-<div class="flat-amenities flat-gallery">
   <div class="flat-image-wrapper">
-    <h2><strong>What this place offers</h2></strong>
+    <h1><strong><%= @flat.name %></strong></h1>
+    <% if @flat.photo.attached? %>
+      <%= image_tag @flat.photo, class: 'flat-image' %>
+    <% end %>
+    <p></p>
+    <p><%= @flat.description %></p>
+    <!-- Thin line below description -->
+    <hr class="thin-line0">
+    <!-- What this place offers section -->
+    <h2><strong>What this place offers</strong></h2>
     <div class="amenities-grid">
       <div class="amenities-left">
         <% @flat.amenities.split(', ').first(@flat.amenities.split(', ').length / 2).each do |amenity| %>
@@ -84,8 +29,51 @@
       </div>
     </div>
   </div>
+  <!-- Booking Section -->
+  <div class="booking-container">
+    <h3><strong><%= @flat.price_per_night %> gold per night</strong></h3>
+    <%= form_with model: @booking, url: flat_bookings_path(@flat), local: true, html: { id: 'booking-form' } do |f| %>
+      <div class="form-group">
+        <%= f.label :start_datetime, "CHECK-IN", style: "font-weight: bold; font-size: 0.8em;" %>
+        <!-- Date picker for start_datetime -->
+        <%= f.text_field :start_datetime, data: { controller: "datepicker" }, class: "form-control", id: "start_datetime" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :end_datetime, "CHECKOUT", style: "font-weight: bold; font-size: 0.8em;" %>
+        <!-- Date picker for end_datetime -->
+        <%= f.text_field :end_datetime, data: { controller: "datepicker" }, class: "form-control", id: "end_datetime" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :guests, "GUESTS", style: "font-weight: bold; font-size: 0.8em;"  %>
+        <%= f.number_field :guests, class: "form-control", min: 1, id: "guests" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Reserve", class: "btn btn-primary w-100" %>
+      </div>
+      <!-- Text under the Reserve button -->
+      <p class="text-muted" style="font-size: 0.9em; text-align: center;">
+        You won't be charged yet. <br>
+        Price per night includes VAT and all applicable fees.
+      </p>
+      <div class="form-group">
+        <!-- Calculation displayed above total -->
+        <div class="d-flex justify-content-between">
+          <p id="price-breakdown-msg" class="d-inline-block"></p>
+          <!-- Price breakdown here -->
+          <p class="final-price-msg"></p>
+          <!-- Using a class for the first final price -->
+        </div>
+        <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
+        <div class="d-flex justify-content-between">
+          <p><strong>Total</strong></p>
+          <strong>
+            <p class="final-price-msg"></p>
+          </strong> <!-- Using a class for the second final price -->
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-
 <script>
   document.addEventListener("turbo:load", function() {
     const pricePerNight = <%= @flat.price_per_night %>; // Get the flat price per night
@@ -138,3 +126,12 @@
     document.getElementById("guests").addEventListener("input", calculateTotal);
   });
 </script>
+<div class="location">
+  <h3><strong>Where you’ll be</strong></h3>
+  <%= @flat.address %>
+</div>
+<div class="map-container"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>

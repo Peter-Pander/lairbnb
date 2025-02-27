@@ -1,0 +1,24 @@
+/* app/assets/stylesheets/components/_map.scss */
+.location {
+  margin-left: 200px;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  width: 80%;
+  height: 600px;
+  border-radius: 15px; /* Round the corners of the map container */
+  overflow: hidden; /* Ensure content doesn't spill out when rounded */
+  margin: 0 auto; /* Center align horizontally */
+  display: block; /* Ensure the container is treated as a block element */
+  margin-bottom: 300px;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
