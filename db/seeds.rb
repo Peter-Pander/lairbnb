@@ -10,19 +10,54 @@ User.destroy_all
 puts "Seeding users..."
 
 landlord = User.create!(
+  name: 'landlord',
   email: 'landlord@example.com',
   password: 'sandwich'
 )
 
 tenant = User.create!(
+  name: 'tenant',
   email: 'tenant@example.com',
   password: 'sandwich'
 )
 
 puts "Users seeded successfully!"
 
-# Seeding Lairs (Flats)
-puts "Seeding lairs..."
+# Seeding landlords
+puts "Seeding landlords..."
+
+landlords = [
+  {
+    name: "Drakarion, Warden of the Peaks",
+    email: "drakarion@example.com",
+    password: "sandwich",
+    landlord_image: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Drakarion_Warden_of_the_Peaks_lg02wt.jpg"
+  },
+  {
+    name: "Elandrial, Guardian of the Misted Boughs",
+    email: "elandrial@example.com",
+    password: "sandwich",
+    landlord_image: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Elandrial_Guardian_of_the_Misted_Boughs_gumvwo.jpg"
+  },
+  {
+    name: "Merlinus Thorne",
+    email: "merlinus@example.com",
+    password: "sandwich",
+    landlord_image: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Merlinus_Thorne_erhj4a.jpg"
+  },
+  {
+    name: "Zalgar the Underkeeper",
+    email: "zalgar@example.com",
+    password: "sandwich",
+    landlord_image: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Zalgar_the_Underkeeper_t34uqb.jpg"
+  },
+  {
+    name: "Thalrik Deepstone",
+    email: "thalrik@example.com",
+    password: "sandwich",
+    landlord_image: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Thalrik_Deepstone_nded00.jpg"
+  }
+]
 
 lairs = [
   {
@@ -31,7 +66,7 @@ lairs = [
     address: "Rifugio Lagazuoi, 32043 Cortina d'Ampezzo, Belluno, Italy 🇮🇹",
     price_per_night: 75,
     amenities: "Wi-Fi 🌐, Dragon's Roar Fireplace 🔥, Treasure Chest 💰, Mountain View 🏞️, Dragon's Wing Hammocks 🦖, Volcanic Spring Hot Tub ♨️, Stone Carving Studio 🛠️, Fireproof Walls 🔥🧱, Mountain Echo Sound System 🎶, Dragon Rider's Stables 🐴, Hoard of Gold 🏅, Scales of Power Ritual Area ⚡, Roaring Waterfall 🌊, Cloud Gazing Deck ☁️, High Altitude Lounge 🛋️",
-    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/dragonsden237_krf9v1.jpg"
+    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/dragonsden237_krf9v1.jpg",
   },
   {
     name: "Elven Treehouse",
@@ -39,7 +74,7 @@ lairs = [
     address: "Shiratani Unsuikyo, 白谷雲水峡宮之浦線, Yakushima, Kumage County, Kagoshima Prefecture, 891-4205, Japan 🇯🇵",
     price_per_night: 120,
     amenities: "Wi-Fi 🌐, Healing Waters 💧, Elven Magic ✨, Forest View 🌳, Moonlit Glade 🌙, Enchanted Tree Swing 🌲, Sacred Herb Garden 🌱, Elven Craftsmanship Workshop 🪓, Starlight Weaver's Loom 🪡, Moss-Covered Meditation Spots 🧘, Spirit of the Forest Incense 🌿, Ancient Oak Throne 🪑, Elven Lyre Music 🎶, Crystal Clear Spring 💧, Celestial Dome Viewing 🌌, Elven Storytelling Circle 📖",
-    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Elven_Treehouse_kgs03p.jpg"
+    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Elven_Treehouse_kgs03p.jpg",
   },
   {
     name: "Wizard's Tower",
@@ -47,7 +82,7 @@ lairs = [
     address: "Old Man of Storr, Highland, Scotland, IV51 9HX, United Kingdom 🇬🇧",
     price_per_night: 95,
     amenities: "Wi-Fi 🌐, Potion Brewing Kit 🧪, Magical Artifacts 🧙‍♂️, Stargazing Platform 🔭, Crystal Ball Observation 🔮, Alchemical Lab 🧬, Arcane Energy Converter ⚡, Spellbook Library 📚, Enchanted Mirror 🪞, Wizard's Familiar Suite 🐈, Astral Projection Viewing Room 🌠, Floating Candles 🕯️, Dragonfly Wing Enchantment 🦋, Elemental Runes 🔮, Thunderstorm Viewing Area 🌩️",
-    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/wizardstower3234_eupz68.jpg"
+    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/wizardstower3234_eupz68.jpg",
   },
   {
     name: "Goblin Hideout",
@@ -55,7 +90,7 @@ lairs = [
     address: "Cappadocia, Göreme, Nevşehir, Central Anatolia Region, 50300, Turkey 🇹🇷",
     price_per_night: 250,
     amenities: "Wi-Fi 🌐, Goblin's Forge 🔨, Hidden Treasures 🗝️, Secret Tunnel 🚪, Smuggler's Passage ⚓, Underground Dining Hall 🍽️, Goblin Tinkerer's Workshop ⚙️, Poisoned Dart Practice Room ☠️, Explosive Ingredient Storage 💥, Gold and Gemstone Vault 💎, Ancient Mine Cart Tracks 🚂, Goblin Minstrels 🎶, Cursed Chalice Bar 🍷, Shadow Cloak Stash 🖤, Underground Fire Pit 🔥, Goblin Shadow Projection Room 👹",
-    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Goblin_Hideout2_oh5myx.jpg"
+    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Goblin_Hideout2_oh5myx.jpg",
   },
   {
     name: "Dwarven Stronghold",
@@ -63,10 +98,9 @@ lairs = [
     address: "Schwarzenberg Castle, 08340 Schwarzenberg, Erzgebirge, Germany 🇩🇪",
     price_per_night: 110,
     amenities: "Wi-Fi 🌐, Smithy ⚒️, Mead Hall 🍺, Gemstone Vault 💎, Forge Room 🔥, Dwarven Ale Brewery 🍻, Hammerfall Arena ⚔️, Weapon Crafting Studio 🛠️, Ancient Mine Lair 🏞️, Lava Forge 🌋, Hearthstone Room 🔥, Rune Inscribed Walls ✍️, Dwarven Shield Rack 🛡️, Cold Iron Forge 🔨, Tunnel Access to Hidden Vaults ⛏️, Stone-Engraved Maps 🗺️, Earthquake Safe Chamber 🌍",
-    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Dwarven_Stronghold_wxz6ay.jpg"
+    image_url: "https://res.cloudinary.com/dadymzua9/image/upload/v1/Dwarven_Stronghold_wxz6ay.jpg",
   }
 ]
-
 
 # Create lairs and attach images
 lairs.each do |lair_data|
@@ -77,7 +111,7 @@ lairs.each do |lair_data|
     price_per_night: lair_data[:price_per_night],
     amenities: lair_data[:amenities],
     user: landlord
-  )
+    )
 
   # Attach image from Cloudinary
   file = URI.open(lair_data[:image_url])
@@ -86,7 +120,25 @@ lairs.each do |lair_data|
   puts "Created lair: #{lair.name} with image #{lair_data[:image_url]}"
 end
 
-puts "Lairs seeded successfully!"
+# Create landlords and attach images
+landlords.each do |landlord_data|
+  landlord = User.create!(
+    name: landlord_data[:name],
+    email: landlord_data[:email],
+    password: landlord_data[:password],
+  )
+
+  # Attach the landlord image if the URL is provided
+  if landlord_data[:landlord_image].present?
+    file = URI.open(landlord_data[:landlord_image])  # Use landlord_data and correct key
+    landlord.photo.attach(io: file, filename: "landlord_image_#{landlord.name.parameterize}.jpg", content_type: "image/jpeg")
+  end
+
+  puts "Created user: #{landlord.email} with image #{landlord_data[:landlord_image]}"
+end
+
+
+puts "Lairs and users seeded successfully!"
 
 # Seeding homepage background
 puts "Seeding homepage background..."
