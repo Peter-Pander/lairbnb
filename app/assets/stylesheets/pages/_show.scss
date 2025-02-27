@@ -33,25 +33,21 @@
   border-radius: 10px; /* Rounded corners for the image */
 }
 
+/* Thin line separator */
+.thin-line {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0; /* Adjusted margin for spacing */
+}
+
 /* What this place offers section (Flat Amenities) */
-.flat-amenities {
-  padding: 20px;
-  margin-top: 20px;
-  margin-left: -420px;
-  border-radius: 10px;
-}
-
-.flat-amenities h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
 .amenities-grid {
   display: flex;
   justify-content: space-between;
 }
 
-.amenities-left, .amenities-right {
+.amenities-left,
+.amenities-right {
   width: 48%;
 }
 
@@ -115,18 +111,6 @@ button, .btn {
   cursor: pointer;
 }
 
-.total-price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #333;
-}
-
-p {
-  font-size: 1rem;
-  color: #333;
-}
-
 /* Location and Map */
 .location {
   margin-top: 20px;
@@ -134,11 +118,4 @@ p {
 
 .map-container {
   margin-top: 20px;
-}
-
-/* Thin line separator */
-.thin-line {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 10px 0; /* Adjusted margin for spacing */
 }
