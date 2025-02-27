@@ -40,6 +40,7 @@
   border-radius: 50%; /* Makes the image circular */
   object-fit: cover; /* Ensures the image fills the space without distortion */
   display: block; /* Removes any extra spacing */
+  margin-right: 15px; /* Creates space between the image and the text */
 }
 
 /* Thin line separator */
