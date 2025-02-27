@@ -59,9 +59,30 @@ landlords = [
   }
 ]
 
+# Store created landlords in a hash
+landlord_records = {}
+
+landlords.each do |landlord_data|
+  landlord = User.create!(
+    name: landlord_data[:name],
+    email: landlord_data[:email],
+    password: landlord_data[:password],
+  )
+
+  # Attach the landlord image if the URL is provided
+  if landlord_data[:landlord_image].present?
+    file = URI.open(landlord_data[:landlord_image])
+    landlord.photo.attach(io: file, filename: "landlord_image_#{landlord.name.parameterize}.jpg", content_type: "image/jpeg")
+  end
+
+  landlord_records[landlord_data[:email]] = landlord
+  puts "Created landlord: #{landlord.email} with image #{landlord_data[:landlord_image]}"
+end
+
 lairs = [
   {
     name: "Dragon's Den",
+    landlord_email: "drakarion@example.com",
     description: "The Dolomites, with their jagged peaks and dramatic cliffs, are a landscape shaped by the forces of nature, where dragons call home. The towering spires of rock and vast, rugged terrain form a natural fortress, providing rest and refuge for ancient creatures. The beauty and raw power of this region are undeniable, with vistas stretching far beyond the eye can see, where dragons soar above. Every crag and crevice holds the echo of mythical beings, while the silence of the mountains serves as a reminder of their enduring presence.",
     address: "Rifugio Lagazuoi, 32043 Cortina d'Ampezzo, Belluno, Italy 🇮🇹",
     price_per_night: 75,
@@ -70,6 +91,7 @@ lairs = [
   },
   {
     name: "Elven Treehouse",
+    landlord_email: "elandrial@example.com",
     description: "In the heart of Yakushima Forest, ancient, moss-covered trees reach up to the sky, hiding the Elven Treehouse among their branches. The forest, shrouded in mist and mystery, creates an atmosphere of peace and enchantment, where the elves have long made their home. Towering cedars and lush greenery form a natural canopy, where treehouses high in the boughs offer a retreat from the world below. The magic of nature flows through every leaf and root, and the harmony of the forest resonates with those attuned to the spirit of the elves, offering serenity and hidden wonders within the mist.",
     address: "Shiratani Unsuikyo, 白谷雲水峡宮之浦線, Yakushima, Kumage County, Kagoshima Prefecture, 891-4205, Japan 🇯🇵",
     price_per_night: 120,
@@ -78,6 +100,7 @@ lairs = [
   },
   {
     name: "Wizard's Tower",
+    landlord_email: "merlinus@example.com",
     description: "The Old Man of Storr, on the Isle of Skye, stands as a monument to the mystical forces of nature, rising above the mist like the Wizard’s Tower. Its towering rock formations and eerie landscapes are steeped in ancient energy, making it a perfect site for the study of arcane knowledge. The windswept hills and jagged peaks are an ideal setting for wizards to contemplate their craft, with ley lines of magic coursing through the earth beneath. As the mists roll in, the mountain seems to come alive, offering a powerful connection to the unseen worlds, where magic is as much a part of the landscape as the rocks themselves.",
     address: "Old Man of Storr, Highland, Scotland, IV51 9HX, United Kingdom 🇬🇧",
     price_per_night: 95,
@@ -86,6 +109,7 @@ lairs = [
   },
   {
     name: "Goblin Hideout",
+    landlord_email: "zalgar@example.com",
     description: "Cappadocia’s striking, surreal landscape of fairy chimneys and ancient rock dwellings is where the Goblin Hideout can be found. Beneath its rocky surface, labyrinthine tunnels and hidden chambers extend for miles, where goblins have long made their home, guarding their treasures and secrets. The soft volcanic rock that forms Cappadocia’s iconic shapes is ideal for carving, giving the goblins ample space to create their hidden lairs and forges. The beauty of this region lies in its contrasts — the breathtaking natural formations above ground conceal a rich, secret world below, where goblins have thrived for centuries, far from the eyes of ordinary folk.",
     address: "Cappadocia, Göreme, Nevşehir, Central Anatolia Region, 50300, Turkey 🇹🇷",
     price_per_night: 250,
@@ -94,6 +118,7 @@ lairs = [
   },
   {
     name: "Dwarven Stronghold",
+    landlord_email: "thalrik@example.com",
     description: "The Erzgebirge, with its deep mining history and towering mountain peaks, is the home of the Dwarven Stronghold. Beneath the surface, vast networks of tunnels and halls are carved from solid rock, housing the wealth and craftsmanship of generations of dwarves. The region’s rich deposits of precious metals and stones have long attracted the dwarves, who have turned the mountains into living monuments to their skill and resilience. The clang of the blacksmith’s hammer still echoes through the valleys, and the air is filled with the scent of smelted metal and the glow of forge fires. Above ground, the lush forests and peaceful villages hold the contrast of the industrious and secretive world that lies below, where the dwarves continue their work, hidden from the world above.",
     address: "Schwarzenberg Castle, 08340 Schwarzenberg, Erzgebirge, Germany 🇩🇪",
     price_per_night: 110,
@@ -104,39 +129,29 @@ lairs = [
 
 # Create lairs and attach images
 lairs.each do |lair_data|
+  landlord = landlord_records[lair_data[:landlord_email]] # Get the correct landlord
+
+  # Ensure landlord exists before creating the flat
+  if landlord.nil?
+    puts "Error: No landlord found for email #{lair_data[:landlord_email]}"
+    next
+  end
+
   lair = Flat.create!(
     name: lair_data[:name],
     description: lair_data[:description],
     address: lair_data[:address],
     price_per_night: lair_data[:price_per_night],
     amenities: lair_data[:amenities],
-    user: landlord
-    )
+    user: landlord # Assign correct landlord
+  )
 
   # Attach image from Cloudinary
   file = URI.open(lair_data[:image_url])
   lair.photo.attach(io: file, filename: "#{lair.name.parameterize}.jpg", content_type: "image/jpeg")
 
-  puts "Created lair: #{lair.name} with image #{lair_data[:image_url]}"
+  puts "Created lair: #{lair.name} with landlord #{landlord.name} and image #{lair_data[:image_url]}"
 end
-
-# Create landlords and attach images
-landlords.each do |landlord_data|
-  landlord = User.create!(
-    name: landlord_data[:name],
-    email: landlord_data[:email],
-    password: landlord_data[:password],
-  )
-
-  # Attach the landlord image if the URL is provided
-  if landlord_data[:landlord_image].present?
-    file = URI.open(landlord_data[:landlord_image])  # Use landlord_data and correct key
-    landlord.photo.attach(io: file, filename: "landlord_image_#{landlord.name.parameterize}.jpg", content_type: "image/jpeg")
-  end
-
-  puts "Created user: #{landlord.email} with image #{landlord_data[:landlord_image]}"
-end
-
 
 puts "Lairs and users seeded successfully!"
 
