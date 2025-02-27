@@ -25,6 +25,23 @@
   border-radius: 10px; /* Rounded corners for the image */
 }
 
+.landlord-info {
+  display: flex;
+  align-items: center; /* Align image and text vertically */
+  gap: 10px; /* Add space between image and text */
+  font-weight: 520;
+  max-width: 80%; /* Limit the size */
+  width: 350px; /* Set a max width to keep it from being too large */
+}
+
+.landlord-image {
+  width: 100px;  /* Adjust size as needed */
+  height: 100px; /* Keep width and height the same for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+  display: block; /* Removes any extra spacing */
+}
+
 /* Thin line separator */
 .thin-line0 {
   border: none;

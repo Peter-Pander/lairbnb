@@ -10,9 +10,12 @@
     <p><%= @flat.description %></p>
     <!-- Thin line below description -->
     <hr class="thin-line0">
-    <!-- Landlord picture -->
+    <!-- Landlord picture and name -->
     <% if @user.photo.attached? %>
-      <%= image_tag @user.photo %>
+      <div class="landlord-info">
+        <%= image_tag @user.photo, class: 'landlord-image' %>
+        <p>Hosted by <%= @user.name %></p>
+      </div>
     <% end %>
     <hr class="thin-line0">
     <!-- What this place offers section -->
