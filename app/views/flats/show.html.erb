@@ -9,6 +9,26 @@
       <% end %>
       <p></p>
       <p><%= @flat.description %></p>
+      <!-- Thin line below description -->
+      <hr class="thin-line">
+      <!-- What this place offers section -->
+      <h2><strong>What this place offers</strong></h2>
+      <div class="amenities-grid">
+        <div class="amenities-left">
+          <% @flat.amenities.split(', ').first(@flat.amenities.split(', ').length / 2).each do |amenity| %>
+            <div class="amenity-item">
+              <span><%= amenity %></span>
+            </div>
+          <% end %>
+        </div>
+        <div class="amenities-right">
+          <% @flat.amenities.split(', ').drop(@flat.amenities.split(', ').length / 2).each do |amenity| %>
+            <div class="amenity-item">
+              <span><%= amenity %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
   <!-- Booking Section -->
@@ -108,29 +128,6 @@
     document.getElementById("guests").addEventListener("input", calculateTotal);
   });
 </script>
-<!-- What this place offers section -->
-<div class="flat-amenities flat-gallery">
-  <div class="flat-image-wrapper">
-    <h2><strong>What this place offers</h2>
-    </strong>
-    <div class="amenities-grid">
-      <div class="amenities-left">
-        <% @flat.amenities.split(', ').first(@flat.amenities.split(', ').length / 2).each do |amenity| %>
-          <div class="amenity-item">
-            <span><%= amenity %></span>
-          </div>
-        <% end %>
-      </div>
-      <div class="amenities-right">
-        <% @flat.amenities.split(', ').drop(@flat.amenities.split(', ').length / 2).each do |amenity| %>
-          <div class="amenity-item">
-            <span><%= amenity %></span>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="location">
   <h3><strong>Where you’ll be</strong></h3>
   <%= @flat.address %>
