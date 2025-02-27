@@ -1,33 +1,31 @@
 <!-- Flat Details and Booking Section Container -->
 <div class="flat-container">
   <!-- Flat Details -->
-  <div class="flat-gallery">
-    <div class="flat-image-wrapper">
-      <h1><strong><%= @flat.name %></strong></h1>
-      <% if @flat.photo.attached? %>
-        <%= image_tag @flat.photo, class: 'flat-image' %>
-      <% end %>
-      <p></p>
-      <p><%= @flat.description %></p>
-      <!-- Thin line below description -->
-      <hr class="thin-line">
-      <!-- What this place offers section -->
-      <h2><strong>What this place offers</strong></h2>
-      <div class="amenities-grid">
-        <div class="amenities-left">
-          <% @flat.amenities.split(', ').first(@flat.amenities.split(', ').length / 2).each do |amenity| %>
-            <div class="amenity-item">
-              <span><%= amenity %></span>
-            </div>
-          <% end %>
-        </div>
-        <div class="amenities-right">
-          <% @flat.amenities.split(', ').drop(@flat.amenities.split(', ').length / 2).each do |amenity| %>
-            <div class="amenity-item">
-              <span><%= amenity %></span>
-            </div>
-          <% end %>
-        </div>
+  <div class="flat-image-wrapper">
+    <h1><strong><%= @flat.name %></strong></h1>
+    <% if @flat.photo.attached? %>
+      <%= image_tag @flat.photo, class: 'flat-image' %>
+    <% end %>
+    <p></p>
+    <p><%= @flat.description %></p>
+    <!-- Thin line below description -->
+    <hr class="thin-line0">
+    <!-- What this place offers section -->
+    <h2><strong>What this place offers</strong></h2>
+    <div class="amenities-grid">
+      <div class="amenities-left">
+        <% @flat.amenities.split(', ').first(@flat.amenities.split(', ').length / 2).each do |amenity| %>
+          <div class="amenity-item">
+            <span><%= amenity %></span>
+          </div>
+        <% end %>
+      </div>
+      <div class="amenities-right">
+        <% @flat.amenities.split(', ').drop(@flat.amenities.split(', ').length / 2).each do |amenity| %>
+          <div class="amenity-item">
+            <span><%= amenity %></span>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

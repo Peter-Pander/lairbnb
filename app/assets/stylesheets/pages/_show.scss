@@ -3,23 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px; /* Space between flat details and booking section */
+  gap: 60px; /* Space between flat details and booking section */
   margin: 20px auto;
-  max-width: 1200px; /* Ensures it doesn’t stretch too much */
-}
-
-/* Flat Gallery (Left Side) */
-.flat-gallery {
-  flex: 1; /* Takes up remaining space */
-  display: flex;
-  justify-content: center; /* Center the gallery */
-  margin: 20px 0;
+  max-width: 1350px; /* Ensures it doesn’t stretch too much */
 }
 
 .flat-image-wrapper {
   position: relative;
   max-width: 80%; /* Limit the size */
-  width: 620px; /* Set a max width to keep it from being too large */
+  width: 800px; /* Set a max width to keep it from being too large */
   padding: 20px;
   background-color: #f4f4f4; /* Add a subtle background */
   border-radius: 15px; /* Rounded corners for a clean look */
@@ -34,10 +26,11 @@
 }
 
 /* Thin line separator */
-.thin-line {
+.thin-line0 {
   border: none;
   border-top: 1px solid #ccc;
-  margin: 10px 0; /* Adjusted margin for spacing */
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 /* What this place offers section (Flat Amenities) */
@@ -113,7 +106,7 @@ button, .btn {
 
 /* Location and Map */
 .location {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .map-container {
