@@ -9,6 +9,8 @@ gem 'pry-rails'
 # Gems for Chatbot
 gem "ruby-openai"
 gem "solid_cable"
+gem "solid_queue"
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
