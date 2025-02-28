@@ -1,0 +1,6 @@
+<!-- app/views/questions/_question.html.erb -->
+<div id="<%= dom_id(question) %>" class="question">
+  <%= turbo_stream_from dom_id(question) %>
+  <p class="user-question"><%= question.user_question %></p>
+  <div class="ai-answer"><%= markdown(question.ai_answer.presence || "...") %></div>
+</div>

@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :flats, only: [:index, :show] do
     resources :bookings, only: [:create, :show] # Add nested routes for bookings
   end
+
+  resources :questions, only: [:index, :create]
 end
