@@ -200,6 +200,8 @@ GEM
     msgpack (1.8.0)
     multipart-post (2.4.1)
     mutex_m (0.3.0)
+    neighbor (0.5.2)
+      activerecord (>= 7)
     net-http (0.6.0)
       uri
     net-imap (0.5.6)
@@ -383,6 +385,7 @@ DEPENDENCIES
   geocoder
   importmap-rails (~> 1.2.3)
   jbuilder
+  neighbor
   pg (~> 1.1)
   pry-rails
   puma (>= 5.0)

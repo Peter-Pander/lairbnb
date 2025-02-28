@@ -10,6 +10,7 @@ gem 'pry-rails'
 gem "ruby-openai"
 gem "solid_cable"
 gem "solid_queue"
+gem 'neighbor'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
