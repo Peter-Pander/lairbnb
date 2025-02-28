@@ -5,6 +5,7 @@ puts "Clearing existing data..."
 Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
+Question.destroy_all
 
 # Seeding Users
 puts "Seeding users..."
