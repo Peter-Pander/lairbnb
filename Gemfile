@@ -5,6 +5,7 @@ ruby "3.3.5"
 gem "cloudinary"
 gem "geocoder"
 gem 'pry-rails'
+gem "ruby-openai"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
