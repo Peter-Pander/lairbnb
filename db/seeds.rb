@@ -2,6 +2,7 @@ require "open-uri"
 
 # Clear existing data
 puts "Clearing existing data..."
+Question.destroy_all
 Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
