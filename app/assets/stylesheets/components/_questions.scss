@@ -43,6 +43,19 @@
   .ai-answer {
     align-self: flex-end;
     background: $gray-200;
+    padding: 0.5rem;
+    max-width: 70%;
+    width: fit-content;
+    word-wrap: break-word;
+    border-radius: 1rem;
+
+    p {
+      margin: 0; // Removes unnecessary spacing from Markdown output
+    }
+
+    strong, b {
+      font-weight: bold; // Ensures Markdown-generated bold text is styled properly
+    }
   }
 
   #new_question {

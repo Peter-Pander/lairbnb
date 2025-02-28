@@ -11,6 +11,7 @@ gem "ruby-openai"
 gem "solid_cable"
 gem "solid_queue"
 gem 'neighbor'
+gem 'redcarpet'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
