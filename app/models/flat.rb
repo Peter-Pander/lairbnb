@@ -18,7 +18,7 @@ class Flat < ApplicationRecord
     response = client.embeddings(
       parameters: {
         model: 'text-embedding-3-small',
-        input: "Product: #{name}. Description: #{description}, Price per night: #{price_per_night}"
+        input: "Flat: #{name}. Description: #{description}, Price per night: #{price_per_night}"
       }
     )
     embedding = response['data'][0]['embedding']
