@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["startDatetime", "endDatetime", "guests", "finalPrice", "priceBreakdown"];
 
   connect() {
-    this.pricePerNight = parseFloat(this.element.dataset.bookingPricePerNight); // Get price from data attribute
+    this.pricePerNight = parseFloat(this.element.dataset.reservationPricePerNight); // Get price from data attribute
   }
 
   calculateTotal() {

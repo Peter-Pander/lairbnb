@@ -9,6 +9,7 @@ class FlatsController < ApplicationController
     @flat = Flat.find(params[:id])
     @user = @flat.user
     @booking = Booking.new # Add this line to prevent @booking from being nil
+    @reservation = Reservation.new
     # Add coordinates for map display (geocoding happens for the specific flat)
     @markers = [{
       lat: @flat.latitude,

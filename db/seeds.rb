@@ -4,6 +4,7 @@ require "open-uri"
 puts "Clearing existing data..."
 Question.destroy_all
 Booking.destroy_all
+Reservation.destroy_all
 Flat.destroy_all
 User.destroy_all
 
