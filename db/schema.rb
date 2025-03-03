@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_03_065325) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_03_104439) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "vector"
@@ -93,6 +93,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_03_065325) do
     t.integer "guests"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 1, null: false
     t.index ["flat_id"], name: "index_reservations_on_flat_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end

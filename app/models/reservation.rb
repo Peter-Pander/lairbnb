@@ -2,6 +2,8 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :flat
 
+  enum status: { confirmed: 0, pending: 1, rejected: 2 }
+
   # Validations
   validates :start_datetime, :end_datetime, :guests, presence: true
   validate :end_after_start
