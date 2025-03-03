@@ -59,7 +59,7 @@
     </div>
   </div>
   <!-- Payment Method Container -->
-  <div class="payment-container">
+  <div class="payment-container" data-controller="payment-dropdown">
     <h3>Pay with
       <!-- PayPal icon with characteristic color -->
       <i class="fa-brands fa-paypal" style="float: right; font-size: 1.5rem; color: #0070ba; margin-right: 10px;"></i>
@@ -74,45 +74,27 @@
     </h3>
     <div class="custom-dropdown">
       <!-- Button with default PayPal selected -->
-      <button class="dropdown-btn">
+      <button class="dropdown-btn" data-action="click->payment-dropdown#toggleDropdown" data-payment-dropdown-target="button">
         <i class="fa-brands fa-paypal" style="color: #0070ba; margin-right: 10px;"></i> PayPal
       </button>
-      <div class="dropdown-content">
+      <div class="dropdown-content" data-payment-dropdown-target="menu">
         <div class="dropdown-item" data-value="paypal">
           <i class="fa-brands fa-paypal" style="color: #0070ba; margin-right: 10px;"></i> PayPal
         </div>
-        <div class="dropdown-item" data-value="visa">
+        <div class="dropdown-item" data-value="visa" data-action="click->payment-dropdown#selectPaymentMethod">
           <i class="fa-brands fa-cc-visa" style="color: #1a1f71; margin-right: 10px;"></i> Visa
         </div>
-        <div class="dropdown-item" data-value="mastercard">
+        <div class="dropdown-item" data-value="mastercard" data-action="click->payment-dropdown#selectPaymentMethod">
           <i class="fa-brands fa-cc-mastercard" style="color: #eb001b; margin-right: 10px;"></i> MasterCard
         </div>
-        <div class="dropdown-item" data-value="amex">
+        <div class="dropdown-item" data-value="amex" data-action="click->payment-dropdown#selectPaymentMethod">
           <i class="fa-brands fa-cc-amex" style="color: #2e77bb; margin-right: 10px;"></i> AMEX
         </div>
-        <div class="dropdown-item" data-value="googlepay">
+        <div class="dropdown-item" data-value="googlepay" data-action="click->payment-dropdown#selectPaymentMethod">
           <i class="fa-brands fa-google-pay" style="color: #4285f4; margin-right: 10px;"></i> Google Pay
         </div>
       </div>
     </div>
-    <script>
-      // Simple JS to handle the dropdown toggle and value selection
-      document.querySelector('.dropdown-btn').addEventListener('click', function() {
-        document.querySelector('.dropdown-content').classList.toggle('show');
-      });
-
-      document.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', function() {
-          let value = item.getAttribute('data-value');
-          let iconHTML = item.querySelector('i').outerHTML;
-          let text = item.innerText.trim();
-
-          // Set the button text with the selected icon and text
-          document.querySelector('.dropdown-btn').innerHTML = iconHTML + ' ' + text;
-          document.querySelector('.dropdown-content').classList.remove('show');
-        });
-      });
-    </script>
     <hr class="thin-line2">
     <h3>Cancellation policy</h3>
     <p class="cancellation-text">This reservation is non-refundable.</p>
