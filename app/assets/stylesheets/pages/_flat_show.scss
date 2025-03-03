@@ -1,9 +1,9 @@
-/* Container to position Flat Details and Booking Section side by side */
+/* Container to position Flat Details and Reservation Section side by side */
 .flat-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 60px; /* Space between flat details and booking section */
+  gap: 60px; /* Space between flat details and reservation section */
   margin: 20px auto;
   max-width: 1350px; /* Ensures it doesn’t stretch too much */
 }
@@ -70,9 +70,9 @@
   font-size: 1rem;
 }
 
-/* Booking Section (Right Side) */
-.booking-container {
-  width: 400px; /* Fixed width for booking section */
+/* Reservation Section (Right Side) */
+.reservation-container {
+  width: 400px; /* Fixed width for reservation section */
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 15px;
@@ -82,7 +82,7 @@
   top: 20px; /* Sticks 20px from the top when scrolling */
 }
 
-.booking-container h3 {
+.reservation-container h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
   font-weight: bold;

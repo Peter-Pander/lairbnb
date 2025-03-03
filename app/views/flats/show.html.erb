@@ -1,4 +1,4 @@
-<!-- Flat Details and Booking Section Container -->
+<!-- Flat Details and Reservation Section Container -->
 <div class="flat-container">
   <!-- Flat Details -->
   <div class="flat-image-wrapper">
@@ -37,28 +37,30 @@
       </div>
     </div>
   </div>
-  <!-- Booking Section -->
-  <div class="booking-container" data-controller="booking" data-booking-price-per-night="<%= @flat.price_per_night %>">
+  <!-- Reservation Section -->
+  <div class="reservation-container" data-controller="reservation" data-reservation-price-per-night="<%= @flat.price_per_night %>">
     <h3><strong><%= @flat.price_per_night %> gold per night</strong></h3>
-    <%= form_with model: @booking, url: flat_bookings_path(@flat), local: true, html: { id: 'booking-form' } do |f| %>
+    <%= form_with model: @reservation, url: flat_reservations_path(@flat), local: true, html: { id: 'reservation-form' } do |f| %>
       <div class="form-group">
         <%= f.label :start_datetime, "CHECK-IN", style: "font-weight: bold; font-size: 0.8em;" %>
         <%= f.text_field :start_datetime,
-          data: { controller: "datepicker", booking_target: "startDatetime", action: "change->booking#calculateTotal" },
+          name: "reservation[start_datetime]",
+          data: { controller: "datepicker", reservation_target: "startDatetime", action: "change->reservation#calculateTotal" },
           class: "form-control",
           id: "start_datetime" %>
       </div>
       <div class="form-group">
         <%= f.label :end_datetime, "CHECKOUT", style: "font-weight: bold; font-size: 0.8em;" %>
         <%= f.text_field :end_datetime,
-          data: { controller: "datepicker", booking_target: "endDatetime", action: "change->booking#calculateTotal" },
+          data: { controller: "datepicker", reservation_target: "endDatetime", action: "change->reservation#calculateTotal" },
           class: "form-control",
           id: "end_datetime" %>
       </div>
       <div class="form-group">
         <%= f.label :guests, "GUESTS", style: "font-weight: bold; font-size: 0.8em;" %>
         <%= f.number_field :guests,
-          data: { booking_target: "guests", action: "input->booking#calculateTotal" },
+          name: "reservation[guests]",
+          data: { reservation_target: "guests", action: "input->reservation#calculateTotal" },
           class: "form-control",
           min: 1,
           id: "guests" %>
@@ -73,14 +75,14 @@
       <div class="form-group">
         <!-- Price Breakdown -->
         <div class="d-flex justify-content-between">
-          <p id="price-breakdown-msg" class="d-inline-block" data-booking-target="priceBreakdown"></p>
-          <p class="final-price-msg" data-booking-target="finalPrice"></p>
+          <p id="price-breakdown-msg" class="d-inline-block" data-reservation-target="priceBreakdown"></p>
+          <p class="final-price-msg" data-reservation-target="finalPrice"></p>
         </div>
         <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
         <div class="d-flex justify-content-between">
           <p><strong>Total</strong></p>
           <strong>
-            <p class="final-price-msg" data-booking-target="finalPrice"></p>
+            <p class="final-price-msg" data-reservation-target="finalPrice"></p>
           </strong>
         </div>
       </div>

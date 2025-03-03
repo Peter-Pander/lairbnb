@@ -8,6 +8,7 @@ class ReservationsController < ApplicationController
 
   # Create a new reservation
   def create
+    @user = @flat.user
     @reservation = @flat.reservations.new(reservation_params)
     @reservation.user = current_user # assuming you have user authentication set up
 

@@ -47,7 +47,7 @@
 }
 
 /* Wrapper to make both containers appear next to each other */
-.booking-wrapper {
+.reservation-wrapper {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -217,7 +217,7 @@ hr {
   text-align: left;
 }
 
-.booking-wrapper2 {
+.reservation-wrapper2 {
   display: flex;
   justify-content: space-between;
   gap: 90px;
@@ -328,7 +328,7 @@ hr {
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
-  .booking-wrapper {
+  .reservation-wrapper {
     flex-direction: column;
     align-items: center;
   }
