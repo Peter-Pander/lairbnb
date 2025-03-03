@@ -1,0 +1,5 @@
+<h1>Reservation Confirmed! 🎉</h1>
+<p>Your deal has been made successfully.</p>
+<p><strong>Flat:</strong> <%= @reservation.flat.name %></p>
+<p><strong>Check-in:</strong> <%= @reservation.start_datetime.strftime("%B %d, %Y") %></p>
+<p><strong>Check-out:</strong> <%= @reservation.end_datetime.strftime("%B %d, %Y") %></p>
