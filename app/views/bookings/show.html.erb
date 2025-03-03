@@ -9,57 +9,11 @@
   <!-- Left Side: Your Trip -->
   <div class="trip-container">
     <!-- Deal announcement -->
-    <div class="deal-announcement">
-      <p id="deal-text">
-        <!-- The random deal will be inserted here -->
+    <div class="deal-announcement" data-controller="deal-announcement">
+      <p id="deal-text" data-deal-announcement-target="text">
+        <!-- Stimulus will insert a random deal here -->
       </p>
     </div>
-    <script>
-      // List of goblin-style deal announcements with "Lower price." at the top
-      const deals = [
-        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>Time is money, friend! 💸 Lock in that deal ‘fore someone else snags it!</span>",
-
-        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>I got the best deals, anywhere! 🔥 Ya won’t find a price like this again!</span>",
-
-        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>Oi! You booking or just window shopping? 👀 Get it while it's hot! 🔥</span>",
-
-        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>Cha-ching! 💰 Best price ya gonna get—don’t wait ‘til it’s gone! ⏳</span>",
-
-        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>A deal so good, it’s almost criminal! 😏💰 Hurry up ‘n’ book it!</span>",
-
-        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>Can I interest ya in a limited-time offer? ⏳ ‘Cause this one won’t last! 🚀</span>",
-
-        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>Gold ain't gonna save itself! 🏆 Lock in this steal before it vanishes! ✨</span>",
-
-        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>Fast as lightning ⚡ Book now and secure your spot in the lair!</span>",
-
-        "<strong class='deal-title'>Lower price.</strong> <span class='money-emoji'>💸</span><br>" +
-        "<span>Make haste, ya never know when this deal’ll be gone! ⚡ Hurry up ‘n’ get it! 🎯</span>"
-      ];
-
-      // Function to pick and display a random deal
-      function displayDeal() {
-        const dealText = deals[Math.floor(Math.random() * deals.length)];
-        const dealElement = document.getElementById("deal-text");
-
-        if (dealElement) {
-          dealElement.innerHTML = dealText;
-        }
-      }
-
-      // Wait for Turbo to load the page before displaying the deal
-      document.addEventListener("turbo:load", function() {
-        displayDeal();
-      });
-    </script>
     <h4><strong>Your trip</strong></h4>
     <div class="dates-guests">
       <p><strong>Dates</strong></p>
@@ -105,7 +59,7 @@
     </div>
   </div>
   <!-- Payment Method Container -->
-  <div class="payment-container">
+  <div class="payment-container" data-controller="payment-dropdown">
     <h3>Pay with
       <!-- PayPal icon with characteristic color -->
       <i class="fa-brands fa-paypal" style="float: right; font-size: 1.5rem; color: #0070ba; margin-right: 10px;"></i>
@@ -120,45 +74,27 @@
     </h3>
     <div class="custom-dropdown">
       <!-- Button with default PayPal selected -->
-      <button class="dropdown-btn">
+      <button class="dropdown-btn" data-action="click->payment-dropdown#toggleDropdown" data-payment-dropdown-target="button">
         <i class="fa-brands fa-paypal" style="color: #0070ba; margin-right: 10px;"></i> PayPal
       </button>
-      <div class="dropdown-content">
+      <div class="dropdown-content" data-payment-dropdown-target="menu">
         <div class="dropdown-item" data-value="paypal">
           <i class="fa-brands fa-paypal" style="color: #0070ba; margin-right: 10px;"></i> PayPal
         </div>
-        <div class="dropdown-item" data-value="visa">
+        <div class="dropdown-item" data-value="visa" data-action="click->payment-dropdown#selectPaymentMethod">
           <i class="fa-brands fa-cc-visa" style="color: #1a1f71; margin-right: 10px;"></i> Visa
         </div>
-        <div class="dropdown-item" data-value="mastercard">
+        <div class="dropdown-item" data-value="mastercard" data-action="click->payment-dropdown#selectPaymentMethod">
           <i class="fa-brands fa-cc-mastercard" style="color: #eb001b; margin-right: 10px;"></i> MasterCard
         </div>
-        <div class="dropdown-item" data-value="amex">
+        <div class="dropdown-item" data-value="amex" data-action="click->payment-dropdown#selectPaymentMethod">
           <i class="fa-brands fa-cc-amex" style="color: #2e77bb; margin-right: 10px;"></i> AMEX
         </div>
-        <div class="dropdown-item" data-value="googlepay">
+        <div class="dropdown-item" data-value="googlepay" data-action="click->payment-dropdown#selectPaymentMethod">
           <i class="fa-brands fa-google-pay" style="color: #4285f4; margin-right: 10px;"></i> Google Pay
         </div>
       </div>
     </div>
-    <script>
-      // Simple JS to handle the dropdown toggle and value selection
-      document.querySelector('.dropdown-btn').addEventListener('click', function() {
-        document.querySelector('.dropdown-content').classList.toggle('show');
-      });
-
-      document.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', function() {
-          let value = item.getAttribute('data-value');
-          let iconHTML = item.querySelector('i').outerHTML;
-          let text = item.innerText.trim();
-
-          // Set the button text with the selected icon and text
-          document.querySelector('.dropdown-btn').innerHTML = iconHTML + ' ' + text;
-          document.querySelector('.dropdown-content').classList.remove('show');
-        });
-      });
-    </script>
     <hr class="thin-line2">
     <h3>Cancellation policy</h3>
     <p class="cancellation-text">This reservation is non-refundable.</p>
