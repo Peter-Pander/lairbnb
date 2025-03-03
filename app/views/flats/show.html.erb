@@ -38,102 +38,56 @@
     </div>
   </div>
   <!-- Booking Section -->
-  <div class="booking-container">
+  <div class="booking-container" data-controller="booking" data-booking-price-per-night="<%= @flat.price_per_night %>">
     <h3><strong><%= @flat.price_per_night %> gold per night</strong></h3>
     <%= form_with model: @booking, url: flat_bookings_path(@flat), local: true, html: { id: 'booking-form' } do |f| %>
       <div class="form-group">
         <%= f.label :start_datetime, "CHECK-IN", style: "font-weight: bold; font-size: 0.8em;" %>
-        <!-- Date picker for start_datetime -->
-        <%= f.text_field :start_datetime, data: { controller: "datepicker" }, class: "form-control", id: "start_datetime" %>
+        <%= f.text_field :start_datetime,
+          data: { controller: "datepicker", booking_target: "startDatetime", action: "change->booking#calculateTotal" },
+          class: "form-control",
+          id: "start_datetime" %>
       </div>
       <div class="form-group">
         <%= f.label :end_datetime, "CHECKOUT", style: "font-weight: bold; font-size: 0.8em;" %>
-        <!-- Date picker for end_datetime -->
-        <%= f.text_field :end_datetime, data: { controller: "datepicker" }, class: "form-control", id: "end_datetime" %>
+        <%= f.text_field :end_datetime,
+          data: { controller: "datepicker", booking_target: "endDatetime", action: "change->booking#calculateTotal" },
+          class: "form-control",
+          id: "end_datetime" %>
       </div>
       <div class="form-group">
-        <%= f.label :guests, "GUESTS", style: "font-weight: bold; font-size: 0.8em;"  %>
-        <%= f.number_field :guests, class: "form-control", min: 1, id: "guests" %>
+        <%= f.label :guests, "GUESTS", style: "font-weight: bold; font-size: 0.8em;" %>
+        <%= f.number_field :guests,
+          data: { booking_target: "guests", action: "input->booking#calculateTotal" },
+          class: "form-control",
+          min: 1,
+          id: "guests" %>
       </div>
       <div class="form-group">
         <%= f.submit "Reserve", class: "btn btn-primary w-100" %>
       </div>
-      <!-- Text under the Reserve button -->
       <p class="text-muted" style="font-size: 0.9em; text-align: center;">
         You won't be charged yet. <br>
         Price per night includes VAT and all applicable fees.
       </p>
       <div class="form-group">
-        <!-- Calculation displayed above total -->
+        <!-- Price Breakdown -->
         <div class="d-flex justify-content-between">
-          <p id="price-breakdown-msg" class="d-inline-block"></p>
-          <!-- Price breakdown here -->
-          <p class="final-price-msg"></p>
-          <!-- Using a class for the first final price -->
+          <p id="price-breakdown-msg" class="d-inline-block" data-booking-target="priceBreakdown"></p>
+          <p class="final-price-msg" data-booking-target="finalPrice"></p>
         </div>
         <hr style="border-top: 1px solid #ccc; margin: 5px 0;">
         <div class="d-flex justify-content-between">
           <p><strong>Total</strong></p>
           <strong>
-            <p class="final-price-msg"></p>
-          </strong> <!-- Using a class for the second final price -->
+            <p class="final-price-msg" data-booking-target="finalPrice"></p>
+          </strong>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-<script>
-  document.addEventListener("turbo:load", function() {
-    const pricePerNight = <%= @flat.price_per_night %>; // Get the flat price per night
-
-    function calculateTotal() {
-      const startDate = document.getElementById("start_datetime").value;
-      const endDate = document.getElementById("end_datetime").value;
-      const guests = parseInt(document.getElementById("guests").value);
-
-      // Check if dates and guests are provided
-      if (startDate && endDate && guests > 0) {
-        const start = new Date(startDate);
-        const end = new Date(endDate);
-
-        // Calculate number of nights
-        const timeDifference = end - start;
-        const nights = timeDifference / (1000 * 3600 * 24); // Convert ms to days
-
-        if (nights > 0) {
-          // Calculate the total price
-          const totalPrice = pricePerNight * nights * guests;
-          document.querySelectorAll(".final-price-msg").forEach(function(element) {
-            element.innerHTML = `${totalPrice} gold`;
-          });
-
-          // Add price breakdown above total
-          document.getElementById("price-breakdown-msg").innerHTML = `${pricePerNight} gold x ${nights} nights x ${guests} guests`;
-
-          // Hide the "Select dates and guests to see the price" message
-          document.getElementById("total-price-msg").style.display = "none";
-        } else {
-          document.querySelectorAll(".final-price-msg").forEach(function(element) {
-            element.innerHTML = `Invalid date range`;
-          });
-          document.getElementById("price-breakdown-msg").innerHTML = '';
-        }
-      } else {
-        // Show the "Select dates and guests to see the price" message if no dates or guests
-        document.getElementById("total-price-msg").style.display = "none"; // Hide it completely
-        document.querySelectorAll(".final-price-msg").forEach(function(element) {
-          element.innerHTML = '';
-        });
-        document.getElementById("price-breakdown-msg").innerHTML = '';
-      }
-    }
-
-    // Event listeners to trigger the calculation
-    document.getElementById("start_datetime").addEventListener("change", calculateTotal);
-    document.getElementById("end_datetime").addEventListener("change", calculateTotal);
-    document.getElementById("guests").addEventListener("input", calculateTotal);
-  });
-</script>
+<!-- Map -->
 <div class="location">
   <h3><strong>Where you’ll be</strong></h3>
   <%= @flat.address %>
