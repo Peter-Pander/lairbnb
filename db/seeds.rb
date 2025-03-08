@@ -9,22 +9,35 @@ Reservation.destroy_all
 Flat.destroy_all
 User.destroy_all
 
-# Seeding Users
-puts "Seeding users..."
 
-landlord = User.create!(
-  name: 'landlord',
-  email: 'landlord@example.com',
-  password: 'sandwich'
-)
+# Seeding tenants
+puts "Seeding tenants..."
 
-tenant = User.create!(
-  name: 'tenant',
-  email: 'tenant@example.com',
-  password: 'sandwich'
-)
+# Load the tenants JSON file
+tenants_file = File.read('db/tenants.json')
+tenants_data = JSON.parse(tenants_file)
 
-puts "Users seeded successfully!"
+tenant_records = {}
+
+tenants_data.each do |tenant_info|
+  tenant = User.create!(
+    name: tenant_info["name"],
+    email: tenant_info["email"],
+    password: tenant_info["password"]
+  )
+
+  # Attach tenant image if the URL is provided
+  if tenant_info["image"].present?
+    file = URI.open(tenant_info["image"])
+    tenant.photo.attach(io: file, filename: "tenant_image_#{tenant.name.parameterize}.jpg", content_type: "image/jpeg")
+  end
+
+  tenant_records[tenant_info["email"]] = tenant
+  puts "Created tenant: #{tenant.email} with image #{tenant_info["image"]}"
+end
+
+
+puts "Tenants seeded successfully!"
 
 
 # Seeding landlords
@@ -53,7 +66,9 @@ landlords_data.each do |landlord_data|
   puts "Created landlord: #{landlord.email} with image #{landlord_data["landlord_image"]}"
 end
 
+puts "landlords seeded successfully!"
 
+puts "Seeding lairs"
 # Load lair data from JSON file
 lairs_data = JSON.parse(File.read(Rails.root.join('db', 'lairs.json')))
 
@@ -83,7 +98,7 @@ lairs_data.each do |lair_data|
   puts "Created lair: #{lair.name} with landlord #{landlord.name} and image #{lair_data['image_url']}"
 end
 
-puts "Lairs and users seeded successfully!"
+puts "Lairs seeded successfully!"
 
 
 # Seeding homepage background
