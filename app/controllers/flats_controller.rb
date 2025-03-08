@@ -18,6 +18,11 @@ class FlatsController < ApplicationController
     }]
   end
 
+  def messages
+    @flat = Flat.find(params[:id]) # Find the flat by ID
+    @messages = @flat.messages # Retrieve messages for that flat
+  end
+
   private
 
   def flat_params

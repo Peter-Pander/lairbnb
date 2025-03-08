@@ -28,3 +28,14 @@
 <% end %>
 <!-- Edit Profile Button -->
 <%= link_to "Edit Profile", edit_user_profile_path, class: "btn btn-primary" %>
+<!-- Messages -->
+<h1>Messages for <%= @user.name %></h1>
+<% @messages.each do |message| %>
+  <div class="message">
+    <strong>From: <%= message.sender.name %></strong>
+    <p><%= message.content %></p>
+    <small><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></small>
+    <!-- Link to view all messages for the specific flat -->
+    <%= link_to 'View messages for this flat', flat_messages_path(message.flat), class: "btn btn-secondary" %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<!-- app/views/flats/messages.html.erb -->
+<h1>Messages for <%= @flat.name %></h1>
+<% @messages.each do |message| %>
+  <div class="message">
+    <strong>From: <%= message.sender.name %></strong>
+    <p><%= message.content %></p>
+    <small><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></small>
+  </div>
+<% end %>
