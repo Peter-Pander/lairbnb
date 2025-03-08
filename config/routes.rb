@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :show]
 
     # Added correct routes for messages
-    resources :messages, only: [:new, :show, :create], param: :id do
+    resources :messages, only: [:index, :new, :show, :create], param: :id do
       # This will ensure you're passing the correct params in URLs
     end
 

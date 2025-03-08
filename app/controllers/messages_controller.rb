@@ -3,6 +3,11 @@ class MessagesController < ApplicationController
   before_action :set_flat
   before_action :set_landlord
 
+  def index
+    @flat = Flat.find(params[:flat_id])
+    @messages = @flat.messages
+  end
+
   def show
     @landlord = @flat.user  # Assuming the landlord is the user associated with the flat
     @messages = @flat.messages.where(
