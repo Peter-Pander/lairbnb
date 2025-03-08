@@ -38,8 +38,6 @@ end
 
 
 puts "Tenants seeded successfully!"
-
-
 # Seeding landlords
 puts "Seeding landlords..."
 
@@ -53,7 +51,8 @@ landlords_data.each do |landlord_data|
   landlord = User.create!(
     name: landlord_data["name"],
     email: landlord_data["email"],
-    password: landlord_data["password"]
+    password: landlord_data["password"],
+    role: :landlord # Assign the role as landlord here
   )
 
   # Attach the landlord image if the URL is provided
@@ -66,7 +65,7 @@ landlords_data.each do |landlord_data|
   puts "Created landlord: #{landlord.email} with image #{landlord_data["landlord_image"]}"
 end
 
-puts "landlords seeded successfully!"
+puts "Landlords seeded successfully!"
 
 puts "Seeding lairs"
 # Load lair data from JSON file

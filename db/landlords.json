@@ -3,30 +3,35 @@
     "name": "Drakarion, Warden of the Peaks",
     "email": "drakarion@example.com",
     "password": "sandwich",
-    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Drakarion_Warden_of_the_Peaks_lg02wt.jpg"
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Drakarion_Warden_of_the_Peaks_lg02wt.jpg",
+    "role": "landlord"
   },
   {
     "name": "Elandrial, Guardian of the Misted Boughs",
     "email": "elandrial@example.com",
     "password": "sandwich",
-    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Elandrial_Guardian_of_the_Misted_Boughs_gumvwo.jpg"
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Elandrial_Guardian_of_the_Misted_Boughs_gumvwo.jpg",
+    "role": "landlord"
   },
   {
     "name": "Merlinus Thorne",
     "email": "merlinus@example.com",
     "password": "sandwich",
-    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Merlinus_Thorne_erhj4a.jpg"
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Merlinus_Thorne_erhj4a.jpg",
+    "role": "landlord"
   },
   {
     "name": "Zalgar the Underkeeper",
     "email": "zalgar@example.com",
     "password": "sandwich",
-    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Zalgar_the_Underkeeper_t34uqb.jpg"
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Zalgar_the_Underkeeper_t34uqb.jpg",
+    "role": "landlord"
   },
   {
     "name": "Thalrik Deepstone",
     "email": "thalrik@example.com",
     "password": "sandwich",
-    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Thalrik_Deepstone_nded00.jpg"
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Thalrik_Deepstone_nded00.jpg",
+    "role": "landlord"
   }
 ]
