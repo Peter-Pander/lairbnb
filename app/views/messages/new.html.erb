@@ -2,20 +2,20 @@
   <h1>Chat</h1>
   <div id="messages" class="messages">
     <% @messages.each do |message| %>
-      <div id="message-<%= message.id %>" class="<%= message.sender == current_user ? 'sent' : 'received' %>">
-        <small>
-          <strong><%= message.sender.nickname %></strong>
+      <div id="message-<%= message.id %>" class="message <%= message.sender == current_user ? 'sent' : 'received' %>">
+        <small class="message-info">
+          <strong><%= message.sender.name %></strong>
           <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
         </small>
-        <p><%= message.content %></p>
+        <p class="message-content"><%= message.content %></p>
       </div>
     <% end %>
   </div>
-  <%= form_with model: [@flat, @message], local: true do |f| %>
+  <%= simple_form_for [@flat, @message], local: true, html: {class: "d-flex"}, wrapper_html: {class: "flex-grow-1"} do |f| %>
     <%= f.hidden_field :recipient_id, value: @landlord.id %>
-    <div>
-      <%= f.text_area :content, placeholder: "Type a message..." %>
+    <div class="message-input-container flex-grow-1">
+      <%= f.text_area :content, placeholder: "Type a message...", class: "flex-grow-1" %>
+      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
     </div>
-    <%= f.submit "Send" %>
   <% end %>
 </div>
