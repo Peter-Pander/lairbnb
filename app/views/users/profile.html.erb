@@ -1,0 +1,9 @@
+<!-- app/views/users/profile.html.erb -->
+<h1>Welcome, <%= @user.name %>!</h1>
+<% if @user.photo.attached? %>
+  <div class="profile-avatar">
+    <%= image_tag @user.photo, class: "avatar" %>
+  </div>
+<% end %>
+<p>Email: <%= @user.email %></p>
+<!-- Add any other user information you'd like to display -->
