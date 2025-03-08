@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :questions, only: [:index, :create]
 
-  # Route for user's profile page
+  resources :users, only: [:show, :edit, :update]  # Ensure 'update' is included here
   get 'profile', to: 'users#profile', as: 'profile'
+  patch 'profile', to: 'users#update', as: 'update_user_profile'
 end
