@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       end
     end
     resources :bookings, only: [:create, :show]
+    resources :messages, only: [:show, :create]
   end
 
   resources :questions, only: [:index, :create]
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#profile', as: 'profile'
   get 'edit_profile', to: 'users#edit', as: 'edit_user_profile'  # This is the added route for the edit page
   patch 'profile', to: 'users#update', as: 'update_user_profile'
+  patch 'users/update_role', to: 'users#update_role', as: 'update_role'
 end

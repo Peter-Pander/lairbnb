@@ -14,5 +14,17 @@
     <%= f.button :submit, "Update Profile" %>
   </div>
 <% end %>
+<%= form_with model: @user, url: update_role_path, method: :patch, local: true do |form| %>
+  <div class="form-group">
+    <%= form.label :role, "Select Role" %>
+    <%= form.select :role, User.roles.keys.map { |role| [role.capitalize, role] }, { include_blank: false } %>
+  </div>
+  <%= form.submit "Update Role", class: "btn btn-primary" %>
+<% end %>
+<% if @user.role == "tenant" %>
+  <p>You are a tenant.</p>
+<% elsif @user.role == "landlord" %>
+  <p>You are a landlord.</p>
+<% end %>
 <!-- Edit Profile Button -->
 <%= link_to "Edit Profile", edit_user_profile_path, class: "btn btn-primary" %>

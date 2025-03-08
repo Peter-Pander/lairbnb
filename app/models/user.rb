@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 
+  enum role: { tenant: 0, landlord: 1 }
   has_many :flats, dependent: :destroy
 
   validates :name, presence: true
