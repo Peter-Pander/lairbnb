@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]  # Ensure 'update' is included here
   get 'profile', to: 'users#profile', as: 'profile'
+  get 'edit_profile', to: 'users#edit', as: 'edit_user_profile'  # This is the added route for the edit page
   patch 'profile', to: 'users#update', as: 'update_user_profile'
 end
