@@ -1,0 +1,16 @@
+<!-- app/views/users/edit.html.erb -->
+<h2>Edit Profile</h2>
+<%= simple_form_for(@user, url: update_user_profile_path, html: { multipart: true }) do |f| %>
+  <div class="form-group">
+    <%= f.input :name, label: "Full Name" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :email, label: "Email" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :photo, as: :file, label: "Upload Profile Picture" %>
+  </div>
+  <div class="form-group">
+    <%= f.button :submit, "Update Profile" %>
+  </div>
+<% end %>
