@@ -1,0 +1,24 @@
+<!-- app/views/messages/index.html.erb -->
+<h1>Messages for <%= @flat.user.name %></h1>
+<% @messages.each do |message| %>
+  <div class="message">
+    <strong>From: <%= message.sender.name %></strong>
+    <p><%= message.content %></p>
+    <small><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></small>
+  </div>
+<% end %>
+<!-- Form for landlord to reply to messages -->
+<% if current_user == @flat.user %> <!-- Only show the reply form for the landlord -->
+  <% if @messages.any? %> <!-- Only show the form if there are messages -->
+    <%= form_with model: [@flat, @message], local: true do |f| %>
+      <div>
+        <%= f.text_area :content, placeholder: "Type your reply..." %>
+      </div>
+      <%= f.hidden_field :sender_id, value: current_user.id %> <!-- Sender is the landlord -->
+      <%= f.hidden_field :receiver_id, value: @messages.last.sender.id %> <!-- Receiver is the last sender -->
+      <%= f.submit "Send", class: "btn btn-primary" %>
+    <% end %>
+  <% else %>
+    <p>No messages yet.</p>
+  <% end %>
+<% end %>

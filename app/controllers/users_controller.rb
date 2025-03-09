@@ -8,6 +8,9 @@ class UsersController < ApplicationController
     # Ensure the user is a landlord and has at least one flat
     @flat = @user.flats.first
 
+    # Get all messages received by the landlord
+    @messages = Message.where(receiver_id: @user.id)
+
     # Find the first message involving the user (either as sender or receiver)
     @message = Message.where(sender: @user).or(Message.where(receiver: @user)).first
   end

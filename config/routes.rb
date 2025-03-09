@@ -15,9 +15,12 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :show]
 
     # Added correct routes for messages
-    resources :messages, only: [:new, :show, :create], param: :id do
+    resources :messages, only: [:index, :new, :show, :create], param: :id do
       # This will ensure you're passing the correct params in URLs
     end
+
+    # Route to view messages for a specific flat for the landlord (updated to avoid conflict)
+    get 'messages_for_landlord', to: 'flats#messages', as: 'messages_for_landlord'
   end
 
   resources :questions, only: [:index, :create]
