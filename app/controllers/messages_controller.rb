@@ -22,9 +22,11 @@ class MessagesController < ApplicationController
   def new
     @flat = Flat.find(params[:flat_id])  # Find the flat
     @landlord = @flat.user               # Get the landlord
+
+    # Ensure both tenant's and landlord's messages are included
     @messages = Message.where(sender_id: current_user.id, receiver_id: @landlord.id)
-    .or(Message.where(sender_id: @landlord.id, receiver_id: current_user.id))
-    .order(created_at: :asc) # Get chat history
+                      .or(Message.where(sender_id: @landlord.id, receiver_id: current_user.id))
+                      .order(created_at: :asc)
 
     @message = Message.new  # Initialize a new message for the form
   end
@@ -33,14 +35,33 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.sender = current_user
     @message.flat = Flat.find(params[:flat_id])
-    @message.receiver = @message.flat.user  # Assuming the landlord owns the flat
+
+    # Fetch previous messages
+    previous_messages = Message.where(flat: @message.flat)
+                              .where(sender: @landlord).or(Message.where(receiver: @landlord))
+                              .order(:created_at)
+
+    if current_user == @landlord
+      if previous_messages.any?
+        @message.receiver = previous_messages.last.sender
+      else
+        raise "No previous messages found. Unable to determine recipient."
+      end
+    else
+      @message.receiver = @landlord
+    end
 
     if @message.save
-      redirect_to flat_messages_path(@message.flat) # Redirect to the chat
+      if current_user.role == "tenant"
+        redirect_to new_flat_message_path(@message.flat)
+      else
+        redirect_to flat_messages_path(@message.flat)
+      end
     else
-      render :show, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
+
 
   private
 
