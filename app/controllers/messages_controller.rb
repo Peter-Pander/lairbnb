@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   def index
     @flat = Flat.find(params[:flat_id])
     @messages = @flat.messages
+    @message = Message.new  # Initialize a new empty message for the form
   end
 
   def show

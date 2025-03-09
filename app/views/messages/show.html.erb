@@ -12,7 +12,7 @@
     <% end %>
   </div>
   <%= form_with model: [@flat, @message], local: true do |f| %>
-    <%= f.hidden_field :recipient_id, value: @landlord.id %>
+    <%= f.hidden_field :receiver_id, value: @landlord.id %>
     <div>
       <%= f.text_area :content, placeholder: "Type a message..." %>
     </div>
