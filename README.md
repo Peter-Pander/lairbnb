@@ -56,5 +56,5 @@ rails s
 ## 🌍 LairBnBs Vision
 Inspired by the idea that every adventurer, whether a noble elf or a mischievous goblin, deserves a safe and comfortable lair.
 
-## 👥 Team Members
+## 👨‍💻 Creator
 - [Maximilian Schöpf](https://www.linkedin.com/in/maximilian-schöpf-19307523b)
