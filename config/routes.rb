@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'users/profile'
   devise_for :users
-  root to: "pages#home"
+  root to: "flats#index"
 
   get "up" => "rails/health#show", as: :rails_health_check
 
