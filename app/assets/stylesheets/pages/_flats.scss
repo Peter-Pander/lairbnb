@@ -20,8 +20,10 @@ body.index-page .navbar-lewagon .navbar-brand img {
 .cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Exactly 5 columns on large screens */
-  gap: 70px; /* Space between items */
+  row-gap: 0;
+  column-gap: 70px;
   justify-content: center; /* Centers the grid */
+  padding-bottom: 70px;
   max-width: calc(5 * 282px + 4 * 70px); /* calculates the total width needed for 5 columns
   (each 282px wide) plus the gaps between them (4 gaps, each 70px).
   This ensures that the grid does not stretch beyond the necessary width. */
@@ -31,7 +33,7 @@ body.index-page .navbar-lewagon .navbar-brand img {
 
 .card-item {
   width: 282px; /* Same width as the image */
-  padding-top: 10px;
+  padding-top: 70px;
   border-radius: 10px;
 }
 

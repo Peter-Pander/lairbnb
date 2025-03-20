@@ -33,5 +33,79 @@
     "password": "sandwich",
     "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Thalrik_Deepstone_nded00.jpg",
     "role": "landlord"
+  },
+
+  {
+    "name": "Vaiana Moanarii",
+    "email": "vaiana@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Vaiana_Moanarii_jhmqqi.jpg",
+    "role": "landlord"
+  },
+  {
+    "name": "Thalindra Wildbloom",
+    "email": "thalindra@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Thalindra_Wildbloom_mwab9q.jpg",
+    "role": "landlord"
+  },
+  {
+    "name": "Contessa Lysandra Velmora",
+    "email": "lysandra@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Contessa_Lysandra_Velmora_jpuut1.jpg",
+    "role": "landlord"
+  },
+  {
+    "name": "Faelith Emberveil",
+    "email": "faelith@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Faelith_Emberveil_zfmb5h.jpg",
+    "role": "landlord"
+  },
+  {
+    "name": "Orianna Suncrest",
+    "email": "orianna@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Orianna_Suncrest_a7gem0.jpg",
+    "role": "landlord"
+  },
+
+
+
+  {
+    "name": "Lord Alaric Frostbane",
+    "email": "alaric@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Lord_Alaric_Frostbane_sy47pz.jpg",
+    "role": "landlord"
+  },
+  {
+    "name": "Aurielle Solwhisper",
+    "email": "aurielle@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Aurielle_Solwhisper_my4spo.jpg",
+    "role": "landlord"
+  },
+  {
+    "name": "Faelan Briarwhisper",
+    "email": "faelan@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Faelan_Briarwhisper_uk81p6.jpg",
+    "role": "landlord"
+  },
+  {
+    "name": "Fiora Greenvale",
+    "email": "fiora@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Fiora_Greenvale_uh3lsf.jpg",
+    "role": "landlord"
+  },
+  {
+    "name": "Caelia Starborne",
+    "email": "caelia@example.com",
+    "password": "sandwich",
+    "landlord_image": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Caelia_Starborne_mplrxv.jpg",
+    "role": "landlord"
   }
 ]
