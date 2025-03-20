@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 60px; /* Space between flat details and reservation section */
-  margin: 20px auto;
+  margin: 50px auto 20px;
   max-width: 1350px; /* Ensures it doesn’t stretch too much */
 }
 
@@ -13,7 +13,7 @@
   max-width: 80%; /* Limit the size */
   width: 800px; /* Set a max width to keep it from being too large */
   padding: 20px;
-  background-color: #f4f4f4; /* Add a subtle background */
+  background-color: #ffffff;
   border-radius: 15px; /* Rounded corners for a clean look */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a shadow for a floating effect */
 }
@@ -74,10 +74,9 @@
 .reservation-container {
   width: 400px; /* Fixed width for reservation section */
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
   position: sticky;
   top: 20px; /* Sticks 20px from the top when scrolling */
 }
@@ -100,11 +99,16 @@
 }
 
 .form-control {
+  background-color: white;
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+}
+
+.form-control:focus {
+  background-color: white;
 }
 
 .form-control:focus {

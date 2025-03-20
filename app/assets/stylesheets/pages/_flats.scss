@@ -1,8 +1,12 @@
+body {
+  background-color: white;
+}
+
 /* Only apply sticky navbar on the index page */
 body.index-page .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  padding: 30px 73px 50px 73px; /* Top: 30px, Bottom: 50px, Left and Right: 0px */
+  padding: 30px 73px 30px 73px; /* Top: 30px, Bottom: 30px, Left and Right: 0px */
   position: sticky;
   top: 0;
   z-index: 1000; /* Ensures it stays above other elements */
