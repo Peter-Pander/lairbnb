@@ -67,7 +67,7 @@
     "name": "Vampire Chateau",
     "landlord_email": "lysandra@example.com",
     "description": "Perched atop Romania's mist-covered Carpathian Mountains stands Vampire Chateau, an ancient gothic residence cloaked in mystery and elegance. Intricate spires and shadowy halls echo centuries of whispers, blending luxury and intrigue seamlessly. Within these halls, velvet-draped chambers and candlelit corridors transport guests into a realm of eternal twilight, where secrets dwell in every shadow. Surrounded by deep forests and moonlit gardens, the Chateau invites guests into an atmosphere of sophistication and allure, tailored specifically for beings of nocturnal refinement.",
-    "address": "Bran Castle, Strada General Traian Moșoiu 24, Bran 507025, Romania 🇷🇴",
+    "address": "Bran Castle, Romania 🇷🇴",
     "price_per_night": 200,
     "amenities": "Wi-Fi 🌐, Gothic Library 📚, Blood Moon Viewing Balcony 🌕, Secret Passageways 🗝️, Velvet-Draped Chambers 🛌, Shadow Dance Hall 💃, Crypt Spa ⚰️, Wine (Blood Red) Cellar 🍷, Enchanted Mirror Room 🪞, Bat Sanctuary 🦇, Eternal Flame Fireplace 🔥, Nightshade Herb Garden 🌿, Candlelit Dinners 🕯️, Moonlight Sonata Room 🎹, Misty Gardens 🌫️",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Vampire_Chateau_neppv8.jpg"
@@ -76,7 +76,7 @@
     "name": "Fairy Glade Cottage",
     "landlord_email": "faelith@example.com",
     "description": "Nestled within the tranquil beauty of England’s Lake District, Fairy Glade Cottage is a picturesque retreat enchanted with the whimsy and charm of fairy folk. Surrounded by blooming meadows, trickling streams, and ancient oaks, it provides a peaceful sanctuary for rest and renewal. Twinkling lights, fragrant blossoms, and delicate butterflies lend an air of magical calm, inviting travelers to reconnect with nature’s gentle rhythms. The cottage’s cozy interiors and inviting charm provide warmth and comfort, fostering serenity and enchantment amid lush greenery.",
-    "address": "Lake Windermere, Cumbria, England, LA23 1LJ, United Kingdom 🇬🇧",
+    "address": "Belle Isle, Windermere, United Kingdom 🇬🇧",
     "price_per_night": 95,
     "amenities": "Wi-Fi 🌐, Fairy Ring Meditation Circle 🍄, Butterfly Sanctuary 🦋, Enchanted Lantern Pathways 🏮, Pixie Dust Crafting ✨, Meadow-view Porch 🌸, Forest Tea Garden ☕, Floral Arrangement Studio 💐, Birdsong Wake-Up Call 🐦, Babbling Brook Jacuzzi 💧, Honey Harvesting Station 🍯, Twilight Firefly Viewing 🌠, Miniature Herbal Apothecary 🌱, Secret Garden Library 📖, Gentle Stream Hammocks 🛌",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Fairy_Glade_Cottage_yytiu5.jpg"
@@ -97,7 +97,7 @@
     "name": "Frostborn Citadel",
     "landlord_email": "alaric@example.com",
     "description": "Perched upon the icy cliffs of the Arctic tundra, the Frostborn Citadel stands as an unyielding fortress carved from glacial stone. Here, the air crackles with magic, and the northern lights dance across an eternal winter sky. Forged by frost giants and imbued with the essence of ancient ice, this stronghold offers both a refuge and a proving ground for warriors who embrace the cold. Within its frozen halls, echoes of legendary battles and tales of winter’s might whisper through the winds.",
-    "address": "Arctic Circle, Svalbard, Norway 🇳🇴",
+    "address": "Northwest Spitsbergen National Park, Norway 🇳🇴",
     "price_per_night": 150,
     "amenities": "Wi-Fi 🌐, Ice Throne Room ❄️, Eternal Bonfire Hall 🔥, Northern Lights Viewing Platform 🌌, Frost-Forged Blacksmithing ⚒️, Crystal Ice Caverns ⛏️, Yeti-Guarded Perimeter 🐻‍❄️, Glacier Spa ♨️, Rune-Inscribed Walls ✍️, Enchanted Fur Cloak Wardrobe 🦺, Arctic Wolf Companions 🐺, Frozen Mead Hall 🍻, Blizzard Meditation Chamber 🌨️, Ice Skating Arena ⛸️, Snowstorm Resistance Runes ❄️",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Frostborn_Citadel_kljorl.jpg"
@@ -106,7 +106,7 @@
     "name": "Celestial Monastery",
     "landlord_email": "aurielle@example.com",
     "description": "Nestled high among the sacred peaks of the Himalayas, the Celestial Monastery is a sanctuary of enlightenment and balance. Ancient cherry blossom trees sway in the mountain breeze, their petals carried by the whispers of monks who have meditated here for centuries. Floating lanterns illuminate the pathways, while mystical energy flows through the air like an unseen current. For those seeking wisdom, inner peace, or the secrets of celestial magic, this mountaintop retreat offers unparalleled serenity.",
-    "address": "Taktshang Monastery, Paro Valley, Bhutan 🇧🇹",
+    "address": "Paro Taktsang, Bhutan 🇧🇹",
     "price_per_night": 140,
     "amenities": "Wi-Fi 🌐, Floating Meditation Platform 🧘‍♂️, Celestial Tea Garden 🍵, Echoing Prayer Chamber 🏯, Mystic Dragon Shrine 🐉, Whispering Wind Balconies 🌬️, Enchanted Lotus Pond 🌸, Scroll-Lined Study Hall 📜, Elemental Harmony Training Room ☯️, Cloud-Walking Ritual Circle ☁️, Moonlit Reflection Garden 🌙, Harmonized Gong Room 🎶, Sacred Fire Pit 🔥, Guardian Spirit Watchtower 👁️",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Celestial_Monastery_dmeg4z.jpg"
@@ -124,7 +124,7 @@
     "name": "Sylvanwood Enclave",
     "landlord_email": "fiora@example.com",
     "description": "Hidden within the emerald embrace of the Amazon Rainforest, Sylvanwood Enclave is a sanctuary where nature’s magic thrives. Towering trees cradle suspended walkways, glowing fungi illuminate the forest floor, and the whispers of ancient dryads hum through the leaves. Here, the boundary between the mundane and the mystical fades, allowing guests to experience the raw power of the wild, guided by the spirits of the trees and the harmony of untouched nature.",
-    "address": "Amazon Rainforest, Brazil 🇧🇷",
+    "address": "Parque Nacional do Jaú, Brazil 🇧🇷",
     "price_per_night": 135,
     "amenities": "Wi-Fi 🌐, Canopy Meditation Chambers 🍃, Bioluminescent Fungi Pathways ✨, Whispering Tree Council 🌲, Sacred Waterfall Sanctuary 🌊, Spirit Fox Companions 🦊, Herbal Alchemy Workshop 🌿, Enchanted Vine Hammocks 🏕️, Mystic Birdsong Alarm Clock 🐦, Forest-Tuned String Instruments 🎻, Ancient Totem Guardian Rituals 🛕, Firefly-Illuminated Dining Hall 🕯️, Moonlit Druidic Circle 🌙",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Sylvanwood_Enclave_md3c2b.jpg"
@@ -133,7 +133,7 @@
     "name": "Astral Observatory",
     "landlord_email": "caelia@example.com",
     "description": "Perched atop the Atacama Desert’s highest plateau, the Astral Observatory is a gateway to the cosmos. With skies so clear that the Milky Way seems within reach, this celestial retreat is the perfect haven for stargazers, cosmic scholars, and wanderers of the infinite night. The air hums with interstellar energy, and the walls are inscribed with forgotten constellations. Every dawn here marks the beginning of a new cosmic journey, as the universe unveils its secrets under the ever-watchful gaze of the stars.",
-    "address": "Cerro Paranal, Atacama Desert, Chile 🇨🇱",
+    "address": "Cerro Paranal, Chile 🇨🇱",
     "price_per_night": 180,
     "amenities": "Wi-Fi 🌐, Telescope Array 🔭, Cosmic Meditation Chamber 🌌, Time-Dilation Observatory ⏳, Floating Stargazing Platforms ☄️, Meteorite Display Vault 🪐, Celestial Library of Forgotten Stars 📖, Orbital Viewing Deck 🌠, Planetarium Projection Dome 🎥, Space-Tuned Harmonic Resonator 🎼, Gravity-Defying Lounge Area 🛋️, Nightfall Solar Alignment Ritual 🌞, Aurora Forecasting Balcony 🌆",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Astral_Observatory_rqjqlr.jpg"
