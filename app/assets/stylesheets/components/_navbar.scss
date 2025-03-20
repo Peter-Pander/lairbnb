@@ -14,3 +14,12 @@
   width: 80px;
   border-radius: 5px;
 }
+
+.navbar-lewagon .navbar-brand-big img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+  border: 2px solid black;
+  object-fit: cover; /* Maintains aspect ratio and avoids distortion */
+}

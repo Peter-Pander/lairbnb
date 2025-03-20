@@ -43,5 +43,100 @@
     "price_per_night": 110,
     "amenities": "Wi-Fi 🌐, Smithy ⚒️, Mead Hall 🍺, Gemstone Vault 💎, Forge Room 🔥, Dwarven Ale Brewery 🍻, Hammerfall Arena ⚔️, Weapon Crafting Studio 🛠️, Ancient Mine Lair 🏞️, Lava Forge 🌋, Hearthstone Room 🔥, Rune Inscribed Walls ✍️, Dwarven Shield Rack 🛡️, Cold Iron Forge 🔨, Tunnel Access to Hidden Vaults ⛏️, Stone-Engraved Maps 🗺️, Earthquake Safe Chamber 🌍",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Dwarven_Stronghold_wxz6ay.jpg"
+  },
+
+  {
+    "name": "Mermaid's Cove",
+    "landlord_email": "vaiana@example.com",
+    "description": "Tucked within the crystalline waters of Bora Bora lies Mermaid’s Cove, an underwater haven sculpted by coral reefs and sunken treasures. Surrounded by vibrant marine life and shimmering turquoise lagoons, this sanctuary offers tranquility beneath the waves. Each nook and coral grotto sings with the gentle lullaby of the sea, offering serene retreats for mermaids and sea-dwellers alike. Here, secrets of the ocean depths blend harmoniously with luxurious comfort, where every ripple and current tells a story as ancient as the seas themselves.",
+    "address": "Lagoonarium, Bora Bora, Leeward Islands, French Polynesia 🇵🇫",
+    "price_per_night": 180,
+    "amenities": "Wi-Fi 🌐, Coral Reef Viewing 🌊, Sunken Treasure Chest 💰, Underwater Lounge 🐠, Seaweed Wrap Spa 🧖‍♀️, Pearl Diving Area 💎, Mermaid’s Tail Fitting 🧜‍♀️, Luminescent Jellyfish Lamps 🪼, Dolphin Communication Station 🐬, Ocean Echo Sound System 🎶, Water Breathing Charm Station ✨, Seashell Craft Workshop 🐚, Ocean Current Transportation 🌊, Coral Garden Meditation 🪸, Moonlit Surface Deck 🌙",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Mermaid_cove_etgnmy.jpg"
+  },
+  {
+    "name": "Centaur Meadow Lodge",
+    "landlord_email": "thalindra@example.com",
+    "description": "The rolling hills of Tuscany's Val d'Orcia shelter Centaur Meadow Lodge, a sprawling retreat blending rustic charm with natural elegance. This tranquil haven offers lush pastures and shaded woodlands, ideal for centaurs seeking a blend of pastoral leisure and refined comfort. Fragrant wildflowers carpet the landscape, and gentle breezes carry the sounds of nature through open spaces. It's a sanctuary where earth and sky meet, welcoming travelers who yearn for harmony between adventure and relaxation in the heart of serene countryside.",
+    "address": "Val d'Orcia, Siena, Tuscany, Italy 🇮🇹",
+    "price_per_night": 105,
+    "amenities": "Wi-Fi 🌐, Spacious Pastures 🏞️, Archery Range 🏹, Herbal Healing Station 🌿, Hoof Care Spa 🐴, Open Air Dining Pavilion 🍽️, Star Gazing Meadow 🌌, Organic Vineyard 🍇, Centaur Library 📚, Fire Circle Gathering Area 🔥, Nature Trails 🌳, Herbalism Workshop 🧴, Meadow Yoga Sessions 🧘, Creekside Hammocks 🏖️, Leatherworking Studio 🪡",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Centaur_Meadow_Lodge_rdzzjj.jpg"
+  },
+  {
+    "name": "Vampire Chateau",
+    "landlord_email": "lysandra@example.com",
+    "description": "Perched atop Romania's mist-covered Carpathian Mountains stands Vampire Chateau, an ancient gothic residence cloaked in mystery and elegance. Intricate spires and shadowy halls echo centuries of whispers, blending luxury and intrigue seamlessly. Within these halls, velvet-draped chambers and candlelit corridors transport guests into a realm of eternal twilight, where secrets dwell in every shadow. Surrounded by deep forests and moonlit gardens, the Chateau invites guests into an atmosphere of sophistication and allure, tailored specifically for beings of nocturnal refinement.",
+    "address": "Bran Castle, Strada General Traian Moșoiu 24, Bran 507025, Romania 🇷🇴",
+    "price_per_night": 200,
+    "amenities": "Wi-Fi 🌐, Gothic Library 📚, Blood Moon Viewing Balcony 🌕, Secret Passageways 🗝️, Velvet-Draped Chambers 🛌, Shadow Dance Hall 💃, Crypt Spa ⚰️, Wine (Blood Red) Cellar 🍷, Enchanted Mirror Room 🪞, Bat Sanctuary 🦇, Eternal Flame Fireplace 🔥, Nightshade Herb Garden 🌿, Candlelit Dinners 🕯️, Moonlight Sonata Room 🎹, Misty Gardens 🌫️",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Vampire_Chateau_neppv8.jpg"
+  },
+  {
+    "name": "Fairy Glade Cottage",
+    "landlord_email": "faelith@example.com",
+    "description": "Nestled within the tranquil beauty of England’s Lake District, Fairy Glade Cottage is a picturesque retreat enchanted with the whimsy and charm of fairy folk. Surrounded by blooming meadows, trickling streams, and ancient oaks, it provides a peaceful sanctuary for rest and renewal. Twinkling lights, fragrant blossoms, and delicate butterflies lend an air of magical calm, inviting travelers to reconnect with nature’s gentle rhythms. The cottage’s cozy interiors and inviting charm provide warmth and comfort, fostering serenity and enchantment amid lush greenery.",
+    "address": "Lake Windermere, Cumbria, England, LA23 1LJ, United Kingdom 🇬🇧",
+    "price_per_night": 95,
+    "amenities": "Wi-Fi 🌐, Fairy Ring Meditation Circle 🍄, Butterfly Sanctuary 🦋, Enchanted Lantern Pathways 🏮, Pixie Dust Crafting ✨, Meadow-view Porch 🌸, Forest Tea Garden ☕, Floral Arrangement Studio 💐, Birdsong Wake-Up Call 🐦, Babbling Brook Jacuzzi 💧, Honey Harvesting Station 🍯, Twilight Firefly Viewing 🌠, Miniature Herbal Apothecary 🌱, Secret Garden Library 📖, Gentle Stream Hammocks 🛌",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Fairy_Glade_Cottage_yytiu5.jpg"
+  },
+  {
+    "name": "Phoenix Roost Villa",
+    "landlord_email": "orianna@example.com",
+    "description": "High atop Arizona’s breathtaking red rocks of Sedona, Phoenix Roost Villa rises as a beacon of renewal and warmth, infused with the mythic spirit of the phoenix. Surrounded by panoramic desert views and radiant sunsets, this luxurious lair embraces the transformative energy of fire and sky. Offering a unique blend of serenity and regeneration, guests find solace within its radiant chambers, golden terraces, and sunlit gardens. Each sunset ignites the sky, serving as a powerful reminder of nature’s endless cycles of rebirth and hope.",
+    "address": "Sedona, Arizona, 86336, USA 🇺🇸",
+    "price_per_night": 170,
+    "amenities": "Wi-Fi 🌐, Flame-lit Terraces 🔥, Sun Meditation Chamber 🌞, Ash and Ember Spa ♨️, Phoenix Feather Workshop 🪶, Solar-Powered Gardens 🌵, Desert View Lounge 🌅, Rebirth Ritual Pavilion 🔥✨, Sunset Observation Deck 🌄, Heated Stone Floors 🪨, Herbal Tea Sanctuary 🍵, Crystal Energy Room 💎, Guided Star Tours 🌠, Flame Retardant Chambers 🧯, Sunrise Yoga Patio 🧘‍♀️",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Phoenix_Roost_Villa_l4jydi.jpg"
+  },
+
+
+
+  {
+    "name": "Frostborn Citadel",
+    "landlord_email": "alaric@example.com",
+    "description": "Perched upon the icy cliffs of the Arctic tundra, the Frostborn Citadel stands as an unyielding fortress carved from glacial stone. Here, the air crackles with magic, and the northern lights dance across an eternal winter sky. Forged by frost giants and imbued with the essence of ancient ice, this stronghold offers both a refuge and a proving ground for warriors who embrace the cold. Within its frozen halls, echoes of legendary battles and tales of winter’s might whisper through the winds.",
+    "address": "Arctic Circle, Svalbard, Norway 🇳🇴",
+    "price_per_night": 150,
+    "amenities": "Wi-Fi 🌐, Ice Throne Room ❄️, Eternal Bonfire Hall 🔥, Northern Lights Viewing Platform 🌌, Frost-Forged Blacksmithing ⚒️, Crystal Ice Caverns ⛏️, Yeti-Guarded Perimeter 🐻‍❄️, Glacier Spa ♨️, Rune-Inscribed Walls ✍️, Enchanted Fur Cloak Wardrobe 🦺, Arctic Wolf Companions 🐺, Frozen Mead Hall 🍻, Blizzard Meditation Chamber 🌨️, Ice Skating Arena ⛸️, Snowstorm Resistance Runes ❄️",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Frostborn_Citadel_kljorl.jpg"
+  },
+  {
+    "name": "Celestial Monastery",
+    "landlord_email": "aurielle@example.com",
+    "description": "Nestled high among the sacred peaks of the Himalayas, the Celestial Monastery is a sanctuary of enlightenment and balance. Ancient cherry blossom trees sway in the mountain breeze, their petals carried by the whispers of monks who have meditated here for centuries. Floating lanterns illuminate the pathways, while mystical energy flows through the air like an unseen current. For those seeking wisdom, inner peace, or the secrets of celestial magic, this mountaintop retreat offers unparalleled serenity.",
+    "address": "Taktshang Monastery, Paro Valley, Bhutan 🇧🇹",
+    "price_per_night": 140,
+    "amenities": "Wi-Fi 🌐, Floating Meditation Platform 🧘‍♂️, Celestial Tea Garden 🍵, Echoing Prayer Chamber 🏯, Mystic Dragon Shrine 🐉, Whispering Wind Balconies 🌬️, Enchanted Lotus Pond 🌸, Scroll-Lined Study Hall 📜, Elemental Harmony Training Room ☯️, Cloud-Walking Ritual Circle ☁️, Moonlit Reflection Garden 🌙, Harmonized Gong Room 🎶, Sacred Fire Pit 🔥, Guardian Spirit Watchtower 👁️",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Celestial_Monastery_dmeg4z.jpg"
+  },
+  {
+    "name": "Feywild Hollow",
+    "landlord_email": "faelan@example.com",
+    "description": "Hidden deep within the ancient forests of Ireland, Feywild Hollow is a mystical grove where reality bends, and time dances to the will of the fae. Bioluminescent fungi and twinkling fairy lights illuminate the grove, casting a soft glow upon the enchanted glades. The air is thick with the scent of honeyed mead and wildflowers, while whispered songs from unseen voices weave through the mist. Here, travelers can embrace the wonders of the Feywild, where magic is woven into every leaf and petal.",
+    "address": "Tollymore Forest, County Down, Northern Ireland 🇬🇧",
+    "price_per_night": 125,
+    "amenities": "Wi-Fi 🌐, Fairy Ring Meditation Circle 🍄, Trickster’s Puzzle Chamber 🎭, Moonlit Fairy Glade 🌙, Spirit Fox Companion 🦊, Dreamcatcher Weaving Workshop 🪢, Talking Trees Grove 🌳, Crystal-Crowned Waterfall 💎, Enchanted Fireflies Light Show ✨, Glimmering Toadstool Lounge 🍄, Whispering Willows Pathway 🍃, Pixie Dust Infusion Bath 🛁, Midsummer Night’s Banquet 🏰, Fae-Charmed Mirror Maze 🪞",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Feywild_Hollow_suiaww.jpg"
+  },
+  {
+    "name": "Sylvanwood Enclave",
+    "landlord_email": "fiora@example.com",
+    "description": "Hidden within the emerald embrace of the Amazon Rainforest, Sylvanwood Enclave is a sanctuary where nature’s magic thrives. Towering trees cradle suspended walkways, glowing fungi illuminate the forest floor, and the whispers of ancient dryads hum through the leaves. Here, the boundary between the mundane and the mystical fades, allowing guests to experience the raw power of the wild, guided by the spirits of the trees and the harmony of untouched nature.",
+    "address": "Amazon Rainforest, Brazil 🇧🇷",
+    "price_per_night": 135,
+    "amenities": "Wi-Fi 🌐, Canopy Meditation Chambers 🍃, Bioluminescent Fungi Pathways ✨, Whispering Tree Council 🌲, Sacred Waterfall Sanctuary 🌊, Spirit Fox Companions 🦊, Herbal Alchemy Workshop 🌿, Enchanted Vine Hammocks 🏕️, Mystic Birdsong Alarm Clock 🐦, Forest-Tuned String Instruments 🎻, Ancient Totem Guardian Rituals 🛕, Firefly-Illuminated Dining Hall 🕯️, Moonlit Druidic Circle 🌙",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Sylvanwood_Enclave_md3c2b.jpg"
+  },
+  {
+    "name": "Astral Observatory",
+    "landlord_email": "caelia@example.com",
+    "description": "Perched atop the Atacama Desert’s highest plateau, the Astral Observatory is a gateway to the cosmos. With skies so clear that the Milky Way seems within reach, this celestial retreat is the perfect haven for stargazers, cosmic scholars, and wanderers of the infinite night. The air hums with interstellar energy, and the walls are inscribed with forgotten constellations. Every dawn here marks the beginning of a new cosmic journey, as the universe unveils its secrets under the ever-watchful gaze of the stars.",
+    "address": "Cerro Paranal, Atacama Desert, Chile 🇨🇱",
+    "price_per_night": 180,
+    "amenities": "Wi-Fi 🌐, Telescope Array 🔭, Cosmic Meditation Chamber 🌌, Time-Dilation Observatory ⏳, Floating Stargazing Platforms ☄️, Meteorite Display Vault 🪐, Celestial Library of Forgotten Stars 📖, Orbital Viewing Deck 🌠, Planetarium Projection Dome 🎥, Space-Tuned Harmonic Resonator 🎼, Gravity-Defying Lounge Area 🛋️, Nightfall Solar Alignment Ritual 🌞, Aurora Forecasting Balcony 🌆",
+    "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Astral_Observatory_rqjqlr.jpg"
   }
+
 ]
