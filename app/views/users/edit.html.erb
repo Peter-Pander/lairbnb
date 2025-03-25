@@ -1,5 +1,10 @@
 <!-- app/views/users/edit.html.erb -->
-<h2>Edit Profile</h2>
+<div class="">
+  <% if @user.photo.attached? %>
+    <%= image_tag @user.photo, class: "avatar-xxl" %>
+  <% end %>
+</div>
+<h2>Your Profile</h2>
 <%= simple_form_for(@user, url: update_user_profile_path, html: { multipart: true }) do |f| %>
   <div class="form-group">
     <%= f.input :name, label: "Full Name" %>
