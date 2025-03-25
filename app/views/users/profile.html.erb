@@ -1,19 +1,10 @@
 <!-- app/views/users/profile.html.erb -->
-<h1>Welcome, <%= @user.name %>!</h1>
-<% if @user.photo.attached? %>
-  <%= image_tag @user.photo, class: "avatar-xl" %>
+<div class="adventurer-card">
+  <% if @user.photo.attached? %>
+    <%= image_tag @user.photo, class: "avatar-xl" %>
+  <% end %>
+  <h1><%= @user.name.split.first %></h1>
 </div>
-<% end %>
-<p>Email: <%= @user.email %></p>
-<!-- Add any other user information you'd like to display -->
-<%= simple_form_for(@user, url: update_user_profile_path, html: { multipart: true }) do |f| %>
-  <div class="form-group">
-    <%= f.input :photo, as: :file, label: "Upload Profile Picture" %>
-  </div>
-  <div class="form-group">
-    <%= f.button :submit, "Update Profile" %>
-  </div>
-<% end %>
 <% if current_user.role == "landlord" %>
   <%= form_with model: @user, url: update_role_path, method: :patch, local: true do |form| %>
     <div class="form-group">
