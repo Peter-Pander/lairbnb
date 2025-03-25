@@ -1,0 +1,40 @@
+.profile-container {
+  display: flex;
+  align-items: flex-start; // Adjust alignment as needed
+  gap: 20px; // Space between the two containers
+  justify-content: center;
+}
+
+.profile-pic-container {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-photo-button {
+  position: absolute;
+  bottom: -10px;
+  left: 70px;
+
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+}
+
+.fa-camera {
+  margin-right: 3px;
+}
+
+
+.hidden-file-input {
+  display: none;
+}
+
+.profile-form-container {
+  flex: 1; // Takes the remaining horizontal space
+}
