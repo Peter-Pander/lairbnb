@@ -23,7 +23,23 @@ tenants_data.each do |tenant_info|
   tenant = User.create!(
     name: tenant_info["name"],
     email: tenant_info["email"],
-    password: tenant_info["password"]
+    password: tenant_info["password"],
+    tavern_talk: tenant_info["tavern_talk"],
+    adventuring_profession: tenant_info["adventuring_profession"],
+    dream_realm: tenant_info["dream_realm"],
+    cursed_habit: tenant_info["cursed_habit"],
+    companion_creature: tenant_info["companion_creature"],
+    age_of_origin: tenant_info["age_of_origin"],
+    trained_at: tenant_info["trained_at"],
+    unexpected_quirk: tenant_info["unexpected_quirk"],
+    useless_talent: tenant_info["useless_talent"],
+    battle_song: tenant_info["battle_song"],
+    tongues_you_speak: tenant_info["tongues_you_speak"],
+    title_of_your_scroll: tenant_info["title_of_your_scroll"],
+    enchanted_by: tenant_info["enchanted_by"],
+    sleeping_conditions: tenant_info["sleeping_conditions"],
+    resting_weapon: tenant_info["resting_weapon"],
+    travel_style: tenant_info["travel_style"]
   )
 
   # Attach tenant image if the URL is provided
@@ -52,7 +68,24 @@ landlords_data.each do |landlord_data|
     name: landlord_data["name"],
     email: landlord_data["email"],
     password: landlord_data["password"],
-    role: :landlord # Assign the role as landlord here
+    role: :landlord,
+    tavern_talk: landlord_data["tavern_talk"],
+    adventuring_profession: landlord_data["adventuring_profession"],
+    dream_realm: landlord_data["dream_realm"],
+    cursed_habit: landlord_data["cursed_habit"],
+    companion_creature: landlord_data["companion_creature"],
+    age_of_origin: landlord_data["age_of_origin"],
+    trained_at: landlord_data["trained_at"],
+    unexpected_quirk: landlord_data["unexpected_quirk"],
+    useless_talent: landlord_data["useless_talent"],
+    battle_song: landlord_data["battle_song"],
+    tongues_you_speak: landlord_data["tongues_you_speak"],
+    title_of_your_scroll: landlord_data["title_of_your_scroll"],
+    enchanted_by: landlord_data["enchanted_by"],
+    sleeping_conditions: landlord_data["sleeping_conditions"],
+    resting_weapon: landlord_data["resting_weapon"],
+    travel_style: landlord_data["travel_style"],
+    innkeeping_philosophy: landlord_data["innkeeping_philosophy"]
   )
 
   # Attach the landlord image if the URL is provided
