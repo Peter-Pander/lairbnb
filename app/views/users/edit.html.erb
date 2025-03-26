@@ -37,21 +37,21 @@
     </div>
     <!-- ROW 2+: Fantasy Fields in a Two-Column Grid -->
     <div class="row row-cols-1 row-cols-md-2 g-3">
-      <!-- Tavern Talk (About you) -->
+      <!-- Tavern Talk -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTavernTalkModal">
         <strong>🔮 About you → Tavern Talk</strong>
         <p class="text-muted mb-0">
           <%= @user.tavern_talk.presence || "Spin a tale about yourself. Brag or lie—we don’t judge." %>
         </p>
       </div>
-      <!-- Your Adventuring Profession -->
+      <!-- Adventuring Profession -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editAdventuringProfessionModal">
         <strong>🛠️ Your Adventuring Profession</strong>
         <p class="text-muted mb-0">
           <%= @user.adventuring_profession.presence || "Are you a mage, beast tamer, herbalist?" %>
         </p>
       </div>
-      <!-- Your Dream Realm -->
+      <!-- Dream Realm -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editDreamRealmModal">
         <strong>🌍 Your Dream Realm</strong>
         <p class="text-muted mb-0">
@@ -65,7 +65,7 @@
           <%= @user.cursed_habit.presence || "What always steals your time?" %>
         </p>
       </div>
-      <!-- Your Companion Creature -->
+      <!-- Companion Creature -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editCompanionCreatureModal">
         <strong>🐉 Your Companion Creature</strong>
         <p class="text-muted mb-0">
@@ -158,426 +158,138 @@
       </div>
     </div>
   </div>
-  <!-- Modal for Editing Name -->
-  <div class="modal fade" id="editNameModal" tabindex="-1" aria-labelledby="editNameModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editNameModalLabel">👤 What is your name?</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">
-            Tell us what you’d like to be called so others can greet you properly.
-            Example: "Selene the Mage," "Groln Ironfist," or "Astrid, retired pirate."
-          </p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :name, label: false, placeholder: "Your name", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Editing Email -->
-  <div class="modal fade" id="editEmailModal" tabindex="-1" aria-labelledby="editEmailModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editEmailModalLabel">✉️ What is your email address?</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">
-            Provide your email so you can receive important notifications (e.g., messages from hosts, quest confirmations, etc.).
-          </p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :email, label: false, placeholder: "Your email", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Tavern Talk -->
-  <div class="modal fade" id="editTavernTalkModal" tabindex="-1" aria-labelledby="editTavernTalkModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editTavernTalkModalLabel">🔮 Tavern Talk</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Spin a tale about yourself. Brag or lie—we don’t judge.</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :tavern_talk, label: false, placeholder: "Your tale", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Adventuring Profession -->
-  <div class="modal fade" id="editAdventuringProfessionModal" tabindex="-1" aria-labelledby="editAdventuringProfessionModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editAdventuringProfessionModalLabel">🛠️ Your Adventuring Profession</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Are you a mage, beast tamer, herbalist?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :adventuring_profession, label: false, placeholder: "Your profession", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Dream Realm -->
-  <div class="modal fade" id="editDreamRealmModal" tabindex="-1" aria-labelledby="editDreamRealmModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editDreamRealmModalLabel">🌍 Your Dream Realm</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Where would you quest next?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :dream_realm, label: false, placeholder: "Your dream realm", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Cursed Habit -->
-  <div class="modal fade" id="editCursedHabitModal" tabindex="-1" aria-labelledby="editCursedHabitModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editCursedHabitModalLabel">⏳ Cursed Habit</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">What always steals your time?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :cursed_habit, label: false, placeholder: "Your cursed habit", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Companion Creature -->
-  <div class="modal fade" id="editCompanionCreatureModal" tabindex="-1" aria-labelledby="editCompanionCreatureModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editCompanionCreatureModalLabel">🐉 Your Companion Creature</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Do you travel with a direwolf, raven, or tiny slime?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :companion_creature, label: false, placeholder: "Your companion creature", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Age of Origin -->
-  <div class="modal fade" id="editAgeOfOriginModal" tabindex="-1" aria-labelledby="editAgeOfOriginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editAgeOfOriginModalLabel">🧭 Age of Origin</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Born in the Age of Fire? The Crystal Era?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :age_of_origin, label: false, placeholder: "Your age of origin", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Trained at… -->
-  <div class="modal fade" id="editTrainedAtModal" tabindex="-1" aria-labelledby="editTrainedAtModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editTrainedAtModalLabel">📜 Trained at…</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Did you study at Arcane Academy or the Orcish Warcamp?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :trained_at, label: false, placeholder: "Where you trained", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Unexpected Quirk -->
-  <div class="modal fade" id="editUnexpectedQuirkModal" tabindex="-1" aria-labelledby="editUnexpectedQuirkModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editUnexpectedQuirkModalLabel">🧝 Unexpected Quirk</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Reveal something strange or fun.</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :unexpected_quirk, label: false, placeholder: "Your unexpected quirk", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Useless Talent -->
-  <div class="modal fade" id="editUselessTalentModal" tabindex="-1" aria-labelledby="editUselessTalentModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editUselessTalentModalLabel">🎭 Useless Talent</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Perfect at whistling in 4 octaves?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :useless_talent, label: false, placeholder: "Your useless talent", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Battle Song or Lute Tune? -->
-  <div class="modal fade" id="editBattleSongModal" tabindex="-1" aria-labelledby="editBattleSongModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editBattleSongModalLabel">🎶 Battle Song or Lute Tune?</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">A bard’s ballad that stuck with you?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :battle_song, label: false, placeholder: "Your battle song", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Tongues You Speak -->
-  <div class="modal fade" id="editTonguesYouSpeakModal" tabindex="-1" aria-labelledby="editTonguesYouSpeakModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editTonguesYouSpeakModalLabel">📚 Tongues You Speak</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Elvish, Goblin, or Forgotten Runes?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :tongues_you_speak, label: false, placeholder: "The languages you speak", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Title of Your Scroll -->
-  <div class="modal fade" id="editTitleOfYourScrollModal" tabindex="-1" aria-labelledby="editTitleOfYourScrollModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editTitleOfYourScrollModalLabel">📖 Title of Your Scroll</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">What would your life story be called?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :title_of_your_scroll, label: false, placeholder: "Your scroll title", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for You're Enchanted By -->
-  <div class="modal fade" id="editEnchantedByModal" tabindex="-1" aria-labelledby="editEnchantedByModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editEnchantedByModalLabel">✨ You’re Enchanted By…</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">What fascinates or compels you?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :enchanted_by, label: false, placeholder: "What enchants you?", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Preferred Sleeping Conditions -->
-  <div class="modal fade" id="editSleepingConditionsModal" tabindex="-1" aria-labelledby="editSleepingConditionsModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editSleepingConditionsModalLabel">🛌 Preferred Sleeping Conditions</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Moss beds, floating hammocks, or stone slabs?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :sleeping_conditions, label: false, placeholder: "Your sleeping conditions", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Resting Weapon -->
-  <div class="modal fade" id="editRestingWeaponModal" tabindex="-1" aria-labelledby="editRestingWeaponModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editRestingWeaponModalLabel">⚔️ Resting Weapon</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">What weapon do you keep under your pillow?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :resting_weapon, label: false, placeholder: "Your resting weapon", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Travel Style -->
-  <div class="modal fade" id="editTravelStyleModal" tabindex="-1" aria-labelledby="editTravelStyleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editTravelStyleModalLabel">🏇 Travel Style</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">Wyverns, portals, or walking the old paths?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :travel_style, label: false, placeholder: "Your travel style", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal for Innkeeping Philosophy -->
-  <div class="modal fade" id="editInnkeepingPhilosophyModal" tabindex="-1" aria-labelledby="editInnkeepingPhilosophyModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editInnkeepingPhilosophyModalLabel">🏰 Innkeeping Philosophy</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-muted">What makes your lair a perfect sanctuary for weary wanderers?</p>
-          <%= simple_form_for(@user, url: update_user_profile_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.input :innkeeping_philosophy, label: false, placeholder: "Your innkeeping philosophy", required: false %>
-            </div>
-            <div class="form-group mt-3">
-              <%= f.button :submit, "Save", class: "btn-black" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+<!-- Render the modals DRY via partial calls -->
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editNameModal",
+  modal_title: "👤 What is your name?",
+  attribute: :name,
+  description: "Tell us what you’d like to be called so others can greet you properly. Example: 'Selene the Mage', 'Groln Ironfist', or 'Astrid, retired pirate.'",
+  placeholder: "Your name"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editEmailModal",
+  modal_title: "✉️ What is your email address?",
+  attribute: :email,
+  description: "Provide your email so you can receive important notifications (e.g., messages from hosts, quest confirmations, etc.).",
+  placeholder: "Your email"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTavernTalkModal",
+  modal_title: "🔮 Tavern Talk",
+  attribute: :tavern_talk,
+  description: "Spin a tale about yourself. Brag or lie—we don’t judge.",
+  placeholder: "Your tale"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editAdventuringProfessionModal",
+  modal_title: "🛠️ Your Adventuring Profession",
+  attribute: :adventuring_profession,
+  description: "Are you a mage, beast tamer, or herbalist?",
+  placeholder: "Your profession"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editDreamRealmModal",
+  modal_title: "🌍 Your Dream Realm",
+  attribute: :dream_realm,
+  description: "Where would you quest next?",
+  placeholder: "Your dream realm"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editCursedHabitModal",
+  modal_title: "⏳ Cursed Habit",
+  attribute: :cursed_habit,
+  description: "What always steals your time?",
+  placeholder: "Your cursed habit"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editCompanionCreatureModal",
+  modal_title: "🐉 Your Companion Creature",
+  attribute: :companion_creature,
+  description: "Do you travel with a direwolf, raven, or tiny slime?",
+  placeholder: "Your companion creature"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editAgeOfOriginModal",
+  modal_title: "🧭 Age of Origin",
+  attribute: :age_of_origin,
+  description: "Born in the Age of Fire? The Crystal Era?",
+  placeholder: "Your age of origin"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTrainedAtModal",
+  modal_title: "📜 Trained at…",
+  attribute: :trained_at,
+  description: "Did you study at Arcane Academy or the Orcish Warcamp?",
+  placeholder: "Where you trained"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editUnexpectedQuirkModal",
+  modal_title: "🧝 Unexpected Quirk",
+  attribute: :unexpected_quirk,
+  description: "Reveal something strange or fun.",
+  placeholder: "Your unexpected quirk"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editUselessTalentModal",
+  modal_title: "🎭 Useless Talent",
+  attribute: :useless_talent,
+  description: "Perfect at whistling in 4 octaves?",
+  placeholder: "Your useless talent"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editBattleSongModal",
+  modal_title: "🎶 Battle Song or Lute Tune?",
+  attribute: :battle_song,
+  description: "A bard’s ballad that stuck with you?",
+  placeholder: "Your battle song"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTonguesYouSpeakModal",
+  modal_title: "📚 Tongues You Speak",
+  attribute: :tongues_you_speak,
+  description: "Elvish, Goblin, or Forgotten Runes?",
+  placeholder: "The languages you speak"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTitleOfYourScrollModal",
+  modal_title: "📖 Title of Your Scroll",
+  attribute: :title_of_your_scroll,
+  description: "What would your life story be called?",
+  placeholder: "Your scroll title"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editEnchantedByModal",
+  modal_title: "✨ You’re Enchanted By…",
+  attribute: :enchanted_by,
+  description: "What fascinates or compels you?",
+  placeholder: "What enchants you?"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editSleepingConditionsModal",
+  modal_title: "🛌 Preferred Sleeping Conditions",
+  attribute: :sleeping_conditions,
+  description: "Moss beds, floating hammocks, or stone slabs?",
+  placeholder: "Your sleeping conditions"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editRestingWeaponModal",
+  modal_title: "⚔️ Resting Weapon",
+  attribute: :resting_weapon,
+  description: "What weapon do you keep under your pillow?",
+  placeholder: "Your resting weapon"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTravelStyleModal",
+  modal_title: "🏇 Travel Style",
+  attribute: :travel_style,
+  description: "Wyverns, portals, or walking the old paths?",
+  placeholder: "Your travel style"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editInnkeepingPhilosophyModal",
+  modal_title: "🏰 Innkeeping Philosophy",
+  attribute: :innkeeping_philosophy,
+  description: "What makes your lair a perfect sanctuary?",
+  placeholder: "Your innkeeping philosophy"
+} %>
