@@ -19,19 +19,51 @@
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-sizing: border-box;
+  min-width: 450px;
+  max-width: 550px;
+}
+
+/* Left Column: Photo + Name stacked vertically */
+.adventurer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 
   img {
     border-radius: 50%;
-    margin-bottom: 10px;
   }
 
   h1 {
     margin: 0;
-    font-size: 1,6rem;
+    font-size: 1.6rem;
     font-weight: 600;
   }
 }
+
+/* Right Column: Badges */
+.lairbnb-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 160px;
+
+  .badge-item {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .badge-item:last-child {
+    border-bottom: none;
+  }
+}
+
 
 .confirmed-info-card {
   background: white;

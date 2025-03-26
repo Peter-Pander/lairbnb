@@ -3,18 +3,33 @@
   <div class="profile-left-column">
     <!-- Adventurer Card -->
     <div class="adventurer-card">
-      <% if @user.photo.attached? %>
-        <%= image_tag @user.photo, class: "avatar-xl" %>
-      <% end %>
-      <h1><%= @user.name.split.first %></h1>
+      <!-- Left Column: Profile Pic and Name (stacked vertically) -->
+      <div class="adventurer-info">
+        <% if @user.photo.attached? %>
+          <%= image_tag @user.photo, class: "avatar-xl" %>
+        <% end %>
+        <h1><%= @user.name.split.first %></h1>
+      </div>
+      <!-- Right Column: Badges -->
+      <div class="lairbnb-badges">
+        <% if current_user.landlord? %>
+          <div class="badge-item">🌟 Trusted Host</div>
+          <div class="badge-item">🧭 Realm Guide</div>
+          <div class="badge-item">📜 Lorekeeper</div>
+        <% else %>
+          <div class="badge-item">✨ Trusted Guest</div>
+          <div class="badge-item">🌍 Realm Roamer</div>
+          <div class="badge-item">👁️ Curious Soul</div>
+        <% end %>
+      </div>
     </div>
     <!-- Confirmed Information -->
     <div class="confirmed-info-card">
       <h3><%= @user.name.split.first %>'s confirmed Information</h3>
       <ul>
         <li> 🧙 Identity confirmed by the Guild</li>
-        <li> ✉️ Scroll address enchanted (email verified) </li>
-        <li> 💎 Crystal comms aligned</li>
+        <li> 🧩 Runes of communication aligned </li>
+        <li> 💎 Crystal signal attuned</li>
       </ul>
     </div>
   </div>
