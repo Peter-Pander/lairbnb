@@ -30,6 +30,10 @@
       <p>🧩 Runes of communication aligned</p>
       <p>💎 Crystal signal attuned</p>
     </div>
+    <div class="contact-landlord-container">
+      <!-- Message the landlord -->
+      <%= link_to "Message #{ @user.name.split.first.chomp(',') }", new_flat_message_path(@user.flats.first), class: "message-landlord-btn" %>
+    </div>
   </div>
   <!-- Right Column -->
   <div class="profile-right-column">
