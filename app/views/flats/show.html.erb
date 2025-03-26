@@ -12,10 +12,12 @@
     <hr class="thin-line0">
     <!-- Landlord picture and name -->
     <% if @user.photo.attached? %>
-      <div class="landlord-info">
-        <%= image_tag @user.photo, class: 'landlord-image' %>
-        <p>Hosted by <%= @user.name %></p>
-      </div>
+      <%= link_to user_path(@user) do %>
+        <div class="landlord-info">
+          <%= image_tag @user.photo, class: 'landlord-image' %>
+          <p>Hosted by <%= @user.name %></p>
+        </div>
+      <% end %>
     <% end %>
     <hr class="thin-line0">
     <!-- What this place offers section -->

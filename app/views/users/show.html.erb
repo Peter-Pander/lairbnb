@@ -1,0 +1,62 @@
+<div class="profile-page-container">
+  <!-- Left Column -->
+  <div class="profile-left-column">
+    <!-- Adventurer Card -->
+    <div class="adventurer-card">
+      <!-- Left Column: Profile Pic and Name (stacked vertically) -->
+      <div class="adventurer-info">
+        <% if @user.photo.attached? %>
+          <%= image_tag @user.photo, class: "avatar-xl" %>
+        <% end %>
+        <h1><%= @user.name.split.first %></h1>
+      </div>
+      <!-- Right Column: Badges -->
+      <div class="lairbnb-badges">
+        <% if current_user.landlord? %>
+          <div class="badge-item">🌟 Trusted Host</div>
+          <div class="badge-item">🧭 Realm Guide</div>
+          <div class="badge-item">📜 Lorekeeper</div>
+        <% else %>
+          <div class="badge-item">✨ Trusted Guest</div>
+          <div class="badge-item">🌍 Realm Roamer</div>
+          <div class="badge-item">👁️ Curious Soul</div>
+        <% end %>
+      </div>
+    </div>
+    <!-- Confirmed Information -->
+    <div class="confirmed-info-card">
+      <h3><%= @user.name.split.first %>'s confirmed Information</h3>
+      <p>🧙 Identity confirmed by the Guild</p>
+      <p>🧩 Runes of communication aligned</p>
+      <p>💎 Crystal signal attuned</p>
+    </div>
+  </div>
+  <!-- Right Column -->
+  <div class="profile-right-column">
+    <div class="user-lore-card">
+      <h1>About <%= @user.name.split.first %></h1>
+      <!-- User Lore Info -->
+      <div class="lore-columns">
+        <p><strong>🔮 Tavern Talk:</strong> <%= @user.tavern_talk %></p>
+        <p><strong>🛠️ Profession:</strong> <%= @user.adventuring_profession %></p>
+        <p><strong>🌍 Dream Realm:</strong> <%= @user.dream_realm %></p>
+        <p><strong>⏳ Cursed Habit:</strong> <%= @user.cursed_habit %></p>
+        <p><strong>🐉 Companion:</strong> <%= @user.companion_creature %></p>
+        <p><strong>🧭 Age of Origin:</strong> <%= @user.age_of_origin %></p>
+        <p><strong>📜 Trained At:</strong> <%= @user.trained_at %></p>
+        <p><strong>🧝 Unexpected Quirk:</strong> <%= @user.unexpected_quirk %></p>
+        <p><strong>🎭 Useless Talent:</strong> <%= @user.useless_talent %></p>
+        <p><strong>🎶 Battle Song:</strong> <%= @user.battle_song %></p>
+        <p><strong>📚 Languages:</strong> <%= @user.tongues_you_speak %></p>
+        <p><strong>📖 Scroll Title:</strong> <%= @user.title_of_your_scroll %></p>
+        <p><strong>✨ Enchanted By:</strong> <%= @user.enchanted_by %></p>
+        <p><strong>🛌 Sleeping Conditions:</strong> <%= @user.sleeping_conditions %></p>
+        <p><strong>⚔️ Resting Weapon:</strong> <%= @user.resting_weapon %></p>
+        <p><strong>🏇 Travel Style:</strong> <%= @user.travel_style %></p>
+        <% if @user.innkeeping_philosophy.present? %>
+          <p><strong>🏰 Innkeeping Philosophy:</strong> <%= @user.innkeeping_philosophy %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
