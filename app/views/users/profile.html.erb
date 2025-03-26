@@ -8,7 +8,7 @@
         <% if @user.photo.attached? %>
           <%= image_tag @user.photo, class: "avatar-xl" %>
         <% end %>
-        <h1><%= @user.name.split.first %></h1>
+        <h1><%= @user.name.split.first.chomp(',') %></h1>
       </div>
       <!-- Right Column: Badges -->
       <div class="lairbnb-badges">
@@ -25,7 +25,7 @@
     </div>
     <!-- Confirmed Information -->
     <div class="confirmed-info-card">
-      <h3><%= @user.name.split.first %>'s confirmed Information</h3>
+      <h3><%= @user.name.split.first.chomp(',') %>'s confirmed Information</h3>
       <p>🧙 Identity confirmed by the Guild</p>
       <p>🧩 Runes of communication aligned</p>
       <p>💎 Crystal signal attuned</p>
@@ -34,7 +34,7 @@
   <!-- Right Column -->
   <div class="profile-right-column">
     <div class="user-lore-card">
-      <h1>About <%= @user.name.split.first %></h1>
+      <h1>About <%= @user.name.split.first.chomp(',') %></h1>
       <!-- Buttons -->
       <div class="profile-actions">
         <%= link_to "Edit Profile", edit_user_profile_path, class: "btn btn-primary me-2" %>
