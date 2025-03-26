@@ -37,9 +37,24 @@
   /* Removed margin-left to allow flex layout to naturally space the columns */
 }
 
-.profile-info-container h2 {
-  font-weight: 700;
+.profile-header {
+  margin-bottom: 40px;
+
+  h2 {
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #666;
+    font-size: 1rem;
+  }
 }
+
+
+// .profile-info-container h2 {
+//   font-weight: 700;
+// }
 
 /* Container for splitting profile info into two columns */
 .profile-info-columns {
