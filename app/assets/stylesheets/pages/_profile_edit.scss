@@ -1,9 +1,9 @@
 .profile-container {
   display: flex;
-  align-items: flex-start; // Adjust alignment as needed
-  gap: 20px; // Space between the two containers
+  align-items: flex-start;
+  gap: 150px;           // Space between profile picture and info sections
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .profile-pic-container {
@@ -15,7 +15,6 @@
   position: absolute;
   bottom: -10px;
   left: 70px;
-
   background-color: #fff;
   color: #333;
   border: none;
@@ -35,46 +34,66 @@
 }
 
 .profile-info-container {
-  margin-left: 150px;
+  /* Removed margin-left to allow flex layout to naturally space the columns */
 }
 
 .profile-info-container h2 {
   font-weight: 700;
 }
 
-.profile-form-container {
-  flex: 1; // Takes the remaining horizontal space
+/* Container for splitting profile info into two columns */
+.profile-info-columns {
+  display: flex;
+  gap: 150px;         // Gap between the two columns
+  flex-wrap: wrap;
 }
 
-/* -- Add these styles to make your profile items clickable with a hover effect -- */
+.profile-info-column {
+  flex: 1;           // Each column takes equal width
+}
+
+/* Styling for profile items */
 .profile-item {
-  cursor: pointer;                 /* Change cursor on hover */
-  padding: 0.75rem;               /* Some spacing around the text */
-  border-radius: 4px;             /* Rounded corners */
-  transition: background-color 0.2s; /* Smooth transition */
-
-  &:hover {
-    background-color: #f5f5f5;    /* Light grey hover effect */
-  }
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin-bottom: 30px;
 }
 
+/* Ensure paragraphs inside .profile-item always reserve space */
+.profile-item p {
+  min-height: 1.5rem; // Option 1: Set a minimum height (adjust as needed)
+}
+
+/* Option 2: Insert a non-breaking space if <p> is empty */
+/* Uncomment if desired:
+.profile-item p:empty::after {
+  content: "\00a0";
+}
+*/
+
+.profile-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Additional button and form control styles */
 .btn-black {
   background-color: #000;
   color: #fff;
   border: none;
-
-  &:hover {
-    background-color: #000;
-    color: #fff;
-  }
 }
 
-/* Remove green border & checkmark from valid inputs (Bootstrap / SimpleForm) */
+.btn-black:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 .form-control.is-valid,
 .was-validated .form-control:valid {
-  border-color: #ccc !important;    // Gray border
-  background-image: none !important; // Remove check icon
-  box-shadow: none !important;       // Remove green glow
+  border-color: #ccc !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
 .form-control.is-valid:focus,
