@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!  # Ensure the user is signed in
+  skip_before_action :authenticate_user!, only: [:show]
 
   # Display the user's profile page
   def profile
