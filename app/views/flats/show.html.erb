@@ -12,7 +12,7 @@
     <hr class="thin-line0">
     <!-- Landlord picture and name -->
     <% if @user.photo.attached? %>
-      <%= link_to user_path(@user) do %>
+      <%= link_to user_path(@user), class: "no-decoration" do %>
         <div class="landlord-info">
           <%= image_tag @user.photo, class: 'landlord-image' %>
           <p>Hosted by <%= @user.name %></p>
