@@ -81,12 +81,23 @@
     margin-bottom: 20px;
     font-weight: 600;
   }
-
-  ul {
-    padding-left: 20px;
-    list-style-type: none;
-  }
 }
+
+
+.lore-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px; // vertical gap, horizontal gap
+  margin-top: 16px;
+}
+
+.lore-columns p {
+  flex: 0 0 calc(50% - 20px); // Two items per row with spacing
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
 
 .profile-actions {
   margin-bottom: 20px;
