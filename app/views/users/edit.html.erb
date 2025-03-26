@@ -65,10 +65,12 @@
           <strong>🏇 Travel Style</strong>
           <p class="text-muted mb-0"><%= @user.travel_style %></p>
         </div>
-        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editInnkeepingPhilosophyModal">
-          <strong>🏰 Innkeeping Philosophy</strong>
-          <p class="text-muted mb-0"><%= @user.innkeeping_philosophy %></p>
-        </div>
+        <% if current_user.landlord? %>
+          <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editInnkeepingPhilosophyModal">
+            <strong>🏰 Innkeeping Philosophy</strong>
+            <p class="text-muted mb-0"><%= @user.innkeeping_philosophy %></p>
+          </div>
+        <% end %>
       </div>
       <!-- Second Column -->
       <div class="profile-info-column">
