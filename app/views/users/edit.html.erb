@@ -2,15 +2,18 @@
 <div class="profile-container" data-controller="photo">
   <!-- Profile Picture Section -->
   <div class="profile-pic-container">
-    <% if @user.photo.attached? %>
-      <%= image_tag @user.photo, class: "avatar-xxl" %>
-    <% else %>
-      <%= image_tag "placeholder.png", class: "avatar-xxl" %>
-    <% end %>
-    <!-- Edit Photo Button triggers hidden file input (via Stimulus) -->
-    <button type="button" class="edit-photo-button" data-action="click->photo#editPhoto">
-      <i class="fa-solid fa-camera" style="margin-right: 6px;"></i> Edit
-    </button>
+    <!-- Wrap image and edit button in a relatively positioned box -->
+    <div class="profile-pic-wrapper">
+      <% if @user.photo.attached? %>
+        <%= image_tag @user.photo, class: "avatar-xxl" %>
+      <% else %>
+        <%= image_tag "placeholder.png", class: "avatar-xxl" %>
+      <% end %>
+      <!-- Edit Button stays positioned over the image -->
+      <button type="button" class="edit-photo-button" data-action="click->photo#editPhoto">
+        <i class="fa-solid fa-camera" style="margin-right: 6px;"></i> Edit
+      </button>
+    </div>
     <!-- Hidden File Input -->
     <div class="hidden-file-input">
       <%= simple_form_for(@user, url: update_user_profile_path, html: { multipart: true }) do |f| %>
@@ -18,6 +21,19 @@
                     input_html: { data: { "photo-target": "fileInput" } } %>
       <% end %>
     </div>
+    <!-- Landlord Role Form (appears visually below image) -->
+    <% if current_user.role == "landlord" %>
+      <div class="landlord-role-form">
+        <%= form_with model: @user, url: update_role_path, method: :patch, local: true do |form| %>
+          <div class="form-group">
+            <%= form.label :role, "Select Role" %>
+            <%= form.select :role, User.roles.keys.map { |role| [role.capitalize, role] }, { include_blank: false } %>
+          </div>
+          <%= form.submit "Update Role", class: "btn btn-primary" %>
+        <% end %>
+        <p>You are a landlord.</p>
+      </div>
+    <% end %>
   </div>
   <!-- Profile Info Section -->
   <div class="profile-info-container">

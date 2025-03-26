@@ -11,10 +11,15 @@
   display: inline-block;
 }
 
+.profile-pic-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
 .edit-photo-button {
   position: absolute;
   bottom: -10px;
-  left: 70px;
+  left: 60px;
   background-color: #fff;
   color: #333;
   border: none;
@@ -23,10 +28,17 @@
   padding: 5px 10px;
   font-size: 0.875rem;
   font-weight: 600;
+  z-index: 10;
 }
 
 .fa-camera {
-  margin-right: 3px;
+  margin-right: 2px;
+}
+
+
+.landlord-role-form {
+  margin-top: 30px;
+  text-align: left;
 }
 
 .hidden-file-input {
