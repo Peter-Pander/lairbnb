@@ -27,12 +27,12 @@
       <!-- Full Name Column -->
       <div class="col-md-6 profile-item clickable" data-bs-toggle="modal" data-bs-target="#editNameModal">
         <strong>👤 Full Name</strong>
-        <p class="mb-0"><%= @user.name.presence || "Not provided" %></p>
+        <p class="mb-0"><%= @user.name %></p>
       </div>
       <!-- Email Column -->
       <div class="col-md-6 profile-item clickable" data-bs-toggle="modal" data-bs-target="#editEmailModal">
         <strong>✉️ Email</strong>
-        <p class="mb-0"><%= @user.email.presence || "Not provided" %></p>
+        <p class="mb-0"><%= @user.email %></p>
       </div>
     </div>
     <!-- ROW 2+: Fantasy Fields in a Two-Column Grid -->
@@ -40,121 +40,87 @@
       <!-- Tavern Talk -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTavernTalkModal">
         <strong>🔮 About you → Tavern Talk</strong>
-        <p class="text-muted mb-0">
-          <%= @user.tavern_talk.presence || "Spin a tale about yourself. Brag or lie—we don’t judge." %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.tavern_talk %></p>
       </div>
       <!-- Adventuring Profession -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editAdventuringProfessionModal">
         <strong>🛠️ Your Adventuring Profession</strong>
-        <p class="text-muted mb-0">
-          <%= @user.adventuring_profession.presence || "Are you a mage, beast tamer, herbalist?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.adventuring_profession %></p>
       </div>
       <!-- Dream Realm -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editDreamRealmModal">
         <strong>🌍 Your Dream Realm</strong>
-        <p class="text-muted mb-0">
-          <%= @user.dream_realm.presence || "Where would you quest next?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.dream_realm %></p>
       </div>
       <!-- Cursed Habit -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editCursedHabitModal">
         <strong>⏳ Cursed Habit</strong>
-        <p class="text-muted mb-0">
-          <%= @user.cursed_habit.presence || "What always steals your time?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.cursed_habit %></p>
       </div>
       <!-- Companion Creature -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editCompanionCreatureModal">
         <strong>🐉 Your Companion Creature</strong>
-        <p class="text-muted mb-0">
-          <%= @user.companion_creature.presence || "Do you travel with a direwolf, raven, or tiny slime?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.companion_creature %></p>
       </div>
       <!-- Age of Origin -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editAgeOfOriginModal">
         <strong>🧭 Age of Origin</strong>
-        <p class="text-muted mb-0">
-          <%= @user.age_of_origin.presence || "Born in the Age of Fire? The Crystal Era?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.age_of_origin %></p>
       </div>
       <!-- Trained at… -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTrainedAtModal">
         <strong>📜 Trained at…</strong>
-        <p class="text-muted mb-0">
-          <%= @user.trained_at.presence || "Did you study at Arcane Academy or the Orcish Warcamp?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.trained_at %></p>
       </div>
       <!-- Unexpected Quirk -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editUnexpectedQuirkModal">
         <strong>🧝 Unexpected Quirk</strong>
-        <p class="text-muted mb-0">
-          <%= @user.unexpected_quirk.presence || "Reveal something strange or fun." %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.unexpected_quirk %></p>
       </div>
       <!-- Useless Talent -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editUselessTalentModal">
         <strong>🎭 Useless Talent</strong>
-        <p class="text-muted mb-0">
-          <%= @user.useless_talent.presence || "Perfect at whistling in 4 octaves?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.useless_talent %></p>
       </div>
       <!-- Battle Song or Lute Tune? -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editBattleSongModal">
         <strong>🎶 Battle Song or Lute Tune?</strong>
-        <p class="text-muted mb-0">
-          <%= @user.battle_song.presence || "A bard’s ballad that stuck with you?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.battle_song %></p>
       </div>
       <!-- Tongues You Speak -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTonguesYouSpeakModal">
         <strong>📚 Tongues You Speak</strong>
-        <p class="text-muted mb-0">
-          <%= @user.tongues_you_speak.presence || "Elvish, Goblin, or Forgotten Runes?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.tongues_you_speak %></p>
       </div>
       <!-- Title of Your Scroll -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTitleOfYourScrollModal">
         <strong>📖 Title of Your Scroll</strong>
-        <p class="text-muted mb-0">
-          <%= @user.title_of_your_scroll.presence || "What would your life story be called?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.title_of_your_scroll %></p>
       </div>
       <!-- You're Enchanted By… -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editEnchantedByModal">
         <strong>✨ You’re Enchanted By…</strong>
-        <p class="text-muted mb-0">
-          <%= @user.enchanted_by.presence || "What fascinates or compels you?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.enchanted_by %></p>
       </div>
       <!-- Preferred Sleeping Conditions -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editSleepingConditionsModal">
         <strong>🛌 Preferred Sleeping Conditions</strong>
-        <p class="text-muted mb-0">
-          <%= @user.sleeping_conditions.presence || "Moss beds, floating hammocks, or stone slabs?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.sleeping_conditions %></p>
       </div>
       <!-- Resting Weapon -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editRestingWeaponModal">
         <strong>⚔️ Resting Weapon</strong>
-        <p class="text-muted mb-0">
-          <%= @user.resting_weapon.presence || "What weapon do you keep under your pillow?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.resting_weapon %></p>
       </div>
       <!-- Travel Style -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTravelStyleModal">
         <strong>🏇 Travel Style</strong>
-        <p class="text-muted mb-0">
-          <%= @user.travel_style.presence || "Wyverns, portals, or walking the old paths?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.travel_style %></p>
       </div>
       <!-- Innkeeping Philosophy -->
       <div class="col profile-item clickable" data-bs-toggle="modal" data-bs-target="#editInnkeepingPhilosophyModal">
         <strong>🏰 Innkeeping Philosophy</strong>
-        <p class="text-muted mb-0">
-          <%= @user.innkeeping_philosophy.presence || "What makes your lair a perfect sanctuary?" %>
-        </p>
+        <p class="text-muted mb-0"><%= @user.innkeeping_philosophy %></p>
       </div>
     </div>
   </div>
