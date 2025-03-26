@@ -1,0 +1,131 @@
+.profile-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 150px;           // Space between profile picture and info sections
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.profile-pic-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-pic-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-photo-button {
+  position: absolute;
+  bottom: -10px;
+  left: 60px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.fa-camera {
+  margin-right: 2px;
+}
+
+
+.landlord-role-form {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.profile-info-container {
+  /* Removed margin-left to allow flex layout to naturally space the columns */
+}
+
+.profile-header {
+  margin-bottom: 40px;
+
+  h2 {
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #666;
+    font-size: 1rem;
+  }
+}
+
+
+// .profile-info-container h2 {
+//   font-weight: 700;
+// }
+
+/* Container for splitting profile info into two columns */
+.profile-info-columns {
+  display: flex;
+  gap: 150px;         // Gap between the two columns
+  flex-wrap: wrap;
+}
+
+.profile-info-column {
+  flex: 1;           // Each column takes equal width
+}
+
+/* Styling for profile items */
+.profile-item {
+  cursor: pointer;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd; // thin grey line
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin-bottom: 30px;
+}
+
+/* Ensure paragraphs inside .profile-item always reserve space */
+.profile-item p {
+  min-height: 1.5rem; // Option 1: Set a minimum height (adjust as needed)
+}
+
+/* Option 2: Insert a non-breaking space if <p> is empty */
+/* Uncomment if desired:
+.profile-item p:empty::after {
+  content: "\00a0";
+}
+*/
+
+.profile-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Additional button and form control styles */
+.btn-black {
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.btn-black:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  border-color: #ccc !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+.form-control.is-valid:focus,
+.was-validated .form-control:valid:focus {
+  border-color: #ccc !important;
+  box-shadow: none !important;
+}

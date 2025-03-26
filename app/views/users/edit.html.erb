@@ -1,16 +1,266 @@
 <!-- app/views/users/edit.html.erb -->
-<h2>Edit Profile</h2>
-<%= simple_form_for(@user, url: update_user_profile_path, html: { multipart: true }) do |f| %>
-  <div class="form-group">
-    <%= f.input :name, label: "Full Name" %>
+<div class="profile-container" data-controller="photo">
+  <!-- Profile Picture Section -->
+  <div class="profile-pic-container">
+    <!-- Wrap image and edit button in a relatively positioned box -->
+    <div class="profile-pic-wrapper">
+      <% if @user.photo.attached? %>
+        <%= image_tag @user.photo, class: "avatar-xxl" %>
+      <% else %>
+        <%= image_tag "placeholder.png", class: "avatar-xxl" %>
+      <% end %>
+      <!-- Edit Button stays positioned over the image -->
+      <button type="button" class="edit-photo-button" data-action="click->photo#editPhoto">
+        <i class="fa-solid fa-camera" style="margin-right: 6px;"></i> Edit
+      </button>
+    </div>
+    <!-- Hidden File Input -->
+    <div class="hidden-file-input">
+      <%= simple_form_for(@user, url: update_user_profile_path, html: { multipart: true }) do |f| %>
+        <%= f.input :photo, as: :file, label: "Upload Profile Picture",
+                    input_html: { data: { "photo-target": "fileInput" } } %>
+      <% end %>
+    </div>
+    <!-- Landlord Role Form (appears visually below image) -->
+    <% if current_user.role == "landlord" %>
+      <div class="landlord-role-form">
+        <%= form_with model: @user, url: update_role_path, method: :patch, local: true do |form| %>
+          <div class="form-group">
+            <%= form.label :role, "Select Role" %>
+            <%= form.select :role, User.roles.keys.map { |role| [role.capitalize, role] }, { include_blank: false } %>
+          </div>
+          <%= form.submit "Update Role", class: "btn btn-primary" %>
+        <% end %>
+        <p>You are a landlord.</p>
+      </div>
+    <% end %>
   </div>
-  <div class="form-group">
-    <%= f.input :email, label: "Email" %>
+  <!-- Profile Info Section -->
+  <div class="profile-info-container">
+    <div class="profile-header">
+      <h2>Your Profile</h2>
+      <p>The details you share will be used across LairBnB to help fellow adventurers and hosts get to know the real you.</p>
+    </div>
+    <!-- Container for two custom columns -->
+    <div class="profile-info-columns">
+      <!-- First Column -->
+      <div class="profile-info-column">
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editNameModal">
+          <strong>👤 Full Name</strong>
+          <p class="mb-0"><%= @user.name %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTavernTalkModal">
+          <strong>🔮 About you → Tavern Talk</strong>
+          <p class="text-muted mb-0"><%= @user.tavern_talk %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editAdventuringProfessionModal">
+          <strong>🛠️ Your Adventuring Profession</strong>
+          <p class="text-muted mb-0"><%= @user.adventuring_profession %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editDreamRealmModal">
+          <strong>🌍 Your Dream Realm</strong>
+          <p class="text-muted mb-0"><%= @user.dream_realm %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editCursedHabitModal">
+          <strong>⏳ Cursed Habit</strong>
+          <p class="text-muted mb-0"><%= @user.cursed_habit %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editCompanionCreatureModal">
+          <strong>🐉 Your Companion Creature</strong>
+          <p class="text-muted mb-0"><%= @user.companion_creature %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editAgeOfOriginModal">
+          <strong>🧭 Age of Origin</strong>
+          <p class="text-muted mb-0"><%= @user.age_of_origin %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editRestingWeaponModal">
+          <strong>⚔️ Resting Weapon</strong>
+          <p class="text-muted mb-0"><%= @user.resting_weapon %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTravelStyleModal">
+          <strong>🏇 Travel Style</strong>
+          <p class="text-muted mb-0"><%= @user.travel_style %></p>
+        </div>
+        <% if current_user.landlord? %>
+          <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editInnkeepingPhilosophyModal">
+            <strong>🏰 Innkeeping Philosophy</strong>
+            <p class="text-muted mb-0"><%= @user.innkeeping_philosophy %></p>
+          </div>
+        <% end %>
+      </div>
+      <!-- Second Column -->
+      <div class="profile-info-column">
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editEmailModal">
+          <strong>✉️ Email</strong>
+          <p class="mb-0"><%= @user.email %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTrainedAtModal">
+          <strong>📜 Trained at…</strong>
+          <p class="text-muted mb-0"><%= @user.trained_at %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editUnexpectedQuirkModal">
+          <strong>🧝 Unexpected Quirk</strong>
+          <p class="text-muted mb-0"><%= @user.unexpected_quirk %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editUselessTalentModal">
+          <strong>🎭 Useless Talent</strong>
+          <p class="text-muted mb-0"><%= @user.useless_talent %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editBattleSongModal">
+          <strong>🎶 Battle Song or Lute Tune?</strong>
+          <p class="text-muted mb-0"><%= @user.battle_song %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTonguesYouSpeakModal">
+          <strong>📚 Tongues You Speak</strong>
+          <p class="text-muted mb-0"><%= @user.tongues_you_speak %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editTitleOfYourScrollModal">
+          <strong>📖 Title of Your Scroll</strong>
+          <p class="text-muted mb-0"><%= @user.title_of_your_scroll %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editEnchantedByModal">
+          <strong>✨ You’re Enchanted By…</strong>
+          <p class="text-muted mb-0"><%= @user.enchanted_by %></p>
+        </div>
+        <div class="profile-item clickable" data-bs-toggle="modal" data-bs-target="#editSleepingConditionsModal">
+          <strong>🛌 Preferred Sleeping Conditions</strong>
+          <p class="text-muted mb-0"><%= @user.sleeping_conditions %></p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.input :photo, as: :file, label: "Upload Profile Picture" %>
-  </div>
-  <div class="form-group">
-    <%= f.button :submit, "Update Profile" %>
-  </div>
-<% end %>
+</div>
+<!-- Render the modals DRY via partial calls -->
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editNameModal",
+  modal_title: "👤 What is your name?",
+  attribute: :name,
+  description: "Tell us what you’d like to be called so others can greet you properly. Example: 'Selene the Mage', 'Groln Ironfist', or 'Astrid, retired pirate.'",
+  placeholder: "Your name"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editEmailModal",
+  modal_title: "✉️ What is your email address?",
+  attribute: :email,
+  description: "Provide your email so you can receive important notifications (e.g., messages from hosts, quest confirmations, etc.).",
+  placeholder: "Your email"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTavernTalkModal",
+  modal_title: "🔮 Tavern Talk",
+  attribute: :tavern_talk,
+  description: "Spin a tale about yourself. Brag or lie—we don’t judge.",
+  placeholder: "Your tale"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editAdventuringProfessionModal",
+  modal_title: "🛠️ Your Adventuring Profession",
+  attribute: :adventuring_profession,
+  description: "Are you a mage, beast tamer, or herbalist?",
+  placeholder: "Your profession"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editDreamRealmModal",
+  modal_title: "🌍 Your Dream Realm",
+  attribute: :dream_realm,
+  description: "Where would you quest next?",
+  placeholder: "Your dream realm"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editCursedHabitModal",
+  modal_title: "⏳ Cursed Habit",
+  attribute: :cursed_habit,
+  description: "What always steals your time?",
+  placeholder: "Your cursed habit"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editCompanionCreatureModal",
+  modal_title: "🐉 Your Companion Creature",
+  attribute: :companion_creature,
+  description: "Do you travel with a direwolf, raven, or tiny slime?",
+  placeholder: "Your companion creature"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editAgeOfOriginModal",
+  modal_title: "🧭 Age of Origin",
+  attribute: :age_of_origin,
+  description: "Born in the Age of Fire? The Crystal Era?",
+  placeholder: "Your age of origin"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTrainedAtModal",
+  modal_title: "📜 Trained at…",
+  attribute: :trained_at,
+  description: "Did you study at Arcane Academy or the Orcish Warcamp?",
+  placeholder: "Where you trained"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editUnexpectedQuirkModal",
+  modal_title: "🧝 Unexpected Quirk",
+  attribute: :unexpected_quirk,
+  description: "Reveal something strange or fun.",
+  placeholder: "Your unexpected quirk"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editUselessTalentModal",
+  modal_title: "🎭 Useless Talent",
+  attribute: :useless_talent,
+  description: "Perfect at whistling in 4 octaves?",
+  placeholder: "Your useless talent"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editBattleSongModal",
+  modal_title: "🎶 Battle Song or Lute Tune?",
+  attribute: :battle_song,
+  description: "A bard’s ballad that stuck with you?",
+  placeholder: "Your battle song"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTonguesYouSpeakModal",
+  modal_title: "📚 Tongues You Speak",
+  attribute: :tongues_you_speak,
+  description: "Elvish, Goblin, or Forgotten Runes?",
+  placeholder: "The languages you speak"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTitleOfYourScrollModal",
+  modal_title: "📖 Title of Your Scroll",
+  attribute: :title_of_your_scroll,
+  description: "What would your life story be called?",
+  placeholder: "Your scroll title"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editEnchantedByModal",
+  modal_title: "✨ You’re Enchanted By…",
+  attribute: :enchanted_by,
+  description: "What fascinates or compels you?",
+  placeholder: "What enchants you?"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editSleepingConditionsModal",
+  modal_title: "🛌 Preferred Sleeping Conditions",
+  attribute: :sleeping_conditions,
+  description: "Moss beds, floating hammocks, or stone slabs?",
+  placeholder: "Your sleeping conditions"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editRestingWeaponModal",
+  modal_title: "⚔️ Resting Weapon",
+  attribute: :resting_weapon,
+  description: "What weapon do you keep under your pillow?",
+  placeholder: "Your resting weapon"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editTravelStyleModal",
+  modal_title: "🏇 Travel Style",
+  attribute: :travel_style,
+  description: "Wyverns, portals, or walking the old paths?",
+  placeholder: "Your travel style"
+} %>
+<%= render partial: "profile_modal", locals: {
+  modal_id: "editInnkeepingPhilosophyModal",
+  modal_title: "🏰 Innkeeping Philosophy",
+  attribute: :innkeeping_philosophy,
+  description: "What makes your lair a perfect sanctuary?",
+  placeholder: "Your innkeeping philosophy"
+} %>

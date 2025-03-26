@@ -44,6 +44,27 @@ class UsersController < ApplicationController
 
   # Strong parameters to allow specific attributes
   def user_params
-    params.require(:user).permit(:role, :name, :email, :photo)  # Ensure :photo is permitted for file upload
+    params.require(:user).permit(
+      :name,
+      :email,
+      :photo,
+      :tavern_talk,
+      :adventuring_profession,
+      :dream_realm,
+      :cursed_habit,
+      :companion_creature,
+      :age_of_origin,
+      :trained_at,
+      :unexpected_quirk,
+      :useless_talent,
+      :battle_song,
+      :tongues_you_speak,
+      :title_of_your_scroll,
+      :enchanted_by,
+      :sleeping_conditions,
+      :resting_weapon,
+      :travel_style,
+      :innkeeping_philosophy
+    )
   end
 end

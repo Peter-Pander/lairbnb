@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_08_130228) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_25_233914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "vector"
@@ -83,6 +83,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_08_130228) do
     t.bigint "flat_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "conversation_id"
     t.index ["flat_id"], name: "index_messages_on_flat_id"
     t.index ["receiver_id"], name: "index_messages_on_receiver_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
@@ -250,6 +251,23 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_08_130228) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "role", default: 0, null: false
+    t.text "tavern_talk"
+    t.string "adventuring_profession"
+    t.string "dream_realm"
+    t.string "cursed_habit"
+    t.string "companion_creature"
+    t.string "age_of_origin"
+    t.string "trained_at"
+    t.text "unexpected_quirk"
+    t.string "useless_talent"
+    t.string "battle_song"
+    t.string "tongues_you_speak"
+    t.string "title_of_your_scroll"
+    t.string "enchanted_by"
+    t.string "sleeping_conditions"
+    t.string "resting_weapon"
+    t.string "travel_style"
+    t.text "innkeeping_philosophy"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
