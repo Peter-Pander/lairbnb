@@ -12,10 +12,12 @@
     <hr class="thin-line0">
     <!-- Landlord picture and name -->
     <% if @user.photo.attached? %>
-      <div class="landlord-info">
-        <%= image_tag @user.photo, class: 'landlord-image' %>
-        <p>Hosted by <%= @user.name %></p>
-      </div>
+      <%= link_to user_path(@user), class: "no-decoration" do %>
+        <div class="landlord-info">
+          <%= image_tag @user.photo, class: 'landlord-image' %>
+          <p>Hosted by <%= @user.name %></p>
+        </div>
+      <% end %>
     <% end %>
     <hr class="thin-line0">
     <!-- What this place offers section -->
@@ -99,5 +101,3 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-<!-- Message the landlord -->
-<%= link_to "Message the landlord", new_flat_message_path(@flat), class: "btn btn-primary" %>

@@ -43,6 +43,11 @@
   margin-right: 15px; /* Creates space between the image and the text */
 }
 
+.no-decoration {
+  text-decoration: none;
+  color: inherit; /* Keeps the existing text color */
+}
+
 /* Thin line separator */
 .thin-line0 {
   border: none;

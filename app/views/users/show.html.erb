@@ -12,7 +12,7 @@
       </div>
       <!-- Right Column: Badges -->
       <div class="lairbnb-badges">
-        <% if current_user.landlord? %>
+        <% if @user.landlord? %>
           <div class="badge-item">🌟 Trusted Host</div>
           <div class="badge-item">🧭 Realm Guide</div>
           <div class="badge-item">📜 Lorekeeper</div>
@@ -30,18 +30,15 @@
       <p>🧩 Runes of communication aligned</p>
       <p>💎 Crystal signal attuned</p>
     </div>
+    <div class="contact-landlord-container">
+      <!-- Message the landlord -->
+      <%= link_to "Message #{ @user.name.split.first.chomp(',') }", new_flat_message_path(@user.flats.first), class: "message-landlord-btn" %>
+    </div>
   </div>
   <!-- Right Column -->
   <div class="profile-right-column">
     <div class="user-lore-card">
       <h1>About <%= @user.name.split.first.chomp(',') %></h1>
-      <!-- Buttons -->
-      <div class="profile-actions">
-        <%= link_to "Edit Profile", edit_user_profile_path, class: "btn btn-primary me-2" %>
-        <% if current_user.landlord? %>
-          <%= link_to 'View messages for my lair', flat_messages_path(flat_id: @flat.id), class: "btn btn-secondary" %>
-        <% end %>
-      </div>
       <!-- User Lore Info -->
       <div class="lore-columns">
         <p><strong>🔮 Tavern Talk:</strong> <%= @user.tavern_talk %></p>

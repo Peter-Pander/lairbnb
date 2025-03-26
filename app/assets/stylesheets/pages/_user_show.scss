@@ -1,0 +1,19 @@
+.contact-landlord-container {
+  margin-top: 40px;
+}
+
+.message-landlord-btn {
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  font-weight: 600;
+  padding: 10px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f0f0f0; // light grey on hover
+    color: black; // stays black
+  }
+}
