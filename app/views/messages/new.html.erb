@@ -1,5 +1,5 @@
 <div class="container chat">
-  <h1>Chat with <%= @flat.user.name %></h1>
+  <h1>Message <%= @flat.user.name.split.first.chomp(',') %></h1>
   <div id="messages" class="messages">
     <% @messages.each do |message| %>
       <div id="message-<%= message.id %>" class="message <%= message.sender == current_user ? 'sent' : 'received' %>">
