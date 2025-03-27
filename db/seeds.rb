@@ -120,6 +120,7 @@ lairs_data.each do |lair_data|
     address: lair_data["address"],
     price_per_night: lair_data["price_per_night"],
     amenities: lair_data["amenities"],
+    tagline: lair_data["tagline"],
     user: landlord # Assign correct landlord
   )
 

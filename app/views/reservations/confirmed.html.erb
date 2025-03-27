@@ -2,6 +2,7 @@
   <h1>Your reservation is confirmed</h1>
   <p>You're going to <%= @reservation.flat.address.split(',').first %> (<%= @reservation.flat.name%>) </p>
   <%= image_tag @reservation.flat.photo, class: "reservation-flat-image" if @reservation.flat.photo.attached? %>
+  <%= @reservation.flat.tagline%>
   <p><strong>Check-in:</strong> <%= @reservation.start_datetime.strftime("%B %d, %Y") %></p>
   <p><strong>Check-out:</strong> <%= @reservation.end_datetime.strftime("%B %d, %Y") %></p>
 </div>
