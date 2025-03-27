@@ -15,3 +15,26 @@
   object-fit: cover;     // Ensures it fills the box without stretching
   border-radius: 12px;
 }
+
+.reservation-host-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 1rem;
+}
+
+.host-text {
+  flex: 1;
+}
+
+.host-image {
+  width: 120px; // Adjust the size as needed
+
+  .host-photo {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
