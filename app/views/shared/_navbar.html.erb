@@ -3,9 +3,15 @@
     <%= link_to flats_path, class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/dadymzua9/image/upload/v1/logo_zysezj" %>
     <% end %>
-    <% if controller_name == "messages" && action_name == "new" && @flat.present? && @flat.user.photo.attached? %>
-      <%= link_to user_path(@flat.user), class: "navbar-brand-big" do %>
-        <%= image_tag @flat.user.photo, alt: "Landlord Profile Picture" %>
+    <% if (controller_name == "messages" && action_name == "new" && @flat.present? && @flat.user.photo.attached?) || (controller_name == "reservations" && action_name == "confirmed" && @reservation.flat.present? && @reservation.flat.user.photo.attached?) %>
+      <% if controller_name == "messages" && action_name == "new" %>
+        <%= link_to user_path(@flat.user), class: "navbar-brand-big" do %>
+          <%= image_tag @flat.user.photo, alt: "Landlord Profile Picture" %>
+        <% end %>
+      <% elsif controller_name == "reservations" && action_name == "confirmed" %>
+        <%= link_to user_path(@reservation.flat.user), class: "navbar-brand-big" do %>
+          <%= image_tag @reservation.flat.user.photo, alt: "Landlord Profile Picture" %>
+        <% end %>
       <% end %>
     <% else %>
       <%= link_to questions_path, class: "navbar-brand-big" do %>
