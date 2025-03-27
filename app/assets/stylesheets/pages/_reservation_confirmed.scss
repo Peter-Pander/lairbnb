@@ -61,3 +61,18 @@
 .check-out {
   padding-left: 165px;
 }
+
+.guest-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  padding-right: 520px;
+  margin-bottom: 20px;
+
+  p {
+    margin: 0;  // Remove default paragraph margin
+    line-height: 1.4;
+  }
+}
