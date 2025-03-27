@@ -1,5 +1,5 @@
 <div class="container chat">
-  <h1>Chat with <%= @flat.user.name %></h1>
+  <h1>Message <%= @flat.user.name.split.first.chomp(',') %></h1>
   <div id="messages" class="messages">
     <% @messages.each do |message| %>
       <div id="message-<%= message.id %>" class="message <%= message.sender == current_user ? 'sent' : 'received' %>">
@@ -11,11 +11,11 @@
       </div>
     <% end %>
   </div>
-  <%= simple_form_for [@flat, @message], local: true, html: {class: "d-flex"}, wrapper_html: {class: "flex-grow-1"} do |f| %>
+  <%= simple_form_for [@flat, @message], local: true, html: { class: "message-form" } do |f| %>
     <%= f.hidden_field :recipient_id, value: @landlord.id %>
-    <div class="message-input-container flex-grow-1">
-      <%= f.text_area :content, placeholder: "Type a message...", class: "flex-grow-1" %>
-      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <div class="message-input-container">
+      <%= f.text_area :content, placeholder: "Type a message..." %>
+      <%= f.submit "Send message", class: "send-message-btn" %>
     </div>
   <% end %>
 </div>

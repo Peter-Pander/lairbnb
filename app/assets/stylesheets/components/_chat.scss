@@ -1,4 +1,3 @@
-// app/assets/stylesheets/components/_chat.scss
 .chat {
   background: white;
   margin-top: 9px;
@@ -18,15 +17,6 @@
     height: 100%;
     overflow: scroll;
     padding: 1rem;
-  }
-
-  #new_message {
-    border-top: 1px solid $gray-200;
-    padding: 1rem;
-
-    .form-group {
-      margin-bottom: 0;
-    }
   }
 
   .message {
@@ -62,4 +52,34 @@
     background: $gray-200;
   }
 
+  .message-form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    width: 100%;
+  }
+
+  .message-input-container {
+    display: flex;
+    flex-direction: column; /* Text area above the button */
+    gap: 10px;              /* Space between input & button */
+  }
+
+  .send-message-btn {
+    background-color: #222;  /* Almost black */
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    cursor: pointer;         /* Pointer cursor on hover */
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #000; /* Fully black on hover */
+    }
+  }
 }
