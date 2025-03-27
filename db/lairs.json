@@ -7,7 +7,7 @@
     "price_per_night": 75,
     "amenities": "Wi-Fi 🌐, Dragon's Roar Fireplace 🔥, Treasure Chest 💰, Mountain View 🏞️, Dragon's Wing Hammocks 🦖, Volcanic Spring Hot Tub ♨️, Stone Carving Studio 🛠️, Fireproof Walls 🔥🧱, Mountain Echo Sound System 🎶, Dragon Rider's Stables 🐴, Hoard of Gold 🏅, Scales of Power Ritual Area ⚡, Roaring Waterfall 🌊, Cloud Gazing Deck ☁️, High Altitude Lounge 🛋️",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/dragonsden237_krf9v1.jpg",
-    "tagline": "Starcrowned Sanctum – Dragon-safe, Orb-locked Entry"
+    "tagline": "Fireproof Retreat. Dragon-Warded. Smooth Flight Access."
   },
   {
     "name": "Elven Treehouse",
@@ -17,7 +17,7 @@
     "price_per_night": 120,
     "amenities": "Wi-Fi 🌐, Healing Waters 💧, Elven Magic ✨, Forest View 🌳, Moonlit Glade 🌙, Enchanted Tree Swing 🌲, Sacred Herb Garden 🌱, Elven Craftsmanship Workshop 🪓, Starlight Weaver's Loom 🪡, Moss-Covered Meditation Spots 🧘, Spirit of the Forest Incense 🌿, Ancient Oak Throne 🪑, Elven Lyre Music 🎶, Crystal Clear Spring 💧, Celestial Dome Viewing 🌌, Elven Storytelling Circle 📖",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Elven_Treehouse_kgs03p.jpg",
-    "tagline": "The Emberkeep – Warded and Welcoming. Whisper-lock entry."
+    "tagline": "Tree-Top Escape. Healing Waters. Starlit Nights."
   },
   {
     "name": "Wizard's Tower",
@@ -27,7 +27,7 @@
     "price_per_night": 95,
     "amenities": "Wi-Fi 🌐, Potion Brewing Kit 🧪, Magical Artifacts 🧙‍♂️, Stargazing Platform 🔭, Crystal Ball Observation 🔮, Alchemical Lab 🧬, Arcane Energy Converter ⚡, Spellbook Library 📚, Enchanted Mirror 🪞, Wizard's Familiar Suite 🐈, Astral Projection Viewing Room 🌠, Floating Candles 🕯️, Dragonfly Wing Enchantment 🦋, Elemental Runes 🔮, Thunderstorm Viewing Area 🌩️",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/wizardstower3234_eupz68.jpg",
-    "tagline": "Moonshade Hollow – Self-spelling Entry, No Summoning Stones Needed"
+    "tagline": "Clifftop Study. Familiar-Friendly. No Passphrase Needed."
   },
   {
     "name": "Goblin Hideout",
@@ -37,7 +37,7 @@
     "price_per_night": 250,
     "amenities": "Wi-Fi 🌐, Goblin's Forge 🔨, Hidden Treasures 🗝️, Secret Tunnel 🚪, Smuggler's Passage ⚓, Underground Dining Hall 🍽️, Goblin Tinkerer's Workshop ⚙️, Poisoned Dart Practice Room ☠️, Explosive Ingredient Storage 💥, Gold and Gemstone Vault 💎, Ancient Mine Cart Tracks 🚂, Goblin Minstrels 🎶, Cursed Chalice Bar 🍷, Shadow Cloak Stash 🖤, Underground Fire Pit 🔥, Goblin Shadow Projection Room 👹",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Goblin_Hideout2_oh5myx.jpg",
-    "tagline": "The Grotto of Greed – Cursed Key Optional. Hoard Protected."
+    "tagline": "Tunnel Check-In. Minstrel Nights. Chalice Bar Open Late."
   },
   {
     "name": "Dwarven Stronghold",
@@ -47,7 +47,7 @@
     "price_per_night": 110,
     "amenities": "Wi-Fi 🌐, Smithy ⚒️, Mead Hall 🍺, Gemstone Vault 💎, Forge Room 🔥, Dwarven Ale Brewery 🍻, Hammerfall Arena ⚔️, Weapon Crafting Studio 🛠️, Ancient Mine Lair 🏞️, Lava Forge 🌋, Hearthstone Room 🔥, Rune Inscribed Walls ✍️, Dwarven Shield Rack 🛡️, Cold Iron Forge 🔨, Tunnel Access to Hidden Vaults ⛏️, Stone-Engraved Maps 🗺️, Earthquake Safe Chamber 🌍",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Dwarven_Stronghold_wxz6ay.jpg",
-    "tagline": "Stonehearth Bastion – Forge-Warmth and Ale-Ready"
+    "tagline": "Stone-Crafted Stay. Forge-Warmth and Ale-Ready"
   },
   {
     "name": "Mermaid's Cove",
@@ -57,7 +57,7 @@
     "price_per_night": 180,
     "amenities": "Wi-Fi 🌐, Coral Reef Viewing 🌊, Sunken Treasure Chest 💰, Underwater Lounge 🐠, Seaweed Wrap Spa 🧖‍♀️, Pearl Diving Area 💎, Mermaid’s Tail Fitting 🧜‍♀️, Luminescent Jellyfish Lamps 🪼, Dolphin Communication Station 🐬, Ocean Echo Sound System 🎶, Water Breathing Charm Station ✨, Seashell Craft Workshop 🐚, Ocean Current Transportation 🌊, Coral Garden Meditation 🪸, Moonlit Surface Deck 🌙",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Mermaid_cove_etgnmy.jpg",
-    "tagline": "Seashell Sanctuary – No Fins Required. Salt-Kissed Comfort."
+    "tagline": "Undersea Getaway. Pearl Diving Nearby. Smooth Currents In."
   },
   {
     "name": "Centaur Meadow Lodge",
@@ -67,7 +67,7 @@
     "price_per_night": 105,
     "amenities": "Wi-Fi 🌐, Spacious Pastures 🏞️, Archery Range 🏹, Herbal Healing Station 🌿, Hoof Care Spa 🐴, Open Air Dining Pavilion 🍽️, Star Gazing Meadow 🌌, Organic Vineyard 🍇, Centaur Library 📚, Fire Circle Gathering Area 🔥, Nature Trails 🌳, Herbalism Workshop 🧴, Meadow Yoga Sessions 🧘, Creekside Hammocks 🏖️, Leatherworking Studio 🪡",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Centaur_Meadow_Lodge_rdzzjj.jpg",
-    "tagline": "Pastoral Refuge – Hooves Welcome, Stars Included."
+    "tagline": " Countryside Escape. Star Meadow Nights. Archery Nearby. "
   },
   {
     "name": "Vampire Chateau",
@@ -77,7 +77,7 @@
     "price_per_night": 200,
     "amenities": "Wi-Fi 🌐, Gothic Library 📚, Blood Moon Viewing Balcony 🌕, Secret Passageways 🗝️, Velvet-Draped Chambers 🛌, Shadow Dance Hall 💃, Crypt Spa ⚰️, Wine (Blood Red) Cellar 🍷, Enchanted Mirror Room 🪞, Bat Sanctuary 🦇, Eternal Flame Fireplace 🔥, Nightshade Herb Garden 🌿, Candlelit Dinners 🕯️, Moonlight Sonata Room 🎹, Misty Gardens 🌫️",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Vampire_Chateau_neppv8.jpg",
-    "tagline": "Twilight Refuge – Velvet-Draped, Fang-Approved"
+    "tagline": "Nocturnal Retreat. Misty Gardens. Crypt Spa Below."
   },
   {
     "name": "Fairy Glade Cottage",
@@ -87,7 +87,7 @@
     "price_per_night": 95,
     "amenities": "Wi-Fi 🌐, Fairy Ring Meditation Circle 🍄, Butterfly Sanctuary 🦋, Enchanted Lantern Pathways 🏮, Pixie Dust Crafting ✨, Meadow-view Porch 🌸, Forest Tea Garden ☕, Floral Arrangement Studio 💐, Birdsong Wake-Up Call 🐦, Babbling Brook Jacuzzi 💧, Honey Harvesting Station 🍯, Twilight Firefly Viewing 🌠, Miniature Herbal Apothecary 🌱, Secret Garden Library 📖, Gentle Stream Hammocks 🛌",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Fairy_Glade_Cottage_yytiu5.jpg",
-    "tagline": "Whimsy Rest – Fireflies Lit, Wings Unclipped"
+    "tagline": "Enchanted Woodland Retreat. Tea Garden Ready. Lantern-Lit Entry."
   },
   {
     "name": "Phoenix Roost Villa",
@@ -97,7 +97,7 @@
     "price_per_night": 170,
     "amenities": "Wi-Fi 🌐, Flame-lit Terraces 🔥, Sun Meditation Chamber 🌞, Ash and Ember Spa ♨️, Phoenix Feather Workshop 🪶, Solar-Powered Gardens 🌵, Desert View Lounge 🌅, Rebirth Ritual Pavilion 🔥✨, Sunset Observation Deck 🌄, Heated Stone Floors 🪨, Herbal Tea Sanctuary 🍵, Crystal Energy Room 💎, Guided Star Tours 🌠, Flame Retardant Chambers 🧯, Sunrise Yoga Patio 🧘‍♀️",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Phoenix_Roost_Villa_l4jydi.jpg",
-    "tagline": "Ashrise Villa – Ember-Cleansed and Reborn Ready"
+    "tagline": "Sunlit Sanctuary Stay. Crystal Calm. Ember Spa Ready. "
   },
   {
     "name": "Frostborn Citadel",
@@ -107,7 +107,7 @@
     "price_per_night": 150,
     "amenities": "Wi-Fi 🌐, Ice Throne Room ❄️, Eternal Bonfire Hall 🔥, Northern Lights Viewing Platform 🌌, Frost-Forged Blacksmithing ⚒️, Crystal Ice Caverns ⛏️, Yeti-Guarded Perimeter 🐻‍❄️, Glacier Spa ♨️, Rune-Inscribed Walls ✍️, Enchanted Fur Cloak Wardrobe 🦺, Arctic Wolf Companions 🐺, Frozen Mead Hall 🍻, Blizzard Meditation Chamber 🌨️, Ice Skating Arena ⛸️, Snowstorm Resistance Runes ❄️",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Frostborn_Citadel_kljorl.jpg",
-    "tagline": "Glacierbound Hall – Chill-Proof and Snow-Sealed"
+    "tagline": "Arctic-View Stronghold. Chill-Proof and Snow-Sealed"
   },
   {
     "name": "Celestial Monastery",
@@ -117,7 +117,7 @@
     "price_per_night": 140,
     "amenities": "Wi-Fi 🌐, Floating Meditation Platform 🧘‍♂️, Celestial Tea Garden 🍵, Echoing Prayer Chamber 🏯, Mystic Dragon Shrine 🐉, Whispering Wind Balconies 🌬️, Enchanted Lotus Pond 🌸, Scroll-Lined Study Hall 📜, Elemental Harmony Training Room ☯️, Cloud-Walking Ritual Circle ☁️, Moonlit Reflection Garden 🌙, Harmonized Gong Room 🎶, Sacred Fire Pit 🔥, Guardian Spirit Watchtower 👁️",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Celestial_Monastery_dmeg4z.jpg",
-    "tagline": "Skyward Haven – Petal-Floated, Gong-Harmonized"
+    "tagline": "Cloud-Top Retreat. Lantern-Lit Arrival. Stars Above, Silence Within."
   },
   {
     "name": "Feywild Hollow",
@@ -127,7 +127,7 @@
     "price_per_night": 125,
     "amenities": "Wi-Fi 🌐, Fairy Ring Meditation Circle 🍄, Trickster’s Puzzle Chamber 🎭, Moonlit Fairy Glade 🌙, Spirit Fox Companion 🦊, Dreamcatcher Weaving Workshop 🪢, Talking Trees Grove 🌳, Crystal-Crowned Waterfall 💎, Enchanted Fireflies Light Show ✨, Glimmering Toadstool Lounge 🍄, Whispering Willows Pathway 🍃, Pixie Dust Infusion Bath 🛁, Midsummer Night’s Banquet 🏰, Fae-Charmed Mirror Maze 🪞",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Feywild_Hollow_suiaww.jpg",
-    "tagline": "Moontraced Grove – Trickster-Tested, Dream-Fused"
+    "tagline": "Magic-Soaked Retreat. Trickster-Tested. Fireflies On Cue. "
   },
   {
     "name": "Sylvanwood Enclave",
@@ -137,7 +137,7 @@
     "price_per_night": 135,
     "amenities": "Wi-Fi 🌐, Canopy Meditation Chambers 🍃, Bioluminescent Fungi Pathways ✨, Whispering Tree Council 🌲, Sacred Waterfall Sanctuary 🌊, Spirit Fox Companions 🦊, Herbal Alchemy Workshop 🌿, Enchanted Vine Hammocks 🏕️, Mystic Birdsong Alarm Clock 🐦, Forest-Tuned String Instruments 🎻, Ancient Totem Guardian Rituals 🛕, Firefly-Illuminated Dining Hall 🕯️, Moonlit Druidic Circle 🌙",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Sylvanwood_Enclave_md3c2b.jpg",
-    "tagline": "Wanderer’s Nook – No cursed keys. Spirit-secured."
+    "tagline": "Rainforest Refuge. Bioluminescent Pathways. Druid-Certified Calm."
   },
   {
     "name": "Astral Observatory",
@@ -147,6 +147,6 @@
     "price_per_night": 180,
     "amenities": "Wi-Fi 🌐, Telescope Array 🔭, Cosmic Meditation Chamber 🌌, Time-Dilation Observatory ⏳, Floating Stargazing Platforms ☄️, Meteorite Display Vault 🪐, Celestial Library of Forgotten Stars 📖, Orbital Viewing Deck 🌠, Planetarium Projection Dome 🎥, Space-Tuned Harmonic Resonator 🎼, Gravity-Defying Lounge Area 🛋️, Nightfall Solar Alignment Ritual 🌞, Aurora Forecasting Balcony 🌆",
     "image_url": "https://res.cloudinary.com/dadymzua9/image/upload/v1/Astral_Observatory_rqjqlr.jpg",
-    "tagline": "Stargazer’s Retreat – Orb-locked and Constellation-Certified"
+    "tagline": "Observatory Above the Clouds. Floating Platform Ready. Stars Within Reach. Meteor Showers Expected."
   }
 ]
