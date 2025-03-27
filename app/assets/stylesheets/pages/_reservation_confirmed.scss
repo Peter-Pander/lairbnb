@@ -1,0 +1,128 @@
+.confirmed-reservation-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirmed-reservation-container h1 {
+  font-weight: 600;
+}
+
+.ikisaki {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.reservation-flat-image {
+  width: 580px;
+  height: 580px;
+  object-fit: cover;     // Ensures it fills the box without stretching
+  border-radius: 12px;
+}
+
+.reservation-host-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 580px;
+  max-width: 580px;
+  gap: 20px;
+  padding-top: 15px;
+  padding-right: 5px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc; /* Thin grey line */
+}
+
+.host-text {
+  flex: 1;
+}
+
+.tagline {
+  font-size: 17.5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.host-image {
+  width: 120px; // Adjust the size as needed
+  margin-top: 5px;
+  padding-left: 20px;
+
+  .host-photo {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(224, 223, 222, 0.6);
+  }
+}
+
+.reservation-dates {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+
+  .check-in,
+  .check-out {
+    width: auto; // Let it size based on content
+    min-width: 290px;
+    max-width: 400px;
+    p {
+      margin: 5px 0;
+    }
+  }
+}
+
+.check-out {
+  padding-left: 165px;
+}
+
+.guest-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  padding-right: 520px;
+  margin-bottom: 20px;
+
+  p {
+    margin: 0;  // Remove default paragraph margin
+    line-height: 1.4;
+  }
+}
+
+.amount-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  min-width: 575px;
+  max-width: 575px;
+  padding-right: 490px;
+  margin-bottom: 20px;
+
+  p {
+    margin: 0;  // Remove default paragraph margin
+    line-height: 1.4;
+  }
+}
+
+.reservation-code {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  padding-right: 440px;
+  margin-bottom: 20px;
+
+  p {
+    margin: 0;  // Remove default paragraph margin
+    line-height: 1.4;
+  }
+}

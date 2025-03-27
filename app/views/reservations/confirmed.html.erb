@@ -1,5 +1,46 @@
-<h1>Reservation Confirmed! 🎉</h1>
-<p>Your deal has been made successfully.</p>
-<p><strong>Flat:</strong> <%= @reservation.flat.name %></p>
-<p><strong>Check-in:</strong> <%= @reservation.start_datetime.strftime("%B %d, %Y") %></p>
-<p><strong>Check-out:</strong> <%= @reservation.end_datetime.strftime("%B %d, %Y") %></p>
+<div class="confirmed-reservation-container">
+  <h1>Your reservation is confirmed</h1>
+  <p class="ikisaki">You're going to <%= @reservation.flat.address.split(',').first %> (<%= @reservation.flat.name%>) </p>
+  <%= image_tag @reservation.flat.photo, class: "reservation-flat-image" if @reservation.flat.photo.attached? %>
+  <div class="reservation-host-info">
+    <div class="host-text">
+      <p class="tagline"><%= @reservation.flat.tagline %></p>
+      <p>Entire lair hosted by <%= @reservation.flat.user.name %></p>
+    </div>
+    <div class="host-image">
+      <%= link_to user_path(@reservation.flat.user) do %>
+        <% if @reservation.flat.user.photo.attached? %>
+          <%= image_tag @reservation.flat.user.photo, class: "host-photo", alt: "Landlord Profile Picture" %>
+        <% else %>
+          <%= image_tag "default-profile.png", class: "host-photo", alt: "Default Profile Picture" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="reservation-dates">
+    <!-- Check-in Details -->
+    <div class="check-in">
+      <p><strong><%= @reservation.start_datetime.strftime("%A") %></strong></p>
+      <p><%= @reservation.start_datetime.strftime("%b %d, %Y") %></p>
+      <p>Check in anytime after 2PM</p>
+    </div>
+    <!-- Check-out Details -->
+    <div class="check-out">
+      <p><strong><%= @reservation.end_datetime.strftime("%A") %></strong></p>
+      <p><%= @reservation.end_datetime.strftime("%b %d, %Y") %></p>
+      <p>Check out 11AM</p>
+    </div>
+  </div>
+  <div class="guest-info">
+    <p>Guests</p>
+    <p><%= @reservation.guests %></p>
+  </div>
+  <div class="amount-info">
+    <p>Amount</p>
+    <p><%= number_to_currency(@reservation.total_price, unit: "gold", precision: 0, format: "%n %u") %></p>
+  </div>
+  <div class="reservation-code">
+    <p>Reservation Code</p>
+    <p><%= @reservation.reservation_code %></p>
+  </div>
+</div>
