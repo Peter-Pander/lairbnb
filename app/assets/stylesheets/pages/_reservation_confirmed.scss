@@ -22,6 +22,7 @@
   justify-content: space-between;
   gap: 20px;
   padding: 1rem;
+  border-bottom: 1px solid #ccc; /* Thin grey line */
 }
 
 .host-text {
@@ -36,5 +37,27 @@
     height: auto;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 8px 24px rgba(224, 223, 222, 0.6);
   }
+}
+
+.reservation-dates {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+
+  .check-in,
+  .check-out {
+    width: auto; // Let it size based on content
+    min-width: 285px;
+    max-width: 400px;
+    p {
+      margin: 5px 0;
+    }
+  }
+}
+
+.check-out {
+  padding-left: 165px;
 }

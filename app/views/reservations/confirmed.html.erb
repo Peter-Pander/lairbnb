@@ -13,6 +13,18 @@
       <% end %>
     </div>
   </div>
-  <p><strong>Check-in:</strong> <%= @reservation.start_datetime.strftime("%B %d, %Y") %></p>
-  <p><strong>Check-out:</strong> <%= @reservation.end_datetime.strftime("%B %d, %Y") %></p>
+  <div class="reservation-dates">
+    <!-- Check-in Details -->
+    <div class="check-in">
+      <p><strong><%= @reservation.start_datetime.strftime("%A") %></strong></p>
+      <p><%= @reservation.start_datetime.strftime("%b %d, %Y") %></p>
+      <p>Check in anytime after 2PM</p>
+    </div>
+    <!-- Check-out Details -->
+    <div class="check-out">
+      <p><strong><%= @reservation.end_datetime.strftime("%A") %></strong></p>
+      <p><%= @reservation.end_datetime.strftime("%b %d, %Y") %></p>
+      <p>Check out 11AM</p>
+    </div>
+  </div>
 </div>
