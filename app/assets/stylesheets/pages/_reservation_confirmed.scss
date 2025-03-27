@@ -91,3 +91,17 @@
     line-height: 1.4;
   }
 }
+
+.reservation-code {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  padding-right: 440px;
+  margin-bottom: 20px;
+
+  p {
+    margin: 0;  // Remove default paragraph margin
+    line-height: 1.4;
+  }
+}

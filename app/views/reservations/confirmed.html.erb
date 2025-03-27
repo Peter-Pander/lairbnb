@@ -39,4 +39,8 @@
     <p>Amount</p>
     <p><%= number_to_currency(@reservation.total_price, unit: "gold", precision: 0, format: "%n %u") %></p>
   </div>
+  <div class="reservation-code">
+    <p>Reservation Code</p>
+    <p><%= @reservation.reservation_code %></p>
+  </div>
 </div>

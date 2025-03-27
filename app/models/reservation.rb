@@ -8,8 +8,14 @@ class Reservation < ApplicationRecord
   validates :start_datetime, :end_datetime, :guests, presence: true
   validate :end_after_start
 
+  before_create :set_reservation_code
+
   def total_price
     calculate_total_price
+  end
+
+  def reservation_code
+    read_attribute(:reservation_code)
   end
 
   private
@@ -26,5 +32,10 @@ class Reservation < ApplicationRecord
   def calculate_total_price
     nights = (end_datetime.to_date - start_datetime.to_date).to_i
     nights * flat.price_per_night * guests
+  end
+
+  def set_reservation_code
+    # Only set if it's not already present
+    self.reservation_code ||= SecureRandom.alphanumeric(7).upcase
   end
 end
