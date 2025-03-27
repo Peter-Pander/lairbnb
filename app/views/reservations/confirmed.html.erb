@@ -1,10 +1,10 @@
 <div class="confirmed-reservation-container">
   <h1>Your reservation is confirmed</h1>
-  <p>You're going to <%= @reservation.flat.address.split(',').first %> (<%= @reservation.flat.name%>) </p>
+  <p class="ikisaki">You're going to <%= @reservation.flat.address.split(',').first %> (<%= @reservation.flat.name%>) </p>
   <%= image_tag @reservation.flat.photo, class: "reservation-flat-image" if @reservation.flat.photo.attached? %>
   <div class="reservation-host-info">
     <div class="host-text">
-      <%= @reservation.flat.tagline %>
+      <p class="tagline"><%= @reservation.flat.tagline %></p>
       <p>Entire lair hosted by <%= @reservation.flat.user.name %></p>
     </div>
     <div class="host-image">
