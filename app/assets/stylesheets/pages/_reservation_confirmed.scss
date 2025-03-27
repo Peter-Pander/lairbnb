@@ -1,0 +1,17 @@
+.confirmed-reservation-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirmed-reservation-container h1 {
+  font-weight: 600;
+}
+
+.reservation-flat-image {
+  width: 550px;
+  height: 550px;
+  object-fit: cover;     // Ensures it fills the box without stretching
+  border-radius: 12px;
+}

@@ -1,5 +1,7 @@
-<h1>Reservation Confirmed! 🎉</h1>
-<p>Your deal has been made successfully.</p>
-<p><strong>Flat:</strong> <%= @reservation.flat.name %></p>
-<p><strong>Check-in:</strong> <%= @reservation.start_datetime.strftime("%B %d, %Y") %></p>
-<p><strong>Check-out:</strong> <%= @reservation.end_datetime.strftime("%B %d, %Y") %></p>
+<div class="confirmed-reservation-container">
+  <h1>Your reservation is confirmed</h1>
+  <p>You're going to <%= @reservation.flat.address.split(',').first %> (<%= @reservation.flat.name%>) </p>
+  <%= image_tag @reservation.flat.photo, class: "reservation-flat-image" if @reservation.flat.photo.attached? %>
+  <p><strong>Check-in:</strong> <%= @reservation.start_datetime.strftime("%B %d, %Y") %></p>
+  <p><strong>Check-out:</strong> <%= @reservation.end_datetime.strftime("%B %d, %Y") %></p>
+</div>
