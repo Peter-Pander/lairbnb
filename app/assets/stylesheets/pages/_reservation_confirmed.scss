@@ -25,6 +25,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 580px;
+  max-width: 580px;
   gap: 20px;
   padding-top: 15px;
   padding-right: 5px;
@@ -100,7 +102,9 @@
   align-items: flex-start;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
-  padding-right: 510px;
+  min-width: 575px;
+  max-width: 575px;
+  padding-right: 490px;
   margin-bottom: 20px;
 
   p {
