@@ -8,8 +8,12 @@
       <p>Entire lair hosted by <%= @reservation.flat.user.name %></p>
     </div>
     <div class="host-image">
-      <% if @reservation.flat.user.photo.attached? %>
-        <%= image_tag @reservation.flat.user.photo, class: "host-photo" %>
+      <%= link_to user_path(@reservation.flat.user) do %>
+        <% if @reservation.flat.user.photo.attached? %>
+          <%= image_tag @reservation.flat.user.photo, class: "host-photo", alt: "Landlord Profile Picture" %>
+        <% else %>
+          <%= image_tag "default-profile.png", class: "host-photo", alt: "Default Profile Picture" %>
+        <% end %>
       <% end %>
     </div>
   </div>
