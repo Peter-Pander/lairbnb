@@ -1,18 +1,14 @@
 <div class="confirm-title">
   <%= link_to "javascript:history.back()", class: 'back-button' do %>
-    <span>&#60;</span> <!-- The "less-than" symbol -->
+    <span>&#60;</span>
   <% end %>
   <h1><strong>Confirm and pay</strong></h1>
 </div>
-<!-- Wrapper to hold both containers side by side -->
 <div class="reservation-wrapper">
   <!-- Left Side: Your Trip -->
   <div class="trip-container">
-    <!-- Deal announcement -->
     <div class="deal-announcement" data-controller="deal-announcement">
-      <p id="deal-text" data-deal-announcement-target="text">
-        <!-- Stimulus will insert a random deal here -->
-      </p>
+      <p id="deal-text" data-deal-announcement-target="text"></p>
     </div>
     <h4><strong>Your trip</strong></h4>
     <div class="dates-guests">
@@ -20,13 +16,15 @@
       <p><%= @reservation.start_datetime.strftime("%b %-d") %> - <%= @reservation.end_datetime.strftime("%b %-d") %></p>
       <br>
       <p><strong>Guests</strong></p>
-      <p><%= @reservation.guests %> <%= @reservation.guests == 1 ? "guest" : "guests" %></p>
+      <p>
+        <%= @reservation.guests %>
+        <%= @reservation.guests == 1 ? "guest" : "guests" %>
+      </p>
       <hr class="thin-line">
     </div>
   </div>
   <!-- Right Side: Price Details -->
   <div class="price-container">
-    <!-- Container for Image and Address -->
     <div class="lair-info-container">
       <div class="lair-info">
         <% if @reservation.flat.photo.attached? %>
@@ -47,33 +45,30 @@
     <div class="d-flex justify-content-between">
       <p>
         <%= "#{number_to_currency(@reservation.flat.price_per_night, unit: '', delimiter: '.', precision: 0)} gold" %>
-        x <%= nights %> nights x <%= @reservation.guests %>
-        <%= @reservation.guests == 1 ? "guest" : "guests" %>
+        x <%= nights %> nights x <%= @reservation.guests %> <%= @reservation.guests == 1 ? "guest" : "guests" %>
       </p>
-      <p><strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong></p>
+      <p>
+        <strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong>
+      </p>
     </div>
     <hr>
     <div class="d-flex justify-content-between">
       <p><strong>Total</strong></p>
-      <p><strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong></p>
+      <p>
+        <strong><%= "#{number_to_currency(total_price, unit: '', delimiter: '.', precision: 0)} gold" %></strong>
+      </p>
     </div>
   </div>
   <!-- Payment Method Container -->
   <div class="payment-container" data-controller="payment-dropdown">
     <h3>Pay with
-      <!-- PayPal icon with characteristic color -->
       <i class="fa-brands fa-paypal" style="float: right; font-size: 1.5rem; color: #0070ba; margin-right: 10px;"></i>
-      <!-- Visa icon with characteristic color -->
       <i class="fa-brands fa-cc-visa" style="float: right; font-size: 1.5rem; color: #1a1f71; margin-right: 10px;"></i>
-      <!-- MasterCard icon with characteristic color -->
       <i class="fa-brands fa-cc-mastercard" style="float: right; font-size: 1.5rem; color: #eb001b; margin-right: 10px;"></i>
-      <!-- AMEX icon with characteristic color -->
       <i class="fa-brands fa-cc-amex" style="float: right; font-size: 1.5rem; color: #2e77bb; margin-right: 10px;"></i>
-      <!-- Google Pay icon with characteristic color -->
       <i class="fa-brands fa-google-pay" style="float: right; font-size: 1.5rem; color: #4285f4; margin-right: 10px;"></i>
     </h3>
     <div class="custom-dropdown">
-      <!-- Button with default PayPal selected -->
       <button class="dropdown-btn" data-action="click->payment-dropdown#toggleDropdown" data-payment-dropdown-target="button">
         <i class="fa-brands fa-paypal" style="color: #0070ba; margin-right: 10px;"></i> PayPal
       </button>
@@ -101,10 +96,10 @@
   </div>
 </div>
 <div class="reservation-wrapper2">
-  <!-- Container for Terms & Conditions -->
   <div class="terms-container reservation-wrapper">
     <p class="terms-text">
-      By selecting the button below, I agree to the Host’s Lair Rules, Ground Rules for Guests, LairBnB’s Rebooking and Refund Policy, and I understand that LairBnB may charge my payment method if I am responsible for any damage caused to the lair. Payment Terms between you and LairBnB Payments (Hoard of Treasures Division, Goldclaw Treasury) apply.  </p>
+      By selecting the button below, I agree to the Host’s Lair Rules, Ground Rules for Guests, LairBnB’s Rebooking and Refund Policy, and I understand that LairBnB may charge my payment method if I am responsible for any damage caused to the lair. Payment Terms between you and LairBnB Payments (Hoard of Treasures Division, Goldclaw Treasury) apply.
+    </p>
     <p class="terms-text">
       I also agree to the updated Terms of Service, Payment Terms of Service, and acknowledge the Privacy Policy of LairBnB, where personal data is kept safer than a dragon’s hoard.
     </p>

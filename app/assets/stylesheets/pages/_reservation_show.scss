@@ -7,7 +7,7 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  position: relative; // Allows precise positioning if needed
+  position: relative; /* Allows precise positioning if needed */
   left: -60px;
 }
 
@@ -22,28 +22,18 @@
   margin-right: 20px; /* Space between the arrow and the title */
   text-decoration: none; /* Remove underline */
   transition: transform 0.2s ease; /* Smooth transition on hover */
-
-  /* Adjust position of the back button */
-  position: relative; /* Makes it possible to position the button relative to its normal position */
+  position: relative; /* Position relative for fine-tuning */
   top: -5px; /* Move the button slightly higher */
   left: -1px; /* Move the button a bit to the left */
 }
 
 .back-button:hover {
-  transform: scale(1.2); /* Slightly scale up the arrow on hover */
+  transform: scale(1.2); /* Scale up the arrow on hover */
 }
 
 .back-button span {
   display: inline-block;
-  font-size: 40px; /* Adjust the size of the arrow */
-}
-
-
-/* Wrapper for title and trip-container to align them together */
-.confirm-wrapper {
-  max-width: 550px; // Matches .trip-container
-  margin-left: auto;
-  margin-right: auto; // Center it like .trip-container
+  font-size: 40px;
 }
 
 /* Wrapper to make both containers appear next to each other */
@@ -56,7 +46,7 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  position: relative; // Allows precise positioning if needed
+  position: relative; /* Allows precise positioning if needed */
 }
 
 /* Left Side: Trip Details */
@@ -80,14 +70,6 @@
   font-size: 17px;
   display: block;
   line-height: 1.5;
-}
-
-.deal-title {
-  margin-right: 335px;
-}
-
-.money-emoji {
-  font-size: 24px;
 }
 
 /* Dates & Guests */
@@ -196,7 +178,7 @@ hr {
   margin-top: 5px;
 }
 
-/* New container styling for Terms and Conditions */
+/* Terms and Conditions Container */
 .terms-container {
   background: white;
   padding: 18px;
@@ -226,7 +208,7 @@ hr {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  position: relative; // Allows precise positioning if needed
+  position: relative; /* Allows precise positioning if needed */
 }
 
 .invisible-container {
@@ -243,29 +225,29 @@ hr {
 .goblin-button {
   display: inline-block;
   padding: 12px 20px;
-  background: linear-gradient(135deg, #FFD700, #FF8C00); // Gold to orange gradient
-  border: 2px solid #A52A2A; // Dark brown border
-  color: #222; // Dark text for contrast
+  background: linear-gradient(135deg, #FFD700, #FF8C00); /* Gold to orange gradient */
+  border: 2px solid #A52A2A; /* Dark brown border */
+  color: #222; /* Dark text for contrast */
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
   text-transform: uppercase;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 3px 3px 0px #A52A2A; // 3D effect
+  box-shadow: 3px 3px 0px #A52A2A; /* 3D effect */
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
 
-  &:hover {
-    background: linear-gradient(135deg, #FF8C00, #FFD700); // Reverse gradient on hover
-    transform: translateY(-2px);
-    box-shadow: 4px 4px 0px #5A1F1F; // Deeper shadow
-  }
+.goblin-button:hover {
+  background: linear-gradient(135deg, #FF8C00, #FFD700); /* Reverse gradient on hover */
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px #5A1F1F; /* Deeper shadow */
+}
 
-  &:active {
-    transform: translateY(2px);
-    box-shadow: 1px 1px 0px #5A1F1F;
-  }
+.goblin-button:active {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 0px #5A1F1F;
 }
 
 /* Dropdown styling */
@@ -279,7 +261,7 @@ hr {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  width: 100%; /* Ensuring it spans the same width as the container */
+  width: 100%; /* Span the container’s width */
   text-align: left;
   display: flex;
   align-items: center;
@@ -292,14 +274,14 @@ hr {
 
 .dropdown-btn:hover {
   background-color: white;
-  color: black; /* Text color changes to black on hover */
+  color: black;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  width: 100%; /* Ensures the dropdown stretches to the full width of the container */
+  width: 100%; /* Full width of the container */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 10px 0;
@@ -320,7 +302,7 @@ hr {
 }
 
 .dropdown-item:hover {
-  background-color: #ddd; /* This controls hover color for dropdown items */
+  background-color: #ddd;
 }
 
 .custom-dropdown:hover .dropdown-content {
