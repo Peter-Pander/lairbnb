@@ -3,23 +3,25 @@
   <!-- Profile Picture Section -->
   <div class="profile-pic-container">
     <!-- Wrap image and edit button in a relatively positioned box -->
-    <div class="profile-pic-wrapper">
-      <% if @user.photo.attached? %>
-        <%= image_tag @user.photo, class: "avatar-xxl" %>
-      <% else %>
-        <%= image_tag "placeholder.png", class: "avatar-xxl" %>
-      <% end %>
-      <!-- Edit Button stays positioned over the image -->
-      <button type="button" class="edit-photo-button" data-action="click->photo#editPhoto">
-        <i class="fa-solid fa-camera" style="margin-right: 6px;"></i> Edit
-      </button>
-    </div>
-    <!-- Hidden File Input -->
-    <div class="hidden-file-input">
-      <%= simple_form_for(@user, url: update_user_profile_path, html: { multipart: true }) do |f| %>
-        <%= f.input :photo, as: :file, label: "Upload Profile Picture",
-                    input_html: { data: { "photo-target": "fileInput" } } %>
-      <% end %>
+    <div class="profile-pic-container" data-controller="photo">
+      <div class="profile-pic-wrapper">
+        <% if @user.photo.attached? %>
+          <%= image_tag @user.photo, class: "avatar-xxl" %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/dadymzua9/image/upload/v1/avatar_placeholder_gadz4b", class: "avatar-xxl", alt: "Default User Avatar" %>
+        <% end %>
+        <!-- Edit Button -->
+        <button type="button" class="edit-photo-button" data-action="click->photo#editPhoto">
+          <i class="fa-solid fa-camera" style="margin-right: 6px;"></i> Edit
+        </button>
+      </div>
+      <!-- Hidden File Input (visually hidden but still active) -->
+      <div class="hidden-file-input" style="position: absolute; left: -9999px;">
+        <%= simple_form_for(@user, url: update_user_profile_path, html: { multipart: true }) do |f| %>
+          <%= f.input :photo, as: :file, label: "Upload Profile Picture",
+                  input_html: { data: { "photo-target": "fileInput", action: "change->photo#upload" } } %>
+        <% end %>
+      </div>
     </div>
     <!-- Landlord Role Form (appears visually below image) -->
     <% if current_user.role == "landlord" %>

@@ -26,11 +26,15 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag current_user.photo, class: "avatar-large", alt: "User Avatar" %>
+              <% if current_user.photo.attached? %>
+                <%= image_tag current_user.photo, class: "avatar-large", alt: "User Avatar" %>
+              <% else %>
+                <%= image_tag "https://res.cloudinary.com/dadymzua9/image/upload/v1/avatar_placeholder_gadz4b", class: "avatar-large", alt: "Default User Avatar" %>
+              <% end %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", profile_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
