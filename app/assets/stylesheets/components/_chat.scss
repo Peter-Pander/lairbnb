@@ -32,6 +32,10 @@
     width: fit-content;
   }
 
+  .message.received .message-info {
+    align-self: flex-end;
+  }
+
   .message-content {
     border-radius: 1rem;
     margin-bottom: 1rem;
