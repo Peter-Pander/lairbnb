@@ -3,11 +3,6 @@
 LairBnB is a fantasy platform where adventurers of all kinds — Humans, Orcs, Tauren, Goblins, Gnomes, Elves, Blood Elves, Night Elves, and more—can find the perfect lair to rent or host.
 Whether you're a lone wanderer or a mighty war chief, LairBnB helps you find the perfect hideout!
 
-![1](https://github.com/user-attachments/assets/d58ca716-4e13-463c-bfbd-45aa5c3d8ce2)
-![2](https://github.com/user-attachments/assets/5c91e4cc-9d02-4283-b72c-a204e9348b90)
-![3](https://github.com/user-attachments/assets/7815dbd0-8276-4295-a2b3-ac8d384afba3)
-![4](https://github.com/user-attachments/assets/4e781d3d-7023-49e0-8f0f-9088149afe9a)
-
 
 <br>
 App home: https://lairbnb3-fda230b7ce88.herokuapp.com/
