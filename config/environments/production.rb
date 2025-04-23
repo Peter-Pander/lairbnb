@@ -94,7 +94,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Avoid “prepared statement already exists” errors with Supabase’s pooler
-  config.active_record.prepare_statements = false
+  config.active_record.disable_prepared_statements = true
+
 
   # Enable DNS rebinding protection and other Host header attacks.
   # config.hosts = [
